@@ -330,10 +330,10 @@ ${T.topbar()}
       <div class="col-lg-6">
         <div class="why-choose-one__right">
           <div class="why-choose-one__thumb wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="100ms">
-            <picture><source srcset="/assets/images/resources/why-choose-1-1.webp" type="image/webp"><img src="/assets/images/resources/why-choose-1-1.jpg" loading="lazy" width="490" height="460" alt="${CLIENT.name} crew at work"></picture><div class="why-choose-one__thumb-box"></div>
+            <picture><source srcset="/assets/images/service/dons-work-3.jpg" type="image/webp"><img src="/assets/images/service/dons-work-3.jpg" loading="lazy" width="490" height="460" alt="${CLIENT.name} crew at work"></picture><div class="why-choose-one__thumb-box"></div>
           </div>
           <div class="why-choose-one__thumb-two wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="300ms">
-            <picture><source srcset="/assets/images/resources/why-choose-1-2.webp" type="image/webp"><img src="/assets/images/resources/why-choose-1-2.jpg" loading="lazy" width="490" height="460" alt="HVAC service in El Dorado, Kansas"></picture>
+            <picture><source srcset="/assets/images/service/dons-team-roof.jpg" type="image/webp"><img src="/assets/images/service/dons-team-roof.jpg" loading="lazy" width="490" height="460" alt="HVAC service in El Dorado, Kansas"></picture>
           </div>
           <div class="why-choose-one__thumb-box-two"></div>
         </div>
@@ -1612,6 +1612,7 @@ function buildGetAQuote() {
 buildGetAQuote();
 // Generate sitemap from actual dist/ contents
 generateSitemap({ distDir: DIST, siteRoot: ROOT, domain: SITE_DOMAIN });
+
 
 
 
