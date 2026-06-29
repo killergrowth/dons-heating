@@ -27,9 +27,9 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${desc}">
 <meta name="twitter:image" content="https://www.donsheatingandair.com/assets/images/social-share.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons-v2/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons-v2/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons-v2/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/Dons_logo.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/Dons_logo.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/Dons_logo.jpg">
 <link rel="manifest" href="/assets/images/favicons-v2/site.webmanifest">
 <!-- Self-hosted fonts - eliminates Google Fonts external round-trips -->
 <link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -462,6 +462,7 @@ onTTFB(sendVital);
 }
 
 module.exports = { htmlHead, htmlScripts, topbar, pageHeader, mobileNav, contactFormSection, faqBlock, serviceCarouselItems, wrapBody };
+
 
 
 
