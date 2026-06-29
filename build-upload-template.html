@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery Admin | Timnath Painting</title>
+<title>Gallery Admin | Don's Heating & Air</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 body { font-family: 'Outfit', sans-serif; background: #f7f3ee; color: #201B10; margin: 0; min-height: 100vh; }
 
-/* ── Admin header ── */
+/* â”€â”€ Admin header â”€â”€ */
 .admin-header {
   background: #201B10; color: #fff; padding: 14px 28px;
   display: flex; align-items: center; justify-content: space-between;
@@ -24,7 +24,7 @@ body { font-family: 'Outfit', sans-serif; background: #f7f3ee; color: #201B10; m
 .admin-header a { color: #AE360E; font-size: 13px; text-decoration: none; }
 .admin-body { max-width: 1200px; margin: 0 auto; padding: 32px 20px; }
 
-/* ── Login ── */
+/* â”€â”€ Login â”€â”€ */
 #loginScreen {
   max-width: 360px; margin: 100px auto;
   background: #fff; border-radius: 10px; padding: 40px 36px;
@@ -41,7 +41,7 @@ body { font-family: 'Outfit', sans-serif; background: #f7f3ee; color: #201B10; m
 }
 #loginError { color: #c0392b; font-size: 13px; text-align: center; margin-top: 10px; display: none; }
 
-/* ── Card shell ── */
+/* â”€â”€ Card shell â”€â”€ */
 .card {
   background: #fff; border-radius: 10px; padding: 28px 32px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 32px;
@@ -52,7 +52,7 @@ body { font-family: 'Outfit', sans-serif; background: #f7f3ee; color: #201B10; m
   border-radius: 12px; font-weight: 700;
 }
 
-/* ── Drop zone ── */
+/* â”€â”€ Drop zone â”€â”€ */
 .drop-zone {
   border: 2px dashed #ccc; border-radius: 8px; padding: 56px 20px;
   text-align: center; cursor: pointer; transition: all 0.2s; background: #fafafa;
@@ -64,7 +64,7 @@ body { font-family: 'Outfit', sans-serif; background: #f7f3ee; color: #201B10; m
 .drop-zone strong { color: #AE360E; }
 #fileInput { display: none; }
 
-/* ── Upload queue ── */
+/* â”€â”€ Upload queue â”€â”€ */
 #uploadQueue { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
 .queue-thumb {
   position: relative; width: 100px; height: 100px;
@@ -92,7 +92,7 @@ body { font-family: 'Outfit', sans-serif; background: #f7f3ee; color: #201B10; m
 }
 #uploadStatus { font-size: 14px; color: #5a5650; }
 
-/* ── Photo grid ── */
+/* â”€â”€ Photo grid â”€â”€ */
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -128,7 +128,7 @@ body { font-family: 'Outfit', sans-serif; background: #f7f3ee; color: #201B10; m
 }
 .photo-card:hover .photo-card-delete { opacity: 1; }
 
-/* ── Edit modal ── */
+/* â”€â”€ Edit modal â”€â”€ */
 .modal-overlay {
   display: none; position: fixed; inset: 0;
   background: rgba(0,0,0,0.55); z-index: 9999;
@@ -202,12 +202,12 @@ body { font-family: 'Outfit', sans-serif; background: #f7f3ee; color: #201B10; m
   border: none; border-radius: 6px; font-weight: 600; font-size: 14px; cursor: pointer;
 }
 
-/* ── States ── */
+/* â”€â”€ States â”€â”€ */
 .loading-state { text-align: center; padding: 60px; color: #999; }
 .empty-state { text-align: center; padding: 60px; color: #bbb; }
 .empty-state i { font-size: 40px; margin-bottom: 12px; display: block; color: #e4dacc; }
 
-/* ── Toast ── */
+/* â”€â”€ Toast â”€â”€ */
 #toast {
   position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(80px);
   background: #201B10; color: #fff; padding: 12px 24px; border-radius: 8px;
@@ -236,7 +236,7 @@ body { font-family: 'Outfit', sans-serif; background: #f7f3ee; color: #201B10; m
 <!-- Admin panel -->
 <div id="adminPanel" style="display:none;">
   <div class="admin-header">
-    <h1><i class="fa-solid fa-images" style="color:#AE360E;margin-right:10px;"></i>Timnath Painting — Gallery Admin</h1>
+    <h1><i class="fa-solid fa-images" style="color:#AE360E;margin-right:10px;"></i>Don's Heating & Air â€” Gallery Admin</h1>
     <a href="/gallery/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right:5px;"></i>View public gallery</a>
   </div>
   <div class="admin-body">
@@ -289,7 +289,7 @@ body { font-family: 'Outfit', sans-serif; background: #f7f3ee; color: #201B10; m
       <h3>Edit Photo Details</h3>
 
       <label>Title / Description <span style="font-weight:400;color:#bbb;">(optional)</span></label>
-      <input type="text" id="editTitle" placeholder="e.g. Exterior repaint — Windsor HOA">
+      <input type="text" id="editTitle" placeholder="e.g. Exterior repaint â€” Emporia HOA">
 
       <label>Tags</label>
       <div class="tag-input-wrap" id="tagInputWrap" onclick="document.getElementById('tagInput').focus()">
@@ -298,7 +298,7 @@ body { font-family: 'Outfit', sans-serif; background: #f7f3ee; color: #201B10; m
       </div>
       <p class="tag-hint">Press <strong>Enter</strong> or <strong>,</strong> to add a tag &bull; Click &times; to remove</p>
       <div id="tagSuggestionsWrap" style="display:none;">
-        <div class="tag-suggestions-label">Previously used tags — click to add:</div>
+        <div class="tag-suggestions-label">Previously used tags â€” click to add:</div>
         <div class="tag-suggestions" id="tagSuggestions"></div>
       </div>
 
@@ -318,10 +318,10 @@ let currentTags = [];
 let selectedFiles = [];
 let allKnownTags = [];
 
-// Suggested tags for Timnath Painting (seeded list + dynamically expanded)
+// Suggested tags for Don's Heating & Air (seeded list + dynamically expanded)
 const SEED_TAGS = ['painting', 'interior', 'exterior', 'commercial', 'residential', 'HOA', 'fence', 'deck', 'staining', 'trim', 'cabinet', 'garage', 'before & after'];
 
-// ── Toast ──────────────────────────────────────────────
+// â”€â”€ Toast â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function toast(msg, type = 'success') {
   const el = document.getElementById('toast');
   const icon = el.querySelector('i');
@@ -332,7 +332,7 @@ function toast(msg, type = 'success') {
   el._t = setTimeout(() => { el.classList.remove('show', 'success', 'error'); }, 3000);
 }
 
-// ── Auth ───────────────────────────────────────────────
+// â”€â”€ Auth â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function init() {
   const saved = sessionStorage.getItem(SESSION_KEY);
   if (saved) { adminPassword = saved; document.getElementById('loginScreen').style.display = 'none'; showPanel(); }
@@ -355,7 +355,7 @@ function showPanel() {
   loadPhotos();
 }
 
-// ── File selection + queue ─────────────────────────────
+// â”€â”€ File selection + queue â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function setupDragDrop() {
   const dz = document.getElementById('dropZone');
   const fi = document.getElementById('fileInput');
@@ -417,13 +417,13 @@ function clearQueue() {
   renderQueue();
 }
 
-// ── Compress ───────────────────────────────────────────
+// â”€â”€ Compress â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function compressImage(file, maxPx = 1200, quality = 0.78) {
   return new Promise(resolve => {
     const img = new Image();
     const url = URL.createObjectURL(file);
     img.onerror = () => {
-      // Image failed to load — fall back to original file
+      // Image failed to load â€” fall back to original file
       URL.revokeObjectURL(url);
       console.warn('compressImage: image failed to load, using original:', file.name);
       resolve(file);
@@ -440,7 +440,7 @@ function compressImage(file, maxPx = 1200, quality = 0.78) {
       canvas.getContext('2d').drawImage(img, 0, 0, w, h);
       canvas.toBlob(blob => {
         if (!blob || blob.size === 0) {
-          // Canvas produced empty blob — fall back to original file
+          // Canvas produced empty blob â€” fall back to original file
           console.warn('compressImage: canvas.toBlob returned empty, using original:', file.name);
           resolve(file);
         } else {
@@ -452,7 +452,7 @@ function compressImage(file, maxPx = 1200, quality = 0.78) {
   });
 }
 
-// ── Upload all ─────────────────────────────────────────
+// â”€â”€ Upload all â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 async function uploadAll() {
   if (!selectedFiles.length) return;
   const btn = document.getElementById('uploadAllBtn');
@@ -472,13 +472,13 @@ async function uploadAll() {
 
       // Guard: reject empty or impossibly large files before hitting the API
       if (!compressed || compressed.size === 0) {
-        console.error('Upload skipped — empty file after compression:', selectedFiles[i].name);
+        console.error('Upload skipped â€” empty file after compression:', selectedFiles[i].name);
         failed++;
         if (statusEl) { statusEl.className = 'q-status error'; statusEl.innerHTML = '<i class="fa-solid fa-xmark"></i>'; }
         continue;
       }
       if (compressed.size > 20 * 1024 * 1024) {
-        console.error('Upload skipped — file too large (>20 MB):', selectedFiles[i].name);
+        console.error('Upload skipped â€” file too large (>20 MB):', selectedFiles[i].name);
         failed++;
         if (statusEl) { statusEl.className = 'q-status error'; statusEl.innerHTML = '<i class="fa-solid fa-xmark"></i>'; }
         continue;
@@ -525,7 +525,7 @@ async function uploadAll() {
   }, 1800);
 }
 
-// ── Load photos ────────────────────────────────────────
+// â”€â”€ Load photos â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 async function loadPhotos() {
   const grid = document.getElementById('photoGrid');
   grid.innerHTML = '<div class="loading-state"><i class="fa-solid fa-spinner fa-spin" style="font-size:24px;color:#AE360E;"></i></div>';
@@ -569,7 +569,7 @@ function makeCard(p) {
   return card;
 }
 
-// ── Edit modal ─────────────────────────────────────────
+// â”€â”€ Edit modal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function openEditModal(p) {
   editingId = p.id;
   currentTags = Array.isArray(p.tags) ? [...p.tags] : [];
@@ -722,3 +722,4 @@ init();
 </script>
 </body>
 </html>
+

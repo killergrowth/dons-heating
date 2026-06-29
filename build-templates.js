@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 const { CLIENT, SERVICES } = require('./_build-data.js');
 
 function htmlHead(title, desc, canonicalUrl, preloadImage, noindex = false) {
@@ -15,18 +15,18 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <link rel="preload" as="image" href="${preloadImage.replace(/\.(jpg|jpeg)$/i, '.webp')}" media="(min-width:801px)">` : ''}
 <!-- Open Graph / Social Share -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Timnath Painting">
+<meta property="og:site_name" content="Don's Heating & Air">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${desc}">
-<meta property="og:url" content="${canonicalUrl || 'https://timnathpainting.com/'}">
-<meta property="og:image" content="https://timnathpainting.com/assets/images/social-share.png">
+<meta property="og:url" content="${canonicalUrl || 'https://www.donsheatingandair.com/'}">
+<meta property="og:image" content="https://www.donsheatingandair.com/assets/images/social-share.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${desc}">
-<meta name="twitter:image" content="https://timnathpainting.com/assets/images/social-share.png">
+<meta name="twitter:image" content="https://www.donsheatingandair.com/assets/images/social-share.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons-v2/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons-v2/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons-v2/favicon-16x16.png">
@@ -38,8 +38,8 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <link rel="preload" href="/assets/css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/vendors/bootstrap/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/css/wallox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="/assets/css/timnath-custom.css?v=20260514" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="/assets/css/timnath-overrides.css?v=20260514" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/css/dons-custom.css?v=20260514" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/css/dons-overrides.css?v=20260514" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <!-- Preload FontAwesome webfont to prevent header layout shift -->
 <link rel="preload" href="/assets/vendors/fontawesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 <!-- Non-critical CSS - deferred async -->
@@ -58,8 +58,8 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <link rel="stylesheet" href="/assets/css/fonts.css">
 <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/assets/css/wallox.css">
-<link rel="stylesheet" href="/assets/css/timnath-custom.css?v=20260514">
-<link rel="stylesheet" href="/assets/css/timnath-overrides.css?v=20260514">
+<link rel="stylesheet" href="/assets/css/dons-custom.css?v=20260514">
+<link rel="stylesheet" href="/assets/css/dons-overrides.css?v=20260514">
 <link rel="stylesheet" href="/assets/vendors/animate/animate.min.css">
 <link rel="stylesheet" href="/assets/vendors/bootstrap-select/bootstrap-select.min.css">
 <link rel="stylesheet" href="/assets/vendors/jquery-ui/jquery-ui.css">
@@ -78,7 +78,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
    ============================================================ */
 
 /* 1. CSS variables (from wallox.css :root) */
-:root{--wallox-font:"Plus Jakarta Sans",sans-serif;--wallox-text:#7E7C76;--wallox-text-dark:#2E2A20;--wallox-base:#AE360E;--wallox-gray:#F4EDE4;--wallox-white:#fff;--wallox-border-color:#E4DACC}
+:root{--wallox-font:"Plus Jakarta Sans",sans-serif;--wallox-text:#7E7C76;--wallox-text-dark:#2E2A20;--wallox-base:#3A5DAE;--wallox-gray:#F4EDE4;--wallox-white:#fff;--wallox-border-color:#E4DACC}
 
 /* 2. Bootstrap container - minimal, so bootstrap.min.css can load async */
 .container,.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
@@ -98,7 +98,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .main-slider-one__item{position:relative;padding-top:115px;padding-bottom:158px;height:803px;background-color:#F4EDE4}
 @media(max-width:1350px){.main-slider-one__item{height:auto}}
 @media(max-width:767px){.main-slider-one__item{padding-top:180px;padding-bottom:200px}}
-/* Hero dark gradient overlay (from timnath-custom.css) */
+/* Hero dark gradient overlay (from dons-custom.css) */
 .main-slider-one__item::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0);z-index:1}
 .main-slider-one .container,.main-slider-one__content{position:relative;z-index:2}
 /* Hero title text */
@@ -108,7 +108,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 
 /* 5. CTA button */
 .wallox-btn{display:inline-block;vertical-align:middle;border:none;outline:none!important;background-color:#2E2A20;color:#fff;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);padding:15px 24px;font-weight:600;font-size:16px;line-height:1.25;text-transform:capitalize;border-radius:100px;position:relative;overflow:hidden;text-align:center}
-.wallox-btn--base{background:#AE360E;color:#fff}
+.wallox-btn--base{background:#3A5DAE;color:#fff}
 
 /* 6. Header layout */
 .main-header__right{display:flex;align-items:center}
@@ -125,7 +125,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 /* ============================================================
    Existing critical overrides (unchanged)
    ============================================================ */
-.main-header { background-color: #201B10 !important; }
+.main-header { background-color: #1B2A4A !important; }
 .main-header__inner { padding: 0 !important; }
 .main-header__logo { display: none !important; }
 
@@ -136,7 +136,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .hero-static .main-slider-one__bg { opacity: 1 !important; transform: none !important; transition: none !important; }
 /* Hero bg img positioning (same as before) */
 .hero-static .main-slider-one__bg img { position:absolute;top:-5%;left:0;width:100%;height:110%;object-fit:cover;object-position:center; }
-/* CSS-only text entrance animations �" fire on load, no JS required */
+/* CSS-only text entrance animations ï¿½" fire on load, no JS required */
 @keyframes heroSlideUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
 .hero-static .main-slider-one__sub-title { animation: heroSlideUp 0.55s ease 0.15s both; }
 .hero-static .main-slider-one__title__box:nth-child(1) h2 { animation: heroSlideUp 0.55s ease 0.3s both; }
@@ -161,7 +161,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 @media(max-width:1199px){.main-header__right__link{display:none!important}}
 @media(min-width:1200px){.mobile-nav__btn{display:none!important}}
 
-/* CWV: Tagline letter-spacing via CSS � eliminates fixTaglines JS setTimeout (which caused CLS) */
+/* CWV: Tagline letter-spacing via CSS ï¿½ eliminates fixTaglines JS setTimeout (which caused CLS) */
 .sec-title__tagline { letter-spacing: 0.5px !important; word-spacing: normal !important; }
 .sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
 </style>
@@ -212,7 +212,7 @@ function topbar() { return ''; /* topbar now embedded in header partial */ }
 
 function pageHeader(title, crumbs) {
   return `<section class="page-header">
-  <div class="page-header__bg" style="background-image:url(/assets/images/backgrounds/timnath-hero.jpg);"></div>
+  <div class="page-header__bg" style="background-image:url(/assets/images/backgrounds/dons-hero.jpg);"></div>
   <div class="container">
     <h2 class="page-header__title">${title}</h2>
     <div class="wallox-breadcrumb"><ul class="wallox-breadcrumb__list list-unstyled">
@@ -260,7 +260,7 @@ function contactFormSection() {
         <div class="wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="100ms"
           style="background:rgba(30,22,14,0.88);border-radius:10px;padding:40px 36px;">
           <div style="margin-bottom:24px;">
-            <span style="color:var(--wallox-base,#AE360E);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Request a Quote</span>
+            <span style="color:var(--wallox-base,#3A5DAE);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Request a Quote</span>
             <h3 style="color:#fff;margin-top:8px;margin-bottom:0;">Get a Free Quote</h3>
           </div>
           <form class="contact-one__form form-one" id="quote-form"
@@ -280,7 +280,7 @@ function contactFormSection() {
               </div>
               <div class="form-one__control">
                 <label for="phone" style="color:#ccc;font-size:13px;">Phone*</label>
-                <input type="text" id="phone" name="phone" placeholder="(970) 000-0000"
+                <input type="text" id="phone" name="phone" placeholder="(316) 321-9438"
                   style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;border-radius:5px;padding:10px 14px;width:100%;">
               </div>
               <div class="form-one__control">
@@ -301,7 +301,7 @@ function contactFormSection() {
               </div>
             </div>
           </form>
-          <p style="margin-top:16px;font-size:13px;color:#aaa;text-align:center;">We respond same-day. Prefer to call or text? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#AE360E);text-decoration:underline;">${CLIENT.phone}</a></p>
+          <p style="margin-top:16px;font-size:13px;color:#aaa;text-align:center;">We respond same-day. Prefer to call or text? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#3A5DAE);text-decoration:underline;">${CLIENT.phone}</a></p>
         </div>
       </div>
 
@@ -311,12 +311,12 @@ function contactFormSection() {
           <span style="color:#fff;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Reach Us Directly</span>
           <h3 style="color:#fff;margin-top:8px;margin-bottom:30px;">We Respond Same-Day</h3>
           <ul class="list-unstyled" style="line-height:2.6;">
-            <li><i class="fa-solid fa-phone" style="color:var(--wallox-base,#AE360E);margin-right:12px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:#fff;">${CLIENT.phone}</a></li>
-            <li style="font-size:13px;color:#aaa;"><i class="fa-solid fa-comment-sms" style="color:var(--wallox-base,#AE360E);margin-right:12px;"></i>Text us to schedule a quote or talk to a team member</li>
-            <li><i class="fa-solid fa-envelope" style="color:var(--wallox-base,#AE360E);margin-right:12px;"></i><a href="mailto:${CLIENT.email}" style="color:#ddd;">${CLIENT.email}</a></li>
-            <li><i class="fa-solid fa-location-dot" style="color:var(--wallox-base,#AE360E);margin-right:12px;"></i><span style="color:#ddd;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</span></li>
+            <li><i class="fa-solid fa-phone" style="color:var(--wallox-base,#3A5DAE);margin-right:12px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:#fff;">${CLIENT.phone}</a></li>
+            <li style="font-size:13px;color:#aaa;"><i class="fa-solid fa-comment-sms" style="color:var(--wallox-base,#3A5DAE);margin-right:12px;"></i>Text us to schedule a quote or talk to a team member</li>
+            <li><i class="fa-solid fa-envelope" style="color:var(--wallox-base,#3A5DAE);margin-right:12px;"></i><a href="mailto:${CLIENT.email}" style="color:#ddd;">${CLIENT.email}</a></li>
+            <li><i class="fa-solid fa-location-dot" style="color:var(--wallox-base,#3A5DAE);margin-right:12px;"></i><span style="color:#ddd;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</span></li>
           </ul>
-          <p style="margin-top:30px;font-style:italic;color:#bbb;">Licensed &amp; Insured &bull; No-VOC Products. &bull; $1M General Liability</p>
+          <p style="margin-top:30px;font-style:italic;color:#bbb;">Licensed &amp; Insured &bull; Licensed & Insured. &bull; $1M General Liability</p>
         </div>
       </div>
 
@@ -330,9 +330,9 @@ function faqBlock(faqs, groupName) {
   ${faqs.map(f => `<details style="border-bottom:1px solid #e4dacc;padding:0;margin:0;">
     <summary style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;cursor:pointer;list-style:none;gap:16px;">
       <span style="display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;color:#2e2a20;">
-        <i class="fa-solid fa-circle-dot" style="color:#AE360E;font-size:8px;flex-shrink:0;"></i>${f.q}
+        <i class="fa-solid fa-circle-dot" style="color:#3A5DAE;font-size:8px;flex-shrink:0;"></i>${f.q}
       </span>
-      <span class="faq-toggle" style="font-size:12px;color:#AE360E;white-space:nowrap;flex-shrink:0;">See answer &#9660;</span>
+      <span class="faq-toggle" style="font-size:12px;color:#3A5DAE;white-space:nowrap;flex-shrink:0;">See answer &#9660;</span>
     </summary>
     <div style="padding:0 0 16px 18px;color:#5a5650;font-size:15px;line-height:1.7;">${f.a}</div>
   </details>`).join('\n  ')}
@@ -340,7 +340,7 @@ function faqBlock(faqs, groupName) {
 <style>
 .kg-faq details[open] .faq-toggle { content: ''; }
 .kg-faq details[open] > summary .faq-toggle::after { content: ''; }
-.kg-faq details[open] .faq-toggle { color:#AE360E; }
+.kg-faq details[open] .faq-toggle { color:#3A5DAE; }
 .kg-faq details > summary::-webkit-details-marker { display:none; }
 .kg-faq details > summary::marker { display:none; }
 </style>`;
@@ -348,7 +348,7 @@ function faqBlock(faqs, groupName) {
 
 function serviceCarouselItems() {
   const items = SERVICES.map(s => `<div class="item"><div class="service-one__item">
-    <div class="service-one__item__thumb" style="height:260px;overflow:hidden;"><picture><source srcset="/assets/images/service/${s.img.replace(/\.(jpg|jpeg)$/i, '.webp')}" type="image/webp"><img src="/assets/images/service/${s.img}" alt="${s.label} in Northern Colorado" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></picture></div>
+    <div class="service-one__item__thumb" style="height:260px;overflow:hidden;"><picture><source srcset="/assets/images/service/${s.img.replace(/\.(jpg|jpeg)$/i, '.webp')}" type="image/webp"><img src="/assets/images/service/${s.img}" alt="${s.label} in Central Kansas" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></picture></div>
     <div class="service-one__item__content">
       <h4 class="service-one__item__title"><a href="/${s.slug}/index.html">${s.label}</a></h4>
       <p class="service-one__item__tagline">${s.tagline}</p>
@@ -356,10 +356,10 @@ function serviceCarouselItems() {
     </div>
   </div></div>`).join('\n');
   const areasBox = `<div class="item"><div class="service-one__item" style="background:#f4ede4;">
-    <div class="service-one__item__thumb"><img src="/assets/images/service/areas-served-map.jpg" alt="Northern Colorado service area map" loading="lazy"></div>
+    <div class="service-one__item__thumb"><img src="/assets/images/service/areas-served-map.jpg" alt="Central Kansas service area map" loading="lazy"></div>
     <div class="service-one__item__content">
       <h4 class="service-one__item__title"><a href="/areas-served/index.html">See Areas We Serve</a></h4>
-      <p class="service-one__item__tagline">Serving Timnath, Windsor, Fort Collins, Loveland and more across Northern Colorado.</p>
+      <p class="service-one__item__tagline">Serving El Dorado, Hillsboro, Emporia and more across Central Kansas.</p>
       <a href="/areas-served/index.html" class="service-one__item__link">View all areas &rarr;</a>
     </div>
   </div></div>`;
@@ -411,28 +411,28 @@ document.addEventListener("DOMContentLoaded", function fixTransforms() {
         } else {
           if (btn) { btn.disabled = false; btn.textContent = orig; }
           if (window.turnstile) window.turnstile.reset();
-          alert('Something went wrong. Please call us at (970) 670-3965.');
+          alert('Something went wrong. Please call us at (316) 321-9438.');
         }
       } catch (err) {
         if (btn) { btn.disabled = false; btn.textContent = orig; }
         if (window.turnstile) window.turnstile.reset();
-        alert('Something went wrong. Please call us at (970) 670-3965.');
+        alert('Something went wrong. Please call us at (316) 321-9438.');
       }
     });
   }
   document.addEventListener('DOMContentLoaded', function () {
     attachFormHandler(
       'quote-form', 'quote_form',
-      '<p style="color:#AE360E;font-size:22px;font-weight:700;margin-bottom:12px;">Thank you!</p><p style="color:rgba(255,255,255,0.85);font-size:15px;line-height:1.7;">We received your request and will be in touch within a few minutes.</p>'
+      '<p style="color:#3A5DAE;font-size:22px;font-weight:700;margin-bottom:12px;">Thank you!</p><p style="color:rgba(255,255,255,0.85);font-size:15px;line-height:1.7;">We received your request and will be in touch within a few minutes.</p>'
     );
     attachFormHandler(
       'contact-form', 'contact_form',
-      '<p style="color:#AE360E;font-size:22px;font-weight:700;margin-bottom:12px;">Message Sent!</p><p style="color:#5a5650;font-size:15px;line-height:1.7;">We received your message and will get back to you same-day. Josh replies to everything personally.</p>'
+      '<p style="color:#3A5DAE;font-size:22px;font-weight:700;margin-bottom:12px;">Message Sent!</p><p style="color:#5a5650;font-size:15px;line-height:1.7;">We received your message and will get back to you same-day. Josh replies to everything personally.</p>'
     );
   });
 }());
 </script>
-<!-- Web Vitals → GA4 (real user Core Web Vitals measurement) -->
+<!-- Web Vitals â†’ GA4 (real user Core Web Vitals measurement) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M1XTQPEKLW"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -462,6 +462,10 @@ onTTFB(sendVital);
 }
 
 module.exports = { htmlHead, htmlScripts, topbar, pageHeader, mobileNav, contactFormSection, faqBlock, serviceCarouselItems, wrapBody };
+
+
+
+
 
 
 
