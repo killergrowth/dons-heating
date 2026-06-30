@@ -1,6 +1,6 @@
 ﻿'use strict';
 /**
- * build.js  -  Timnath Painting Site Builder
+ * build.js  -  Don\'s Heating & Air Site Builder
  * Generates all pillar pages from data + templates
  * Run: node build.js
  * Output: dist/
@@ -35,11 +35,11 @@ const HEADER_STRIPPED = fs.readFileSync(path.join(PARTS, 'header-stripped.html')
 const FOOTER_MINIMAL = fs.readFileSync(path.join(PARTS, 'footer-minimal.html'), 'utf8');
 
 // Custom SVG icons Ã¯Â¿Â½" inline with brand color
-const RED = '#AE360E';
+const BRAND_COLOR = '#3A5DAE';
 function inlineSvg(filename, size) {
   const raw = fs.readFileSync(path.join(__dirname, 'assets/images', filename), 'utf8')
     .replace(/<\?xml[^?]*\?>/g, '').replace(/<!--[\s\S]*?-->/g, '').trim();
-  return raw.replace('<svg ', `<svg fill="${RED}" width="${size}" height="${size}" `);
+  return raw.replace('<svg ', `<svg fill="${BRAND_COLOR}" width="${size}" height="${size}" `);
 }
 const FOOTER = fs.readFileSync(path.join(PARTS, 'footer.html'), 'utf8');
 
@@ -67,11 +67,11 @@ function writeStripped(relPath, html) {
 ensureDir(DIST);
 copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
 // Generate mobile hero variant (800px @ q68 ~70KB) Ã¯Â¿Â½" desktop is pre-compressed in source
-// Source: assets/images/backgrounds/timnath-hero.webp (151KB @ 1440px q50)
+// Source: assets/images/backgrounds/dons-hero.webp (151KB @ 1440px q50)
 {
   const sharp = require('sharp');
-  const heroSrc = path.join(DIST, 'assets', 'images', 'backgrounds', 'timnath-hero.webp');
-  const heroMobile = path.join(DIST, 'assets', 'images', 'backgrounds', 'timnath-hero-mobile.webp');
+  const heroSrc = path.join(DIST, 'assets', 'images', 'backgrounds', 'dons-hero.webp');
+  const heroMobile = path.join(DIST, 'assets', 'images', 'backgrounds', 'dons-hero-mobile.webp');
   if (fs.existsSync(heroSrc) && !fs.existsSync(heroMobile)) {
     sharp(heroSrc).resize(800, null, { withoutEnlargement: true }).webp({ quality: 68 })
       .toFile(heroMobile).then(() => {}).catch(() => {});
@@ -87,7 +87,7 @@ copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
 // Root index.html Ã¯Â¿Â½" built by buildHomepage()
 
 // Copy coming-soon landing page to root (DISABLED Ã¯Â¿Â½" site is live)
-/* const COMING_SOON = path.join(ROOT, '..', 'timnath-painting-coming-soon');
+/* const COMING_SOON = path.join(ROOT, '..', 'El Dorado-painting-coming-soon');
 if (fs.existsSync(COMING_SOON)) {
   fs.copyFileSync(path.join(COMING_SOON, 'index.html'), path.join(DIST, 'index.html'));
   if (fs.existsSync(path.join(COMING_SOON, 'favicon.ico'))) fs.copyFileSync(path.join(COMING_SOON, 'favicon.ico'), path.join(DIST, 'favicon.ico'));
@@ -122,11 +122,11 @@ function buildHomepage() {
     const escapedText = (r.text || '').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     return `<div class="rv-slide">
   <div class="rv-card">
-    <div style="color:#AE360E;margin-bottom:12px;font-size:15px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+    <div style="color:#3A5DAE;margin-bottom:12px;font-size:15px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
     <p style="font-size:14px;color:#5a5650;line-height:1.8;margin-bottom:20px;flex:1;">&ldquo;${escapedText}&rdquo;</p>
     <div style="display:flex;align-items:center;gap:12px;">
-      <div style="width:38px;height:38px;background:#AE360E;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;flex-shrink:0;">${initial}</div>
-      <div><strong style="font-size:14px;color:#201B10;display:block;">${r.author}</strong><span style="font-size:12px;color:#999;">${r.relativeTime}</span></div>
+      <div style="width:38px;height:38px;background:#3A5DAE;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;flex-shrink:0;">${initial}</div>
+      <div><strong style="font-size:14px;color:#1B2A4A;display:block;">${r.author}</strong><span style="font-size:12px;color:#999;">${r.relativeTime}</span></div>
     </div>
   </div>
 </div>`;
@@ -143,16 +143,16 @@ function buildHomepage() {
     name: CLIENT.name,
     telephone: CLIENT.phone,
     email: CLIENT.email,
-    url: 'https://timnathpainting.com',
+    url: 'https://donsheatingandair.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '4836 Becker Dr',
-      addressLocality: 'Timnath',
-      addressRegion: 'CO',
-      postalCode: '80547',
+      streetAddress: '306 S. Main St.',
+      addressLocality: 'El Dorado',
+      addressRegion: 'KS',
+      postalCode: '67042',
       addressCountry: 'US'
     },
-    areaServed: 'Northern Colorado'
+    areaServed: 'Central Kansas'
   };
   if (reviewData.rating && reviewData.userRatingCount) {
     schemaObj.aggregateRating = {
@@ -176,12 +176,12 @@ function buildHomepage() {
 
   const sliders = [
     {
-      bg: 'hero-real-exterior.jpg',
-      sub: 'Northern Colorado Painting Contractor',
-      lines: ['Premium Exterior', 'Painting and More'],
-      btn1: { t: 'Schedule A Free Consultation', h: '/get-a-quote/' },
-      btn2: { t: 'Our Services', h: '/exterior-painting/index.html' },
-      subText: 'Professional painting done rightâ€”on time, on budget, and built to last.'
+      bg: 'dons-hero-gpt2.png',
+      sub: 'Trusted HVAC Experts Since 1959',
+      lines: ["Heating \u0026 Cooling", "Done Right"],
+      btn1: { t: 'Schedule Service Today', h: '/contact/' },
+      btn2: { t: 'Our Services', h: '/services/' },
+      subText: 'Same-day HVAC service across El Dorado, Hillsboro, and Emporia, KS. Licensed, insured, and trusted since 1959.'
     },
   ];
 
@@ -195,7 +195,7 @@ function buildHomepage() {
       src="/assets/images/backgrounds/${bgWebp}"
       srcset="/assets/images/backgrounds/${bgMobile} 800w, /assets/images/backgrounds/${bgWebp} 1440w"
       sizes="(max-width:800px) 100vw, 1440px"
-      alt="Exterior painting services in Northern Colorado by Timnath Painting" width="1440" height="960"
+      alt="HVAC services in El Dorado, Kansas by Don's Heating &amp; Air" width="1440" height="960"
       fetchpriority="high" decoding="sync"
       style="position:absolute;top:-5%;left:0;width:100%;height:110%;object-fit:cover;object-position:center;">
   </div>
@@ -217,8 +217,8 @@ function buildHomepage() {
 
   const features = [
     { icon:'fa-solid fa-lightbulb', title:'10 Year Systems', link:'/exterior-painting/index.html' },
-    { icon:'fa-solid fa-paint-roller', title:'No-VOC Products.', link:'/about.html' },
-    { icon:'fa-solid fa-users', title:'$1M Liability Coverage', link:'/about.html' },
+    { icon:'fa-solid fa-wrench', title:'Licensed &amp; Insured.', link:'/about/' },
+    { icon:'fa-solid fa-users', title:'$1M Liability Coverage', link:'/about/' },
     { icon:'fa-solid fa-shield-halved', title:'Free On-Site Quotes', link:'/get-a-quote/' },
   ];
 
@@ -246,10 +246,10 @@ ${T.topbar()}
     <div class="row align-items-start gutter-y-30">
       <div class="col-lg-6">
         <div class="about-one__thumb">
-          <div class="about-one__thumb__item real-image"><picture><source srcset="/assets/images/about/about-house-new.webp" type="image/webp"><img src="/assets/images/about/about-house-new.jpg" loading="lazy" width="570" height="600" alt="${CLIENT.name}  -  Professional Painting in Northern Colorado"></picture></div>
+          <div class="about-one__thumb__item real-image"><picture><source srcset="/assets/images/backgrounds/dons-hero-wide.png" type="image/webp"><img src="/assets/images/backgrounds/dons-hero-wide.png" loading="lazy" width="570" height="600" alt="Don&apos;s Heating &amp; Air - HVAC Experts in El Dorado, KS"></picture></div>
           <div class="about-one__funfact count-box">
-            <h3 class="about-one__count"><span class="count-text" data-stop="28" data-speed="1500"></span><span>+</span></h3>
-            <p class="about-one__funfact__text">freeze-thaw<br>cycles per year</p>
+            <h3 class="about-one__count"><span class="count-text" data-stop="65" data-speed="1500"></span><span>+</span></h3>
+            <p class="about-one__funfact__text">years of<br>trusted service</p>
           </div>
         </div>
         <div class="about-one__client wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms" style="margin-top:28px;">
@@ -257,7 +257,7 @@ ${T.topbar()}
             <div class="about-one__client__star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
             <p class="about-one__client__text">5-Star Google Rated</p>
           </div></div>
-          <a href="/about.html" class="wallox-btn wallox-btn--base">More About Us</a>
+          <a href="/about/" class="wallox-btn wallox-btn--base">More About Us</a>
         </div>
       </div>
       <div class="col-lg-6">
@@ -267,15 +267,15 @@ ${T.topbar()}
 
               <p class="sec-title__tagline">About ${CLIENT.name}</p>
             </div>
-            <h3 class="sec-title__title">Paint Systems Built for Colorado's Climate</h3>
+            <h3 class="sec-title__title">HVAC Expertise Built on 65 Years of Trust</h3>
           </div>
-          <p class="about-one__top__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Northern Colorado sees 28+ freeze-thaw cycles a year. UV radiation hits 10-15% harder at altitude. Cheap paint fails in 3-4 years here. ${CLIENT.name} builds exterior systems that last 7-10 years using premium Sherwin-Williams and Benjamin Moore coatings, using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore. $1M general liability coverage.</p>
+          <p class="about-one__top__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Don's Heating & Air has been keeping Central Kansas families comfortable since 1959. Locally owned and operated, we service all makes and models of heating and cooling equipment. From emergency furnace repair in January to AC installation before summer, our licensed technicians get it done right the first time.</p>
           <ul class="about-one__list list-unstyled wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
-            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Colorado</li>
-            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Applicators using premium eco-friendly, no-VOC products</li>
-            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Sherwin-Williams &amp; Benjamin Moore approved</li>
-            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> $1M general liability  -  COI on request</li>
-            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> We Know Our Crews. No volume rushing.</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Kansas</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> 24/7 Emergency HVAC Service</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> All Makes &amp; Models Serviced</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Free In-Home Estimates</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Family Owned Since 1959</li>
           </ul>
         </div>
       </div>
@@ -289,7 +289,7 @@ ${T.topbar()}
   <div class="service-one__top">
     <div class="sec-title text-center">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">what we do</p></div>
-      <h3 class="sec-title__title">Painting Services We Offer</h3>
+      <h3 class="sec-title__title">HVAC Services We Offer</h3>
     </div>
   </div>
   <div class="service-one__middle wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
@@ -307,18 +307,18 @@ ${T.topbar()}
         <div class="why-choose-one__left">
           <div class="sec-title text-start">
             <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">Why Choose Us?</p></div>
-            <h3 class="sec-title__title">The Difference Between a 4-Year Job and a 10-Year System</h3>
+            <h3 class="sec-title__title">Why El Dorado Families Have Trusted Us Since 1959</h3>
           </div>
-          <blockquote class="why-choose-one__top__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Most paint failures in Colorado are prep failures, not coating failures. We address the full stack  -  surface prep, primer selection, coating chemistry, and application standards most painters never learn.</blockquote>
+          <blockquote class="why-choose-one__top__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">When your heat goes out in January or your AC fails in August, you need a company you can count on. Don's has been that company for over 65 years. We show up fast, diagnose it right, and fix it right the first time.</blockquote>
           <div class="why-choose-one__feature wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
             <div class="why-choose-one__feature__item"><div class="why-choose-one__feature__item__inner">
               <div class="why-choose-one__feature__icon"><i class="fa-solid fa-check"></i></div>
-              <h4 class="why-choose-one__feature__title">We Know Our Crews.</h4>
+              <h4 class="why-choose-one__feature__title">Same-Day Service Available.</h4>
             </div></div>
-            <p class="why-choose-one__feature__text">The crew you meet on day one is the crew that finishes the job.</p>
+            <p class="why-choose-one__feature__text">We know how critical your home comfort is. That's why we prioritize same-day calls for heating and cooling emergencies.</p>
           </div>
           <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-            <h4 class="progress-box__title">Premium Surface Preparation</h4>
+            <h4 class="progress-box__title">First-Time Fix Rate</h4>
             <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="100%"><div class="progress-box__number count-text">100%</div></div></div>
           </div>
           <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
@@ -330,10 +330,10 @@ ${T.topbar()}
       <div class="col-lg-6">
         <div class="why-choose-one__right">
           <div class="why-choose-one__thumb wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="100ms">
-            <picture><source srcset="/assets/images/resources/why-choose-1-1.webp" type="image/webp"><img src="/assets/images/resources/why-choose-1-1.jpg" loading="lazy" width="490" height="460" alt="${CLIENT.name} crew at work"></picture><div class="why-choose-one__thumb-box"></div>
+            <picture><source srcset="/assets/images/service/dons-work-3.jpg" type="image/webp"><img src="/assets/images/service/dons-work-3.jpg" loading="lazy" width="490" height="460" alt="${CLIENT.name} crew at work"></picture><div class="why-choose-one__thumb-box"></div>
           </div>
           <div class="why-choose-one__thumb-two wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="300ms">
-            <picture><source srcset="/assets/images/resources/why-choose-1-2.webp" type="image/webp"><img src="/assets/images/resources/why-choose-1-2.jpg" loading="lazy" width="490" height="460" alt="Premium exterior painting result"></picture>
+            <picture><source srcset="/assets/images/service/dons-team-roof.jpg" type="image/webp"><img src="/assets/images/service/dons-team-roof.jpg" loading="lazy" width="490" height="460" alt="HVAC service in El Dorado, Kansas"></picture>
           </div>
           <div class="why-choose-one__thumb-box-two"></div>
         </div>
@@ -348,8 +348,8 @@ ${T.topbar()}
 <section style="padding:80px 0;background:#F4EDE4;">
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
-      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">HVAC Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Don\'s Heating & Air Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -365,7 +365,7 @@ ${T.contactFormSection()}`;
   // Inject reviews section and schema
   const finalContent = schemaTag + '\n' + content.replace('<!-- REVIEWS -->', reviewsSection);
 
-  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description, 'https://timnathpainting.com/', '/assets/images/backgrounds/hero-real-exterior.jpg')}
+  write('index.html', `${T.htmlHead(`${CLIENT.name} | Trusted HVAC Services in Central Kansas`, CLIENT.description, 'https://donsheatingandair.com/', '/assets/images/backgrounds/dons-hero-wide.png')}
 ${T.wrapBody(finalContent)}`);
 }
 
@@ -374,15 +374,15 @@ function buildAbout() {
   const content = `
 ${T.topbar()}
 <!-- HEADER -->
-${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
+${T.pageHeader('About Don\'s Heating & Air', '<li><span>About Us</span></li>')}
 
 <section class="about-one" style="padding-top:80px;padding-bottom:80px;">
   <div class="container">
     <div class="row align-items-center gutter-y-30">
       <div class="col-lg-6" style="text-align:center;">
         <div style="overflow:visible;">
-          <img src="/assets/images/about/josh-funk.png" alt="Josh Funk  -  Owner, Timnath Painting" style="width:100%;max-width:460px;display:block;margin:0 auto;">
-          <p style="margin-top:12px;font-weight:600;font-size:1rem;color:#3a2e1e;">Josh Funk, Owner</p>
+          <img src="/assets/images/about/logo-dark.png" alt="Don  -  Owner, Don\'s Heating & Air" style="width:100%;max-width:460px;display:block;margin:0 auto;">
+          <p style="margin-top:12px;font-weight:600;font-size:1rem;color:#3a2e1e;">Don, Owner</p>
           <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:inline-block;">Get a Free Quote</a>
         </div>
       </div>
@@ -390,11 +390,11 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
         <div class="about-one__right">
           <div class="sec-title text-start">
             <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">Our Story</p></div>
-            <h3 class="sec-title__title">Built Different  -  On Purpose</h3>
+            <h3 class="sec-title__title">HVAC Excellence Since 1959</h3>
           </div>
-          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">I'm Josh, a Colorado local, and I've been in and around the painting industry since 2007 and have owned and operated multiple successful painting and construction companies in the Midwest.</p>
-          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="150ms"><em>I have a passion for running small businesses that are insistent on absolute customer satisfaction.</em> I am also a founding partner and coach for Service Catalyst, a growing, Fort Collins-based, coaching and advisory community dedicated to helping service business owners succeed and scale.</p>
-          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">Aside from that, I'm a committed family man with a loving wife and four amazing children. I believe customers want to pay for exceptional care and peace of mind. Our commitment is to curate that!</p>
+          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Don's Heating & Air was founded in El Dorado, Kansas in 1959 and has been a trusted name in home comfort ever since. For over 65 years, our licensed technicians have kept Central Kansas families warm in winter and cool in summer.</p>
+          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="150ms">We service all major brands and models of HVAC equipment. Whether you need emergency furnace repair in January or a new central air system before summer, we show up fast and get it done right the first time.</p>
+          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">Locally owned, licensed, and insured. Proud to serve El Dorado, Hillsboro, Emporia and the surrounding communities. When your comfort is on the line, call Don's.</p>
         </div>
       </div>
     </div>
@@ -407,17 +407,16 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
       <div class="col-lg-6">
         <div class="sec-title text-start">
           <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">Why We Do It Differently</p></div>
-          <h3 class="sec-title__title">Why Northern Colorado Homes Trust Timnath Painting</h3>
+          <h3 class="sec-title__title">Why Central Kansas Homes Trust Don\'s Heating & Air</h3>
         </div>
-        <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Most painting contractors are reactive. You call when something's wrong. They show up, quote the job, and disappear until the next crisis. That's not how we operate.</p>
+        <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Most HVAC contractors are reactive. You call when something's wrong. They show up, quote the job, and disappear until the next crisis. That's not how we operate.</p>
         <ul class="about-one__list list-unstyled wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms" style="margin-top:20px;">
-          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Colorado</li>
-          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> No-VOC Products.  -  approved Sherwin-Williams &amp; Benjamin Moore applicator</li>
-          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> $1M general liability  -  certificates available on request</li>
-          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> We Know Our Crews</li>
-          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Limited project capacity to maintain quality control</li>
-          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Weekly progress updates  -  no chasing us down</li>
-        </ul>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Kansas</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> 24/7 Emergency HVAC Service</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> All Makes &amp; Models Serviced</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Free In-Home Estimates</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Family Owned Since 1959</li>
+          </ul>
       </div>
       <div class="col-lg-6">
         <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms" style="margin-top:40px;">
@@ -429,7 +428,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
           <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="100%"><div class="progress-box__number count-text">100%</div></div></div>
         </div>
         <div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms" style="margin-top:32px;border-radius:10px;overflow:hidden;">
-          <img src="/assets/images/about/about-kitchen.jpg" alt="Painting project by Timnath Painting" style="width:100%;height:auto;display:block;border-radius:10px;">
+          <img src="/assets/images/about/about-kitchen.jpg" alt="Painting project by Don\'s Heating & Air" style="width:100%;height:auto;display:block;border-radius:10px;">
         </div>
       </div>
     </div>
@@ -463,8 +462,8 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
 <section style="padding:80px 0;background:#F4EDE4;">
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
-      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">HVAC Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Don\'s Heating & Air Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -477,7 +476,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  write('about.html', `${T.htmlHead('About Timnath Painting | Josh Funk | NoCo Painting Contractor', "Meet Josh Funk and the Timnath Painting team. Premium painting contractor serving the Golden Triangle  -  Timnath, Windsor & Severance CO. (970) 670-3965", 'https://timnathpainting.com/about')}
+  write('about.html', `${T.htmlHead('About Don\'s Heating & Air | Trusted HVAC Since 1959', "Locally owned and operated HVAC contractor serving El Dorado, Hillsboro, Emporia and Central Kansas since 1959. Licensed, insured, and ready to help. Call (316) 321-9438.", 'https://donsheatingandair.com/about')}
 ${T.wrapBody(content)}`);
 }
 
@@ -501,14 +500,14 @@ function buildServiceHub(slug) {
     const escapedText = (r.text || '').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     return `<div class="col-md-6 col-lg-4">
   <div class="wow fadeInUp" data-wow-duration="1500ms" style="background:#fff;border-radius:10px;padding:28px 24px;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;">
-    <div style="color:#AE360E;margin-bottom:12px;font-size:15px;">
+    <div style="color:#3A5DAE;margin-bottom:12px;font-size:15px;">
       <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
     </div>
     <p style="font-size:14px;color:#5a5650;line-height:1.8;margin-bottom:20px;flex:1;">&ldquo;${escapedText}&rdquo;</p>
     <div style="display:flex;align-items:center;gap:12px;">
-      <div style="width:38px;height:38px;background:#AE360E;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;flex-shrink:0;">${initial}</div>
+      <div style="width:38px;height:38px;background:#3A5DAE;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;flex-shrink:0;">${initial}</div>
       <div>
-        <strong style="font-size:14px;color:#201B10;display:block;">${r.author}</strong>
+        <strong style="font-size:14px;color:#1B2A4A;display:block;">${r.author}</strong>
         <span style="font-size:12px;color:#999;">${r.relativeTime}</span>
       </div>
     </div>
@@ -525,28 +524,28 @@ function buildServiceHub(slug) {
           <div class="sec-title text-start" style="padding-bottom:0;margin-bottom:16px;">
             <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">siding types</p></div>
             <h3 class="sec-title__title" style="margin-bottom:8px;">Siding Types We Work With</h3>
-            <p style="margin:0;color:#666;">Different siding materials require different prep and coating strategies. Here is how we approach each one in Colorado's climate.</p>
+            <p style="margin:0;color:#666;">Different siding materials require different prep and coating strategies. Here is how we approach each one in Central Kansas.</p>
           </div>
           <div style="margin-top:20px;">
-            ${d.sidingTypes.map(s => `<div class="wow fadeInUp" data-wow-duration="1500ms" style="border-left:3px solid #AE360E;padding:14px 18px;margin-bottom:16px;background:#faf7f4;border-radius:0 6px 6px 0;">
-              <strong style="display:block;color:#201B10;margin-bottom:6px;">${s.type}</strong>
+            ${d.sidingTypes.map(s => `<div class="wow fadeInUp" data-wow-duration="1500ms" style="border-left:3px solid #3A5DAE;padding:14px 18px;margin-bottom:16px;background:#faf7f4;border-radius:0 6px 6px 0;">
+              <strong style="display:block;color:#1B2A4A;margin-bottom:6px;">${s.type}</strong>
               <p style="margin:0;color:#5a5650;font-size:15px;line-height:1.7;">${s.desc}</p>
             </div>`).join('\n')}
           </div>
         </div>` : '';
 
-  const whyUsSection = d.whyUs ? `<div style="margin:40px 0;padding:32px;background:#201b10;border-radius:10px;">
+  const whyUsSection = d.whyUs ? `<div style="margin:40px 0;padding:32px;background:#1B2A4A;border-radius:10px;">
           <div class="sec-title text-start" style="padding-bottom:0;margin-bottom:16px;">
-            <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline" style="color:#AE360E;">why choose us</p></div>
-            <h3 class="sec-title__title" style="margin-bottom:0;color:#fff;">Why Timnath Painting</h3>
+            <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline" style="color:#3A5DAE;">why choose us</p></div>
+            <h3 class="sec-title__title" style="margin-bottom:0;color:#fff;">Why Don\'s Heating & Air</h3>
           </div>
           ${d.whyUs.split('\n\n').map(p => `<p class="wow fadeInUp" data-wow-duration="1500ms" style="color:#e8e0d8;line-height:1.8;">${p}</p>`).join('\n')}
           <ul class="list-unstyled" style="margin-top:20px;line-height:2.2;">
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Licensed &amp; Insured in Colorado</span></li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">No-VOC Products.</span></li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">$1M General Liability &mdash; COI on request</span></li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Sherwin-Williams &amp; Benjamin Moore Approved</span></li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">No subcontractors. We know our crews.</span></li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:10px;"></i><span style="color:#fff;">Licensed &amp; Insured in Kansas</span></li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:10px;"></i><span style="color:#fff;">Licensed &amp; Insured.</span></li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:10px;"></i><span style="color:#fff;">$1MLicensed &amp; Insured &mdash; COI on request</span></li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:10px;"></i><span style="color:#fff;">Licensed &amp; Insjamin Moore Approved</span></li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:10px;"></i><span style="color:#fff;">No subcontractors. We know our crews.</span></li>
           </ul>
         </div>` : '';
 
@@ -565,9 +564,9 @@ function buildServiceHub(slug) {
           </div>
           <div class="row gutter-y-20" style="margin-top:8px;">
             ${d.relatedServices.map(s => `<div class="col-md-6"><div style="border:1px solid #e4dacc;border-radius:8px;padding:20px;height:100%;">
-              <strong><a href="/${s.slug}/index.html" style="color:#201B10;">${s.label}</a></strong>
+              <strong><a href="/${s.slug}/index.html" style="color:#1B2A4A;">${s.label}</a></strong>
               <p style="margin:8px 0 12px;font-size:14px;color:#5a5650;">${s.desc}</p>
-              <a href="/${s.slug}/index.html" style="font-size:13px;font-weight:700;color:#AE360E;text-decoration:none;">Learn more &rarr;</a>
+              <a href="/${s.slug}/index.html" style="font-size:13px;font-weight:700;color:#3A5DAE;text-decoration:none;">Learn more &rarr;</a>
             </div></div>`).join('\n')}
           </div>
         </div>` : '';
@@ -601,7 +600,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
             <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">cities we serve</p></div>
             <h3 class="sec-title__title" style="margin-bottom:0;">Areas Served</h3>
           </div>
-          <p class="wow fadeInUp" data-wow-duration="1500ms">We provide ${d.title.split(' in ')[0].toLowerCase()} throughout Northern Colorado:</p>
+          <p class="wow fadeInUp" data-wow-duration="1500ms">We provide ${d.title.split(' in ')[0].toLowerCase()} throughout Central Kansas:</p>
           <div style="margin-top:20px;">${cityLinksHTML}</div>
         </div>
         <div style="margin:40px 0;">
@@ -623,14 +622,14 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
             </ul>
             <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:block;text-align:center;">Request a Quote</a>
           </div>
-          <div style="background:#201b10;color:#f4ede4;padding:30px;border-radius:8px;">
-            <h4 style="color:#ae360e;margin-bottom:15px;">Why Timnath Painting</h4>
+          <div style="background:#1B2A4A;color:#f4ede4;padding:30px;border-radius:8px;">
+            <h4 style="color:#3A5DAE;margin-bottom:15px;">Why Don\'s Heating & Air</h4>
             <ul class="list-unstyled" style="line-height:2;">
-              <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured</li>
-              <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No-VOC Products.</li>
-              <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$1M General Liability</li>
-              <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>SW &amp; BM Approved</li>
-              <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No Subcontractors</li>
+              <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>Licensed &amp; Insured</li>
+              <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>Licensed &amp; Insured.</li>
+              <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>$1M General Liability</li>
+              <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>SW &amp; BM Approved</li>
+              <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>No Subcontractors</li>
             </ul>
           </div>
         </div>
@@ -645,8 +644,8 @@ ${serviceReviewsSection}
 <section style="padding:80px 0;background:#F4EDE4;">
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
-      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">HVAC Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Don\'s Heating & Air Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -659,7 +658,7 @@ ${serviceReviewsSection}
 
 ${T.contactFormSection()}`;
 
-  write(`${slug}/index.html`, `${T.htmlHead(d.metaTitle, d.metaDesc, `https://timnathpainting.com/${slug}/`)}
+  write(`${slug}/index.html`, `${T.htmlHead(d.metaTitle, d.metaDesc, `https://donsheatingandair.com/${slug}/`)}
 ${T.wrapBody(content)}`);
 }
 
@@ -676,19 +675,19 @@ ${T.topbar()}
 .contact-page-header{margin-bottom:20px;text-align:center;}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
 @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:24px;}}
-.contact-headline{color:#201B10;font-size:clamp(28px,3.8vw,52px);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin:0 0 8px;}
-.contact-subtext{font-size:16px;font-weight:600;color:#AE360E;margin:0;letter-spacing:-0.01em;}
+.contact-headline{color:#1B2A4A;font-size:clamp(28px,3.8vw,52px);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin:0 0 8px;}
+.contact-subtext{font-size:16px;font-weight:600;color:#3A5DAE;margin:0;letter-spacing:-0.01em;}
 .contact-card{background:#fff;border-radius:14px;padding:32px 32px 28px;box-shadow:0 4px 24px rgba(0,0,0,0.09);}
-.contact-input{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#201B10;background:#fff;box-sizing:border-box;transition:border-color 0.15s;}
-.contact-input:focus{outline:none;border-color:#AE360E;}
+.contact-input{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#1B2A4A;background:#fff;box-sizing:border-box;transition:border-color 0.15s;}
+.contact-input:focus{outline:none;border-color:#3A5DAE;}
 .contact-input::placeholder{color:#a09890;}
-.contact-select{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#201B10;background:#fff;box-sizing:border-box;}
-.contact-textarea{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#201B10;background:#fff;box-sizing:border-box;resize:vertical;}
-.contact-submit{display:inline-block;padding:12px 28px;background:#AE360E;color:#fff;border:none;border-radius:100px;font-size:15px;font-weight:700;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);cursor:pointer;margin-top:4px;transition:background 0.2s;}
+.contact-select{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#1B2A4A;background:#fff;box-sizing:border-box;}
+.contact-textarea{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#1B2A4A;background:#fff;box-sizing:border-box;resize:vertical;}
+.contact-submit{display:inline-block;padding:12px 28px;background:#3A5DAE;color:#fff;border:none;border-radius:100px;font-size:15px;font-weight:700;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);cursor:pointer;margin-top:4px;transition:background 0.2s;}
 .contact-submit:hover{background:#922d0a;}
 .contact-trust-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
 .contact-trust-list li{display:flex;align-items:flex-start;gap:12px;color:#2E2A20;font-size:15px;line-height:1.5;}
-.contact-trust-list li i{color:#AE360E;margin-top:2px;flex-shrink:0;font-size:16px;}
+.contact-trust-list li i{color:#3A5DAE;margin-top:2px;flex-shrink:0;font-size:16px;}
 .contact-info-cards{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 @media(max-width:700px){.contact-info-cards{grid-template-columns:1fr;}}
 .contact-info-card{text-align:center;padding:24px 16px;background:#fff;border-radius:12px;border:1px solid #e4dacc;}
@@ -697,13 +696,13 @@ ${T.topbar()}
 <section class="contact-wrap">
   <div class="container">
     <div class="contact-page-header">
-      <h1 class="contact-headline">Get In Touch With Timnath Painting</h1>
+      <h1 class="contact-headline">Get In Touch With Don\'s Heating & Air</h1>
       <p class="contact-subtext">We respond fast and always keep it honest</p>
     </div>
     <div class="contact-grid">
       <div>
         <div class="contact-card">
-          <h3 style="margin:0 0 6px;font-size:20px;font-weight:700;color:#201B10;">Send Us a Message</h3>
+          <h3 style="margin:0 0 6px;font-size:20px;font-weight:700;color:#1B2A4A;">Send Us a Message</h3>
           <p style="margin:0 0 20px;font-size:14px;color:#5a5650;line-height:1.55;">Use the form below or call us directly. Every message gets a personal reply from Josh.</p>
           <form id="contact-form" action="/submit" method="POST">
             <div style="display:flex;flex-direction:column;gap:12px;">
@@ -723,38 +722,38 @@ ${T.topbar()}
       </div>
       <div>
         <ul class="contact-trust-list">
-          <li><i class="fa-solid fa-phone"></i><span>Call or text us at <a href="tel:${CLIENT.phoneTel}" style="color:#AE360E;font-weight:700;">${CLIENT.phone}</a></span></li>
-          <li><i class="fa-solid fa-envelope"></i><span>Email us at <a href="mailto:${CLIENT.email}" style="color:#AE360E;font-weight:700;">${CLIENT.email}</a></span></li>
-          <li><i class="fa-solid fa-check"></i><span>Serving Timnath and Northern Colorado. We know the area, the HOAs, and the conditions.</span></li>
+          <li><i class="fa-solid fa-phone"></i><span>Call or text us at <a href="tel:${CLIENT.phoneTel}" style="color:#3A5DAE;font-weight:700;">${CLIENT.phone}</a></span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>Email us at <a href="mailto:${CLIENT.email}" style="color:#3A5DAE;font-weight:700;">${CLIENT.email}</a></span></li>
+          <li><i class="fa-solid fa-check"></i><span>Serving El Dorado, Hillsboro, Emporia and more across Central Kansas. We know the area, the HOAs, and the conditions.</span></li>
           <li><i class="fa-solid fa-check"></i><span>No obligation. Just an honest conversation about your project.</span></li>
           <li><i class="fa-solid fa-check"></i><span>Licensed and insured. $1M general liability. COI available within 24 hours.</span></li>
           <li><i class="fa-solid fa-check"></i><span>Every quote is based on a real in-person assessment, not a number pulled from thin air.</span></li>
         </ul>
         <div class="contact-info-cards">
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Timnath+Painting+Timnath+CO" target="_blank" rel="noopener noreferrer" class="contact-info-card" style="text-decoration:none;display:block;">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=306+S.+Main+St+El+Dorado+KS+67042&destination_place_id=ChIJ2Q46PnGzu4cRridw0AfTeV8" target="_blank" rel="noopener noreferrer" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-diamond-turn-right"></i></div>
-            <h4 style="margin-bottom:0;font-size:15px;color:#201B10;">Directions</h4>
+            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Directions</h4>
           </a>
           <a href="tel:${CLIENT.phoneTel}" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-phone"></i></div>
-            <h4 style="margin-bottom:0;font-size:15px;color:#201B10;">Call or Text</h4>
+            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Call or Text</h4>
           </a>
           <a href="mailto:${CLIENT.email}" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-envelope"></i></div>
-            <h4 style="margin-bottom:0;font-size:15px;color:#201B10;">Email</h4>
+            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Email</h4>
           </a>
         </div>
       </div>
     </div>
     <div style="margin-top:60px;">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97168.06445598403!2d-105.03495221370565!3d40.44202459799552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa4047ac4cc01168b%3A0x5ca0bf376555449f!2sTimnath%20Painting!5e0!3m2!1sen!2sus!4v1777530014876!5m2!1sen!2sus" width="100%" height="450" style="border:0;border-radius:8px;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3126.123!2d-96.8640!3d37.8178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87bb3393e6a5b349%3A0x5f7d6807d070e927!2s306%20S%20Main%20St%2C%20El%20Dorado%2C%20KS%2067042!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="450" style="border:0;border-radius:8px;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
 </main>
 </div>`;
 
-  write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 670-3965', 'Contact Timnath Painting for a free exterior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 670-3965.', 'https://timnathpainting.com/contact')}
+  write('contact.html', `${T.htmlHead('Contact Don\'s Heating & Air | Free Quote | (316) 321-9438', 'Contact Don\'s Heating & Air for a free HVAC estimate. Serving El Dorado, Hillsboro, Emporia & Central Kansas. Call (316) 321-9438.', 'https://donsheatingandair.com/contact')}
 ${T.wrapBody(content)}`);
 }
 
@@ -762,14 +761,14 @@ ${T.wrapBody(content)}`);
 function buildServiceAreas() {
   const cityGrid = CITIES.map(c => {
     const serviceLinks = SERVICES.map(s =>
-      `<li style="margin-bottom:2px;"><a href="/${s.slug}-${c.slug}/index.html" style="font-size:13px;color:#5a5650;text-decoration:none;display:flex;align-items:center;gap:6px;padding:3px 0;"><i class="fa-solid fa-angle-right" style="color:#AE360E;font-size:10px;"></i>${s.label}</a></li>`
+      `<li style="margin-bottom:2px;"><a href="/${s.slug}-${c.slug}/index.html" style="font-size:13px;color:#5a5650;text-decoration:none;display:flex;align-items:center;gap:6px;padding:3px 0;"><i class="fa-solid fa-angle-right" style="color:#3A5DAE;font-size:10px;"></i>${s.label}</a></li>`
     ).join('');
     return `
   <div class="col-md-6 col-lg-4 col-xl-3">
     <div class="wow fadeInUp" data-wow-duration="1500ms" style="background:#f4ede4;padding:25px;border-radius:8px;margin-bottom:20px;">
-      <h4 style="margin-bottom:14px;"><a href="/areas-served/${c.slug}/index.html" style="color:#201B10;text-decoration:none;">${c.label}, CO</a></h4>
+      <h4 style="margin-bottom:14px;"><a href="/areas-served/${c.slug}/index.html" style="color:#1B2A4A;text-decoration:none;">${c.label}, CO</a></h4>
       <ul style="list-style:none;padding:0;margin:0 0 14px;">${serviceLinks}</ul>
-      <a href="/areas-served/${c.slug}/index.html" style="font-size:12px;font-weight:700;color:#AE360E;text-decoration:none;text-transform:uppercase;letter-spacing:1px;">All services in ${c.label} &rarr;</a>
+      <a href="/areas-served/${c.slug}/index.html" style="font-size:12px;font-weight:700;color:#3A5DAE;text-decoration:none;text-transform:uppercase;letter-spacing:1px;">All services in ${c.label} &rarr;</a>
     </div>
   </div>`;
   }).join('\n');
@@ -777,15 +776,15 @@ function buildServiceAreas() {
   const content = `
 ${T.topbar()}
 <!-- HEADER -->
-${T.pageHeader('Areas Served  -  Northern Colorado', '<li><span>Areas Served</span></li>')}
+${T.pageHeader('Areas Served  -  Central Kansas', '<li><span>Areas Served</span></li>')}
 
 <section style="padding:80px 0;">
   <div class="container">
     <div class="sec-title text-center">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">where we work</p></div>
-      <h3 class="sec-title__title">Painting Services Across Northern Colorado</h3>
+      <h3 class="sec-title__title">Painting Services Across Central Kansas</h3>
     </div>
-    <p class="text-center" style="margin:20px auto 50px;max-width:700px;">${CLIENT.name} serves homeowners and commercial property owners throughout the Northern Colorado I-25 corridor. Select your city below to learn more about our services in your area.</p>
+    <p class="text-center" style="margin:20px auto 50px;max-width:700px;">${CLIENT.name} serves homeowners and commercial property owners throughout the Central Kansas I-25 corridor. Select your city below to learn more about our services in your area.</p>
     <div class="row gutter-y-30">${cityGrid}</div>
   </div>
 </section>
@@ -794,8 +793,8 @@ ${T.pageHeader('Areas Served  -  Northern Colorado', '<li><span>Areas Served</sp
 <section style="padding:80px 0;background:#F4EDE4;">
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
-      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">HVAC Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Don\'s Heating & Air Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -808,7 +807,7 @@ ${T.pageHeader('Areas Served  -  Northern Colorado', '<li><span>Areas Served</sp
 
 ${T.contactFormSection()}`;
 
-  write('areas-served/index.html', `${T.htmlHead('Areas Served | Timnath Painting | Northern Colorado', 'Timnath Painting serves Northern Colorado including Timnath, Windsor, Fort Collins, Loveland, Greeley and more. View all Areas Served.', 'https://timnathpainting.com/areas-served/')}
+  write('areas-served/index.html', `${T.htmlHead('Areas Served | Don\'s Heating & Air | Central Kansas', 'Don\'s Heating & Air serves Central Kansas including El Dorado, Hillsboro, Hillsboro, Emporia, Greeley and more. View all Areas Served.', 'https://donsheatingandair.com/areas-served/')}
 ${T.wrapBody(content)}`);
 }
 
@@ -823,13 +822,13 @@ function buildServicesHub() {
   const serviceGrid = SERVICES.map(s => `
     <div class="col-lg-4 col-md-6">
       <div style="background:#fff;border-radius:10px;padding:32px 24px;text-align:center;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;align-items:center;">
-        <div style="font-size:48px;color:#AE360E;margin-bottom:16px;line-height:1;">${
+        <div style="font-size:48px;color:#3A5DAE;margin-bottom:16px;line-height:1;">${
           s.slug === 'fence-staining'   ? inlineSvg('icon-wooden-fence.svg', 52) :
           s.slug === 'exterior-staining' ? inlineSvg('icon-gazebo.svg', 52) :
           s.slug === 'hoa-painting'      ? inlineSvg('icon-hoa-house.svg', 52) :
           `<i class="${s.icon}"></i>`
         }</div>
-        <h4 style="font-size:20px;font-weight:700;color:#201B10;margin-bottom:8px;">${s.label}</h4>
+        <h4 style="font-size:20px;font-weight:700;color:#1B2A4A;margin-bottom:8px;">${s.label}</h4>
         <p style="color:#5a5650;font-size:14px;margin-bottom:24px;flex:1;">${s.tagline}</p>
         <a href="/${s.slug}/index.html" class="wallox-btn wallox-btn--base" style="font-size:14px;padding:10px 22px;">Learn More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
@@ -844,16 +843,16 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">what we do</p></div>
-      <h3 class="sec-title__title">Professional Painting Services in Northern Colorado</h3>
-      <p style="margin:20px auto 0;max-width:680px;color:#5a5650;">From full exterior repaint to HOA common areas, Timnath Painting handles it all with crews using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore.</p>
+      <h3 class="sec-title__title">Professional Painting Services in Central Kansas</h3>
+      <p style="margin:20px auto 0;max-width:680px;color:#5a5650;">From full exterior repaint to HOA common areas, Don\'s Heating & Air handles it all with crews quality HVAC equipment from leading brands.</p>
     </div>
     <div class="row gutter-y-30">${serviceGrid}
     <div class="col-lg-4 col-md-6">
       <div style="background:#fff;border-radius:10px;padding:32px 24px;text-align:center;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;align-items:center;">
-        <div style="font-size:48px;color:#AE360E;margin-bottom:16px;line-height:1;"><i class="fa-solid fa-medal"></i></div>
-        <h4 style="font-size:20px;font-weight:700;color:#201B10;margin-bottom:8px;">Why Timnath?</h4>
-        <p style="color:#5a5650;font-size:14px;margin-bottom:24px;flex:1;">No-VOC Products. $1M liability. We know our crews. See what sets us apart.</p>
-        <a href="/about.html" class="wallox-btn wallox-btn--base" style="font-size:14px;padding:10px 22px;">Our Story <i class="fa-solid fa-arrow-right"></i></a>
+        <div style="font-size:48px;color:#3A5DAE;margin-bottom:16px;line-height:1;"><i class="fa-solid fa-medal"></i></div>
+        <h4 style="font-size:20px;font-weight:700;color:#1B2A4A;margin-bottom:8px;">Why Don's Heating & Air?</h4>
+        <p style="color:#5a5650;font-size:14px;margin-bottom:24px;flex:1;">Licensed & insured. 24/7 emergency service. Trusted by Central Kansas families since 1959.</p>
+        <a href="/about/" class="wallox-btn wallox-btn--base" style="font-size:14px;padding:10px 22px;">Our Story <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div></div>
   </div>
@@ -863,8 +862,8 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
 <section style="padding:80px 0;background:#F4EDE4;">
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
-      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">HVAC Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Don\'s Heating & Air Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -877,7 +876,7 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  write('services/index.html', `${T.htmlHead('Services | Timnath Painting | Northern Colorado', 'Exterior painting, HOA painting, commercial painting, fence staining and more. Professional painting services across Northern Colorado.', 'https://timnathpainting.com/services/')}
+  write('services/index.html', `${T.htmlHead('Services | Don\'s Heating & Air | Central Kansas', 'Furnace repair, AC installation, heat pump services, indoor air quality and more. Professional HVAC services across Central Kansas.', 'https://donsheatingandair.com/services/')}
 ${T.wrapBody(content)}`);
 }
 // Ã¢â€¢ÂÃ¢â€¢Â CITY HUB PAGES Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
@@ -887,20 +886,20 @@ function buildCityHub(city) {
 
   const serviceFeatures = SERVICES.map(s => `
     <li style="display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid #e4dacc;">
-      <div style="flex-shrink:0;width:32px;height:32px;background:#AE360E;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;margin-top:2px;">
+      <div style="flex-shrink:0;width:32px;height:32px;background:#3A5DAE;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;margin-top:2px;">
         <i class="fa-solid fa-check"></i>
       </div>
       <div style="flex:1;">
-        <div style="font-weight:700;color:#201B10;margin-bottom:4px;">
-          <a href="/${s.slug}-${city.slug}/index.html" style="color:#201B10;text-decoration:none;">${s.label} in ${d.label}, CO</a>
+        <div style="font-weight:700;color:#1B2A4A;margin-bottom:4px;">
+          <a href="/${s.slug}-${city.slug}/index.html" style="color:#1B2A4A;text-decoration:none;">${s.label} in ${d.label}, CO</a>
         </div>
         <div style="color:#5a5650;font-size:14px;line-height:1.6;margin-bottom:6px;">${s.tagline}</div>
-        <a href="/${s.slug}-${city.slug}/index.html" style="font-size:12px;font-weight:700;color:#AE360E;text-decoration:none;">Learn more &rarr;</a>
+        <a href="/${s.slug}-${city.slug}/index.html" style="font-size:12px;font-weight:700;color:#3A5DAE;text-decoration:none;">Learn more &rarr;</a>
       </div>
     </li>`).join('');
 
   const otherCities = CITIES.filter(c => c.slug !== city.slug)
-    .map(c => `<a href="/areas-served/${c.slug}/index.html" style="display:inline-block;margin:4px 4px 4px 0;padding:6px 14px;background:#f4ede4;border-radius:4px;font-size:13px;color:#201B10;text-decoration:none;border:1px solid #e4dacc;">${c.label}</a>`).join('');
+    .map(c => `<a href="/areas-served/${c.slug}/index.html" style="display:inline-block;margin:4px 4px 4px 0;padding:6px 14px;background:#f4ede4;border-radius:4px;font-size:13px;color:#1B2A4A;text-decoration:none;border:1px solid #e4dacc;">${c.label}</a>`).join('');
 
   const faqSchema = d.faqs.map(f => ({
     '@type': 'Question',
@@ -914,12 +913,12 @@ function buildCityHub(city) {
       name: CLIENT.name,
       telephone: CLIENT.phone,
       email: CLIENT.email,
-      url: `https://timnathpainting.com/areas-served/${city.slug}/`,
+      url: `https://donsheatingandair.com/areas-served/${city.slug}/`,
       areaServed: `${d.label}, ${d.state}`,
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Timnath',
-        addressRegion: 'CO',
+        addressLocality: 'El Dorado',
+        addressRegion: 'KS',
         postalCode: CLIENT.zip,
         addressCountry: 'US'
       }
@@ -945,7 +944,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
       <!-- MAIN CONTENT -->
       <div class="col-lg-8">
         <div style="margin-bottom:32px;">
-          <h1 style="font-size:32px;font-weight:700;color:#201B10;margin-bottom:10px;">Painting Services in ${d.label}, CO</h1>
+          <h1 style="font-size:32px;font-weight:700;color:#1B2A4A;margin-bottom:10px;">Painting Services in ${d.label}, CO</h1>
           <p style="font-size:15px;color:#5a5650;margin-bottom:0;"><strong>${d.context}.</strong></p>
         </div>
 
@@ -954,8 +953,8 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
         <hr style="border:none;border-top:1px dashed #ddd;margin:32px 0;">
 
         <div style="margin-bottom:32px;">
-          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">what we offer</p>
-          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Our Services in ${d.label}, CO</h2>
+          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3A5DAE;margin-bottom:8px;">what we offer</p>
+          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:20px;">Our Services in ${d.label}, CO</h2>
           <ul style="list-style:none;padding:0;margin:0;border-top:1px solid #e4dacc;">
             ${serviceFeatures}
           </ul>
@@ -964,43 +963,43 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
         <hr style="border:none;border-top:1px dashed #ddd;margin:32px 0;">
 
         <div style="margin-bottom:32px;">
-          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">common questions</p>
-          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Frequently Asked Questions Ã¯Â¿Â½" ${d.label}, CO</h2>
+          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3A5DAE;margin-bottom:8px;">common questions</p>
+          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:20px;">Frequently Asked Questions Ã¯Â¿Â½" ${d.label}, CO</h2>
           ${T.faqBlock(d.faqs, city.slug + '-faq')}
         </div>
 
-        <div style="background:#201B10;color:#f4ede4;border-radius:8px;padding:28px 32px;margin-top:32px;">
+        <div style="background:#1B2A4A;color:#f4ede4;border-radius:8px;padding:28px 32px;margin-top:32px;">
           <h4 style="color:#fff;margin:0 0 10px;font-size:20px;">Ready to Get Started in ${d.label}?</h4>
-          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call or text <a href="tel:${CLIENT.phoneTel}" style="color:#AE360E;font-weight:700;">${CLIENT.phone}</a> or use the form below. We respond same-day and always provide free on-site quotes.</p>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call or text <a href="tel:${CLIENT.phoneTel}" style="color:#3A5DAE;font-weight:700;">${CLIENT.phone}</a> or use the form below. We respond same-day and always provide free on-site quotes.</p>
         </div>
       </div>
 
       <!-- SIDEBAR -->
       <div class="col-lg-4">
         <div style="background:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
-          <h4 style="margin-bottom:16px;color:#201B10;">Get a Free Quote</h4>
+          <h4 style="margin-bottom:16px;color:#1B2A4A;">Get a Free Quote</h4>
           <ul class="list-unstyled" style="line-height:2.4;margin-bottom:16px;">
-            <li><i class="fa-solid fa-phone" style="color:#AE360E;margin-right:8px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-weight:700;font-size:18px;color:#201B10;">${CLIENT.phone}</a></li>
-            <li><i class="fa-solid fa-envelope" style="color:#AE360E;margin-right:8px;"></i><a href="mailto:${CLIENT.email}" style="color:#5a5650;">${CLIENT.email}</a></li>
-            <li><i class="fa-solid fa-location-dot" style="color:#AE360E;margin-right:8px;"></i><span style="color:#5a5650;">Based in ${CLIENT.city}, ${CLIENT.state}</span></li>
+            <li><i class="fa-solid fa-phone" style="color:#3A5DAE;margin-right:8px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-weight:700;font-size:18px;color:#1B2A4A;">${CLIENT.phone}</a></li>
+            <li><i class="fa-solid fa-envelope" style="color:#3A5DAE;margin-right:8px;"></i><a href="mailto:${CLIENT.email}" style="color:#5a5650;">${CLIENT.email}</a></li>
+            <li><i class="fa-solid fa-location-dot" style="color:#3A5DAE;margin-right:8px;"></i><span style="color:#5a5650;">Based in ${CLIENT.city}, ${CLIENT.state}</span></li>
           </ul>
           <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="display:block;text-align:center;">Request a Quote</a>
         </div>
 
-        <div style="background:#201B10;color:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
-          <p style="color:#AE360E;margin-bottom:14px;font-size:16px;font-weight:600;">Why Timnath Painting</p>
+        <div style="background:#1B2A4A;color:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
+          <p style="color:#3A5DAE;margin-bottom:14px;font-size:16px;font-weight:600;">Why Don\'s Heating & Air</p>
           <ul class="list-unstyled" style="line-height:2.2;margin:0;">
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Licensed &amp; Insured</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>No-VOC Products.</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>\$1M General Liability</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>SW &amp; BM Approved</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>We Know Our Crews</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Free On-Site Quotes</li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>Licensed &amp; Insured</li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>Licensed &amp; Insured.</li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>\$1M General Liability</li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>SW &amp; BM Approved</li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>Quality Parts & Repairs</li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>Free On-Site Quotes</li>
           </ul>
         </div>
 
         <div style="padding:28px;border:1px solid #e4dacc;border-radius:8px;">
-          <p style="color:#201B10;margin-bottom:14px;font-size:15px;font-weight:600;">Other Areas We Serve</p>
+          <p style="color:#1B2A4A;margin-bottom:14px;font-size:15px;font-weight:600;">Other Areas We Serve</p>
           <div>${otherCities}</div>
         </div>
       </div>
@@ -1013,8 +1012,8 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
 <section style="padding:80px 0;background:#F4EDE4;">
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
-      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">HVAC Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Don\'s Heating & Air Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -1029,9 +1028,9 @@ ${T.contactFormSection()}`;
 
   write(`areas-served/${city.slug}/index.html`,
     `${T.htmlHead(
-      `Painting Services in ${d.label}, CO | Timnath Painting`,
-      `Professional painting services in ${d.label}, CO. Exterior painting, HOA, commercial, fence staining. Licensed, eco-certified, $1M liability. Call (970) 670-3965.`,
-      `https://timnathpainting.com/areas-served/${city.slug}/`
+      `Painting Services in ${d.label}, CO | Don\'s Heating & Air`,
+      `Professional HVAC services in ${d.label}, KS. Furnace repair, AC installation, heat pumps and more. Licensed & insured. Call (316) 321-9438.`,
+      `https://donsheatingandair.com/areas-served/${city.slug}/`
     )}
 ${T.wrapBody(content)}`);
 }
@@ -1041,16 +1040,16 @@ function buildGallery_OLD() { // OLD Ã¯Â¿Â½" replaced by template-based ve
   const galleryCSS = `
 .gallery-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
 .filter-btn{padding:7px 18px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#5a5650;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;}
-.filter-btn:hover,.filter-btn.active{background:#AE360E;border-color:#AE360E;color:#fff;}
+.filter-btn:hover,.filter-btn.active{background:#3A5DAE;border-color:#3A5DAE;color:#fff;}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
 .gallery-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);transition:transform 0.2s,box-shadow 0.2s;}
 .gallery-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.14);}
 .gallery-card img{width:100%;height:220px;object-fit:cover;display:block;cursor:pointer;}
 .gallery-card-body{padding:14px 16px;}
-.gallery-card-title{font-weight:600;font-size:14px;color:#201B10;margin-bottom:8px;}
+.gallery-card-title{font-weight:600;font-size:14px;color:#1B2A4A;margin-bottom:8px;}
 .gallery-card-tags{display:flex;flex-wrap:wrap;gap:5px;}
-.gallery-tag{background:#f4ede4;color:#AE360E;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;text-transform:uppercase;letter-spacing:0.5px;cursor:pointer;}
-.gallery-tag:hover{background:#AE360E;color:#fff;}
+.gallery-tag{background:#f4ede4;color:#3A5DAE;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;text-transform:uppercase;letter-spacing:0.5px;cursor:pointer;}
+.gallery-tag:hover{background:#3A5DAE;color:#fff;}
 #lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;padding:20px;}
 #lightbox.open{display:flex;}
 #lightbox img{max-height:90vh;max-width:90vw;object-fit:contain;border-radius:4px;}
@@ -1059,7 +1058,7 @@ function buildGallery_OLD() { // OLD Ã¯Â¿Â½" replaced by template-based ve
 .gallery-empty{text-align:center;padding:80px 20px;color:#999;}
 .gallery-empty i{font-size:48px;color:#e4dacc;margin-bottom:16px;display:block;}
 .gallery-loading{text-align:center;padding:80px 20px;}
-.gallery-loading .spinner{width:40px;height:40px;border:3px solid #f4ede4;border-top-color:#AE360E;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px;}
+.gallery-loading .spinner{width:40px;height:40px;border:3px solid #f4ede4;border-top-color:#3A5DAE;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px;}
 @keyframes spin{to{transform:rotate(360deg);}}`;
 
   const content = `
@@ -1072,7 +1071,7 @@ ${T.pageHeader('Project Gallery', '<li><span>Gallery</span></li>')}
     <div class="sec-title text-center" style="margin-bottom:40px;">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">our work</p></div>
       <h3 class="sec-title__title">Completed Projects</h3>
-      <p style="color:#5a5650;margin-top:12px;max-width:600px;margin-left:auto;margin-right:auto;">Browse our completed painting projects across Northern Colorado. Click a tag to filter by project type.</p>
+      <p style="color:#5a5650;margin-top:12px;max-width:600px;margin-left:auto;margin-right:auto;">Browse our completed HVAC projects across Central Kansas. Click a tag to filter by project type.</p>
     </div>
     <div class="gallery-filter-bar" id="filterBar">
       <button class="filter-btn active" data-tag="all">All Projects</button>
@@ -1093,8 +1092,8 @@ ${T.pageHeader('Project Gallery', '<li><span>Gallery</span></li>')}
 <section style="padding:80px 0;background:#F4EDE4;">
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
-      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">HVAC Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Don\'s Heating & Air Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -1107,7 +1106,7 @@ ${T.pageHeader('Project Gallery', '<li><span>Gallery</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  const head = T.htmlHead('Project Gallery | Timnath Painting', 'Browse completed painting projects by Timnath Painting across Northern Colorado. Exterior, HOA, commercial, fence staining and more.');
+  const head = T.htmlHead('HVAC Project Gallery | Don\'s Heating & Air', 'Browse completed HVAC projects by Don\'s Heating & Air across Central Kansas. Exterior, HOA, commercial, fence staining and more.');
   const fullPage = head.replace('</head>', `<style>${galleryCSS}</style></head>`);
 
   const bodyScript = `
@@ -1226,10 +1225,10 @@ function buildServiceLocation(service, city) {
   if (!sd || !cd) { console.warn('Missing data:', service.slug, city.slug); return; }
 
   const pageSlug   = `${service.slug}-${city.slug}`;
-  const canonical  = `https://timnathpainting.com/${pageSlug}/`;
-  const h1Title    = `${service.label} in ${cd.label}, CO`;
-  const metaTitle  = `${service.label} in ${cd.label}, CO | Timnath Painting`;
-  const metaDesc   = `Professional ${service.label.toLowerCase()} in ${cd.label}, CO. Licensed, Eco-Friendly & No-VOC, $1M liability. Free on-site quote. Call ${CLIENT.phone}.`.slice(0, 160);
+  const canonical  = `https://donsheatingandair.com/${pageSlug}/`;
+  const h1Title    = `${service.label} in ${cd.label}, KS`;
+  const metaTitle  = `${service.label} in ${cd.label}, KS | Don\'s Heating & Air`;
+  const metaDesc   = `Professional ${service.label.toLowerCase()} in ${cd.label}, KS. Licensed & insured. $1M liability. Free on-site quote. Call ${CLIENT.phone}.`.slice(0, 160);
 
   // Blended FAQs: 2 service-specific + up to 3 city-specific
   const blendedFaqs = [
@@ -1249,12 +1248,12 @@ function buildServiceLocation(service, city) {
         name: CLIENT.name,
         telephone: CLIENT.phone,
         email: CLIENT.email,
-        url: 'https://timnathpainting.com',
+        url: 'https://donsheatingandair.com',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: '4836 Becker Dr',
-          addressLocality: 'Timnath',
-          addressRegion: 'CO',
+          streetAddress: '306 S. Main St.',
+          addressLocality: 'El Dorado',
+          addressRegion: 'KS',
           postalCode: CLIENT.zip,
           addressCountry: 'US'
         }
@@ -1275,26 +1274,26 @@ function buildServiceLocation(service, city) {
   // Other services this city page links to
   const otherServiceLinks = SERVICES
     .filter(s => s.slug !== service.slug)
-    .map(s => `<li><a href="/${s.slug}-${city.slug}/index.html" style="display:block;padding:8px 0;color:#201B10;font-size:14px;text-decoration:none;border-bottom:1px solid #e4dacc;">${s.label} in ${cd.label}, CO</a></li>`)
+    .map(s => `<li><a href="/${s.slug}-${city.slug}/index.html" style="display:block;padding:8px 0;color:#1B2A4A;font-size:14px;text-decoration:none;border-bottom:1px solid #e4dacc;">${s.label} in ${cd.label}, CO</a></li>`)
     .join('');
 
   // Other cities for this service
   const otherCityLinks = CITIES
     .filter(c => c.slug !== city.slug)
-    .map(c => `<a href="/${service.slug}-${c.slug}/index.html" style="display:inline-block;margin:4px 4px 4px 0;padding:5px 12px;background:#f4ede4;border-radius:4px;font-size:13px;color:#201B10;text-decoration:none;border:1px solid #e4dacc;">${c.label}</a>`)
+    .map(c => `<a href="/${service.slug}-${c.slug}/index.html" style="display:inline-block;margin:4px 4px 4px 0;padding:5px 12px;background:#f4ede4;border-radius:4px;font-size:13px;color:#1B2A4A;text-decoration:none;border:1px solid #e4dacc;">${c.label}</a>`)
     .join('');
 
   const whyFeatures = [
-    { icon: 'fa-solid fa-shield-halved', title: 'Licensed &amp; Insured in Colorado', text: '$1M general liability coverage. Certificates of insurance available on request within 24 hours.' },
-    { icon: 'fa-solid fa-leaf',          title: 'No-VOC Products.',              text: 'Approved Sherwin-Williams and Benjamin Moore applicator. Products and methods that protect your home and the environment.' },
-    { icon: 'fa-solid fa-users',         title: 'We Know Our Crews',                  text: 'No subcontractors. The crew you meet on day one finishes the job. No volume rushing, no shortcuts.' },
+    { icon: 'fa-solid fa-shield-halved', title: 'Licensed &amp; Insured in Kansas', text: 'Licensed HVAC contractor. Certificates of insurance available on request.' },
+    { icon: 'fa-solid fa-tools',          title: 'All Makes &amp; Models.',              text: 'Licensed HVAC technicians serving El Dorado and Central Kansas since 1959.' },
+    { icon: 'fa-solid fa-users',         title: 'Quality Parts & Repairs',                  text: 'Licensed technicians. Quality parts. Honest pricing. HVAC done right the first time.' },
     { icon: 'fa-solid fa-clock',         title: 'Same-Day Response',              text: 'Every quote request gets a same-day response during business hours. On-site assessments scheduled fast.' },
   ];
 
   const content = `
 ${T.topbar()}
 <!-- HEADER -->
-${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.label}</a></li><li><span>${cd.label}, CO</span></li>`)}
+${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.label}</a></li><li><span>${cd.label}, KS</span></li>`)}
 
 <script type="application/ld+json">${schema}</script>
 
@@ -1307,7 +1306,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
 
         <!-- H1 + City Intro -->
         <div style="margin-bottom:32px;">
-          <h1 style="font-size:32px;font-weight:700;color:#201B10;margin-bottom:10px;">${h1Title}</h1>
+          <h1 style="font-size:32px;font-weight:700;color:#1B2A4A;margin-bottom:10px;">${h1Title}</h1>
           <p style="font-size:15px;color:#5a5650;margin-bottom:0;"><strong>${cd.context}.</strong></p>
         </div>
 
@@ -1317,8 +1316,8 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
 
         <!-- Service Intro -->
         <div style="margin-bottom:32px;">
-          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">${sd.tagline}</p>
-          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:16px;">${sd.heroTitle.includes(cd.label) ? sd.heroTitle : sd.heroTitle + ' &#8212; ' + cd.label + ', CO'}</h2>
+          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3A5DAE;margin-bottom:8px;">${sd.tagline}</p>
+          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:16px;">${sd.heroTitle.includes(cd.label) ? sd.heroTitle : sd.heroTitle + ' &#8212; ' + cd.label + ', CO'}</h2>
           ${sd.intro.split('\n\n').map(p => `<p style="color:#5a5650;line-height:1.8;margin-bottom:16px;">${p}</p>`).join('')}
         </div>
 
@@ -1326,8 +1325,8 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
 
         <!-- Process -->
         <div style="margin-bottom:32px;">
-          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">how we work</p>
-          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:16px;">Our ${service.label} Process in ${cd.label}</h2>
+          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3A5DAE;margin-bottom:8px;">how we work</p>
+          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:16px;">Our ${service.label} Process in ${cd.label}</h2>
           ${sd.process.split('\n\n').map(p => `<p style="color:#5a5650;line-height:1.8;margin-bottom:16px;">${p}</p>`).join('')}
         </div>
 
@@ -1335,10 +1334,10 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
 
         <!-- Why Us -->
         <div style="margin-bottom:32px;">
-          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">why choose us</p>
-          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Why ${cd.label} Homeowners Choose Timnath Painting</h2>
+          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3A5DAE;margin-bottom:8px;">why choose us</p>
+          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:20px;">Why ${cd.label} Homeowners Choose Don\'s Heating & Air</h2>
           <ul style="list-style:none;padding:0;margin:0;">
-            ${whyFeatures.map(f => `<li style="display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid #e4dacc;"><div style="flex-shrink:0;width:36px;height:36px;background:#AE360E;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;"><i class="${f.icon}"></i></div><div><div style="font-weight:700;color:#201B10;margin-bottom:4px;">${f.title}</div><div style="color:#5a5650;font-size:14px;line-height:1.6;">${f.text}</div></div></li>`).join('')}
+            ${whyFeatures.map(f => `<li style="display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid #e4dacc;"><div style="flex-shrink:0;width:36px;height:36px;background:#3A5DAE;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;"><i class="${f.icon}"></i></div><div><div style="font-weight:700;color:#1B2A4A;margin-bottom:4px;">${f.title}</div><div style="color:#5a5650;font-size:14px;line-height:1.6;">${f.text}</div></div></li>`).join('')}
           </ul>
         </div>
 
@@ -1346,21 +1345,21 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
 
         <!-- FAQs -->
         <div style="margin-bottom:32px;">
-          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">common questions</p>
-          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Frequently Asked Questions &#8212; ${service.label} in ${cd.label}, CO</h2>
+          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3A5DAE;margin-bottom:8px;">common questions</p>
+          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:20px;">Frequently Asked Questions &#8212; ${service.label} in ${cd.label}, CO</h2>
           ${T.faqBlock(blendedFaqs, pageSlug + '-faq')}
         </div>
 
         <!-- Other Cities for This Service -->
         <div style="padding:24px;background:#f4ede4;border-radius:8px;margin-bottom:32px;">
-          <p style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#AE360E;margin-bottom:10px;">${service.label} in Other NoCo Cities</p>
+          <p style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#3A5DAE;margin-bottom:10px;">${service.label} in Other NoCo Cities</p>
           <div>${otherCityLinks}</div>
         </div>
 
         <!-- Bottom CTA -->
-        <div style="background:#201B10;color:#f4ede4;border-radius:8px;padding:28px 32px;margin-top:16px;">
+        <div style="background:#1B2A4A;color:#f4ede4;border-radius:8px;padding:28px 32px;margin-top:16px;">
           <h4 style="color:#fff;margin:0 0 10px;font-size:20px;">Ready to Get a Free Quote in ${cd.label}?</h4>
-          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call or text <a href="tel:${CLIENT.phoneTel}" style="color:#AE360E;font-weight:700;">${CLIENT.phone}</a> or fill out the form below. We respond same-day and provide free on-site assessments.</p>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call or text <a href="tel:${CLIENT.phoneTel}" style="color:#3A5DAE;font-weight:700;">${CLIENT.phone}</a> or fill out the form below. We respond same-day and provide free on-site assessments.</p>
         </div>
 
       </div>
@@ -1369,37 +1368,37 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
       <div class="col-lg-4">
 
         <div style="background:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
-          <h4 style="margin-bottom:16px;color:#201B10;">Get a Free Quote</h4>
+          <h4 style="margin-bottom:16px;color:#1B2A4A;">Get a Free Quote</h4>
           <ul class="list-unstyled" style="line-height:2.4;margin-bottom:16px;">
-            <li><i class="fa-solid fa-phone" style="color:#AE360E;margin-right:8px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-weight:700;font-size:18px;color:#201B10;">${CLIENT.phone}</a></li>
-            <li><i class="fa-solid fa-envelope" style="color:#AE360E;margin-right:8px;"></i><a href="mailto:${CLIENT.email}" style="color:#5a5650;">${CLIENT.email}</a></li>
-            <li><i class="fa-solid fa-location-dot" style="color:#AE360E;margin-right:8px;"></i><span style="color:#5a5650;">Based in ${CLIENT.city}, ${CLIENT.state}</span></li>
+            <li><i class="fa-solid fa-phone" style="color:#3A5DAE;margin-right:8px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-weight:700;font-size:18px;color:#1B2A4A;">${CLIENT.phone}</a></li>
+            <li><i class="fa-solid fa-envelope" style="color:#3A5DAE;margin-right:8px;"></i><a href="mailto:${CLIENT.email}" style="color:#5a5650;">${CLIENT.email}</a></li>
+            <li><i class="fa-solid fa-location-dot" style="color:#3A5DAE;margin-right:8px;"></i><span style="color:#5a5650;">Based in ${CLIENT.city}, ${CLIENT.state}</span></li>
           </ul>
           <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="display:block;text-align:center;">Request a Quote</a>
         </div>
 
-        <div style="background:#201B10;color:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
-          <p style="color:#AE360E;margin-bottom:14px;font-size:16px;font-weight:600;">Why Timnath Painting</p>
+        <div style="background:#1B2A4A;color:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
+          <p style="color:#3A5DAE;margin-bottom:14px;font-size:16px;font-weight:600;">Why Don\'s Heating & Air</p>
           <ul class="list-unstyled" style="line-height:2.2;margin:0;">
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Licensed &amp; Insured</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>No-VOC Products.</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>\$1M General Liability</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>SW &amp; BM Approved</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>We Know Our Crews</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Free On-Site Quotes</li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>Licensed &amp; Insured</li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>Licensed &amp; Insured.</li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>\$1M General Liability</li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>SW &amp; BM Approved</li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>Quality Parts & Repairs</li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:8px;"></i>Free On-Site Quotes</li>
           </ul>
         </div>
 
         <div style="padding:28px;border:1px solid #e4dacc;border-radius:8px;margin-bottom:24px;">
-          <p style="color:#201B10;margin-bottom:14px;font-size:15px;font-weight:600;">Our Services in ${cd.label}, CO</p>
+          <p style="color:#1B2A4A;margin-bottom:14px;font-size:15px;font-weight:600;">Our Services in ${cd.label}, CO</p>
           <ul class="list-unstyled" style="margin:0;">
             ${otherServiceLinks}
-            <li><a href="/${service.slug}-${city.slug}/index.html" style="display:block;padding:8px 0;color:#AE360E;font-size:14px;font-weight:700;text-decoration:none;">${service.label} in ${cd.label} &rarr;</a></li>
+            <li><a href="/${service.slug}-${city.slug}/index.html" style="display:block;padding:8px 0;color:#3A5DAE;font-size:14px;font-weight:700;text-decoration:none;">${service.label} in ${cd.label} &rarr;</a></li>
           </ul>
         </div>
 
         <div style="padding:28px;border:1px solid #e4dacc;border-radius:8px;">
-          <p style="color:#201B10;margin-bottom:14px;font-size:15px;font-weight:600;">Other Areas for ${service.label}</p>
+          <p style="color:#1B2A4A;margin-bottom:14px;font-size:15px;font-weight:600;">Other Areas for ${service.label}</p>
           <div>${otherCityLinks}</div>
         </div>
 
@@ -1412,8 +1411,8 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
 <section style="padding:80px 0;background:#F4EDE4;">
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
-      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">HVAC Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Don\'s Heating & Air Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -1445,10 +1444,10 @@ copyDir(path.join(ROOT, 'functions'), path.join(DIST, 'functions'));
 buildBlog({
   srcDir: ROOT,
   distDir: DIST,
-  siteId: 'timnath-painting',
+  siteId: 'dons-heating',
   postsPerPage: 10,
-  domain: 'timnathpainting.com',
-  siteName: 'Timnath Painting'
+  domain: 'donsheatingandair.com',
+  siteName: 'Don\'s Heating & Air'
 });
 
 // Ã¢â€â‚¬Ã¢â€â‚¬ Spread recent posts to all inner pages Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
@@ -1512,9 +1511,9 @@ function buildGetAQuote() {
   }
 
   const head = T.htmlHead(
-    'Get a Free Painting Quote | Timnath Painting | (970) 670-3965',
-    'Request a free painting quote from Timnath Painting. No pressure, no surprises. Serving Timnath, Windsor, Fort Collins & Northern Colorado. We respond within 2 hours.',
-    'https://timnathpainting.com/get-a-quote/'
+    'Get a Free Painting Quote | Don\'s Heating & Air | (316) 321-9438',
+    'Request a free HVAC estimate from Don\'s Heating & Air. No pressure, no surprises. Serving El Dorado, Hillsboro, Emporia & Central Kansas. We respond within 2 hours.',
+    'https://donsheatingandair.com/get-a-quote/'
   );
 
   const html = head + `
@@ -1525,31 +1524,31 @@ function buildGetAQuote() {
 .gaq-page-header{margin-bottom:20px;text-align:center;}
 .gaq-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
 @media(max-width:900px){.gaq-grid{grid-template-columns:1fr;gap:24px;}}
-.gaq-headline{color:#201B10;font-size:clamp(28px,3.8vw,52px);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin:0 0 8px;}
+.gaq-headline{color:#1B2A4A;font-size:clamp(28px,3.8vw,52px);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin:0 0 8px;}
 .gaq-subhead{color:#5a5650;font-size:17px;line-height:1.65;margin:0 0 32px;}
 .gaq-trust-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
 .gaq-trust-list li{display:flex;align-items:flex-start;gap:12px;color:#2E2A20;font-size:15px;line-height:1.5;}
-.gaq-trust-list li i{color:#AE360E;margin-top:2px;flex-shrink:0;font-size:16px;}
+.gaq-trust-list li i{color:#3A5DAE;margin-top:2px;flex-shrink:0;font-size:16px;}
 .gaq-card{background:#fff;border-radius:14px;padding:32px 32px 28px;box-shadow:0 4px 24px rgba(0,0,0,0.09);}
-.gaq-input{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#201B10;background:#fff;box-sizing:border-box;transition:border-color 0.15s;}
-.gaq-input:focus{outline:none;border-color:#AE360E;}
+.gaq-input{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#1B2A4A;background:#fff;box-sizing:border-box;transition:border-color 0.15s;}
+.gaq-input:focus{outline:none;border-color:#3A5DAE;}
 .gaq-input::placeholder{color:#a09890;}
 .gaq-fields{display:flex;flex-direction:column;gap:12px;}
-.gaq-submit{width:100%;padding:14px 20px;background:#AE360E;color:#fff;border:none;border-radius:100px;font-size:16px;font-weight:700;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);cursor:pointer;margin-top:4px;transition:background 0.2s;}
+.gaq-submit{width:100%;padding:14px 20px;background:#3A5DAE;color:#fff;border:none;border-radius:100px;font-size:16px;font-weight:700;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);cursor:pointer;margin-top:4px;transition:background 0.2s;}
 .gaq-submit:hover{background:#922d0a;}
 .gaq-trust-line{text-align:center;color:#5a5650;font-size:13px;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;}
-.gaq-trust-line i{color:#AE360E;}
+.gaq-trust-line i{color:#3A5DAE;}
 .gaq-social-proof{margin-top:40px;padding-top:36px;border-top:1px solid #e4dacc;display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:24px;align-items:center;}
 @media(max-width:700px){.gaq-social-proof{grid-template-columns:1fr 1fr;}}
 .gaq-stars{color:#f59e0b;font-size:20px;letter-spacing:2px;}
 .gaq-rating-wrap{display:flex;flex-direction:column;gap:2px;}
-.gaq-rating-num{font-size:28px;font-weight:800;color:#201B10;line-height:1;}
+.gaq-rating-num{font-size:28px;font-weight:800;color:#1B2A4A;line-height:1;}
 .gaq-rating-label{color:#5a5650;font-size:13px;}
 .gaq-proof-item{display:flex;align-items:flex-start;gap:10px;}
-.gaq-proof-item i{color:#AE360E;margin-top:3px;font-size:16px;flex-shrink:0;}
+.gaq-proof-item i{color:#3A5DAE;margin-top:3px;font-size:16px;flex-shrink:0;}
 .gaq-proof-item p{margin:0;color:#2E2A20;font-size:14px;line-height:1.5;}
 .gaq-proof-item strong{display:block;font-size:14px;font-weight:700;}
-.gaq-subtext{font-size:16px;font-weight:600;color:#AE360E;margin:0;letter-spacing:-0.01em;}
+.gaq-subtext{font-size:16px;font-weight:600;color:#3A5DAE;margin:0;letter-spacing:-0.01em;}
 </style>
 <main>
 <section class="gaq-wrap">
@@ -1561,7 +1560,7 @@ function buildGetAQuote() {
     <div class="gaq-grid">
       <div class="gaq-col-form">
         <div class="gaq-card" style="padding:24px;">
-          <h3 style="margin:0 0 12px;font-size:20px;font-weight:700;color:#201B10;">Schedule Your Free In-Home Quote</h3>
+          <h3 style="margin:0 0 12px;font-size:20px;font-weight:700;color:#1B2A4A;">Schedule Your Free In-Home Quote</h3>
           <p style="margin:0 0 16px;font-size:14px;color:#5a5650;line-height:1.55;">One of our estimators will visit your home to assess the project and give you an accurate, honest price - no guessing, no online estimates.</p>
           <div id="2d355475-e9e2-4025-be1d-9768705789fb-4555532"></div>
           <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
@@ -1570,10 +1569,10 @@ function buildGetAQuote() {
       </div>
       <div class="gaq-col-copy">
         <ul class="gaq-trust-list">
-          <li><i class="fa-solid fa-check"></i><span>Local to Timnath and Northern Colorado. We know the conditions, the HOAs, and the neighborhoods.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Local to El Dorado and Central Kansas. We know the area, the homes, and the neighbors.</span></li>
           <li><i class="fa-solid fa-check"></i><span>Licensed &amp; Insured with $1M general liability. COI available on request within 24 hours.</span></li>
           <li><i class="fa-solid fa-check"></i><span>No obligation. Free on-site assessment. We show up, look at the job, and give you a real number. No games.</span></li>
-          <li><i class="fa-solid fa-check"></i><span>Premium Sherwin-Williams &amp; Benjamin Moore coatings. No-VOC products. Systems built to last 7&ndash;10 years in Colorado's climate.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Licensed technicians, quality parts, and honest pricing. Built to last a lifetime of comfort.</span></li>
         </ul>
       </div>
     </div>
@@ -1585,7 +1584,7 @@ function buildGetAQuote() {
       </div>
       <div class="gaq-proof-item">
         <i class="fa-solid fa-location-dot"></i>
-        <p><strong>Local to Northern Colorado</strong>Based in Timnath. Serving Timnath, Windsor, Fort Collins, Loveland &amp; the I-25 corridor.</p>
+        <p><strong>Local to Central Kansas</strong>Based in El Dorado. Serving El Dorado, Hillsboro, Emporia and more across Central Kansas.</p>
       </div>
       <div class="gaq-proof-item">
         <i class="fa-solid fa-shield-halved"></i>
@@ -1613,5 +1612,32 @@ function buildGetAQuote() {
 buildGetAQuote();
 // Generate sitemap from actual dist/ contents
 generateSitemap({ distDir: DIST, siteRoot: ROOT, domain: SITE_DOMAIN });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

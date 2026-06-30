@@ -1,0 +1,2330 @@
+﻿
+/* Slider sub-title: dark bg, no border pill */
+.main-slider-one__sub-title {
+  background-color: #1B2A4A !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 4px !important;
+}
+/* =====================================================
+   Don's Heating & Air â€” Custom Overrides v2
+   ===================================================== */
+
+/* â”€â”€ Fix: wallox.css sets .real-image { visibility: hidden } for GSAP reveal.
+   GSAP removed â€” force visible so about section image always shows. â”€â”€ */
+.real-image {
+  visibility: visible !important;
+}
+
+/* â”€â”€ Fix: wallox.css text-transform:capitalize on body/paragraph text â”€â”€ */
+.about-one__top__text,
+.about-one__list__item,
+.why-choose__top__text,
+.why-choose__box__list__item,
+.why-choose-one__top__text,
+.why-choose-one__feature__title,
+.why-choose-one__feature__text {
+  text-transform: none !important;
+}
+
+/* â”€â”€ Fix WOW.js invisible elements â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.wow {
+  visibility: visible !important;
+}
+
+/* â”€â”€ Hero Slider â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.main-slider-one__bg {
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Strong dark gradient overlay â€” text always readable */
+.main-slider-one__item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.72) 0%,
+    rgba(0,0,0,0.45) 50%,
+    rgba(0,0,0,0.15) 100%
+  );
+  z-index: 1;
+}
+.main-slider-one .container,
+.main-slider-one__content {
+  position: relative;
+  z-index: 2;
+}
+
+/* â”€â”€ About section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.about-one__thumb__item img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Funfact stat box â€” anchor to bottom-left of image */
+.about-one__funfact.count-box {
+  position: absolute;
+  bottom: 30px;
+  left: -20px;
+  z-index: 2;
+  border-radius: 8px;
+  padding: 20px 24px;
+  min-width: 160px;
+  text-align: center;
+}
+
+/* â”€â”€ Service section background overlay â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.service-one {
+  position: relative;
+}
+.service-one__bg {
+  background-size: cover;
+  background-position: center;
+}
+
+/* â”€â”€ Service card images â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.service-one__item__thumb img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* â”€â”€ Why Choose Us images â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.why-choose-one__thumb img {
+  width: 100%;
+  max-height: 500px;
+  height: 440px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 8px;
+  display: block;
+}
+.why-choose-one__thumb-two img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  display: block;
+}
+
+/* â”€â”€ Page header banner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.page-header {
+  background-size: cover;
+  background-position: center 35%;
+  position: relative;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+}
+.page-header .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* â”€â”€ Feature trust boxes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.feature-two__item {
+  text-align: center;
+  padding: 24px 16px;
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 8px;
+  background: #fff;
+  transition: box-shadow 0.2s ease;
+}
+.feature-two__item:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* â”€â”€ City area buttons â€” visible on white background â”€â”€â”€ */
+a.wallox-btn--border {
+  color: #1B2A4A !important;
+  border-color: #1B2A4A !important;
+  background: transparent;
+}
+a.wallox-btn--border:hover {
+  color: #fff !important;
+  background: #1B2A4A !important;
+}
+/* Hero border buttons stay light */
+.main-slider-one a.wallox-btn--border {
+  color: #fff !important;
+  border-color: #fff !important;
+}
+.main-slider-one a.wallox-btn--border:hover {
+  color: #1B2A4A !important;
+  background: #fff !important;
+}
+
+/* â”€â”€ Footer logo sizing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.main-footer__logo img,
+.logo-wallox img {
+  max-width: 160px;
+  height: auto;
+}
+
+/* â”€â”€ Topbar responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 991px) {
+  .topbar-two__list {
+    display: none;
+  }
+}
+
+/* =====================================================
+   MOBILE OVERRIDES (max-width: 767px)
+   ===================================================== */
+@media (max-width: 767px) {
+
+  /* Hide decorative shape blobs */
+  .about-one__shape,
+  .about-one__shape-two,
+  .main-slider-one__element-one,
+  .main-slider-one__element-two,
+  .main-slider-one__element-three,
+  .why-choose-one__thumb-box,
+  .why-choose-one__thumb-box-two {
+    display: none !important;
+  }
+
+  /* Mobile about image */
+  .about-one__thumb__item img {
+    height: 280px;
+  }
+
+  /* Funfact box â€” stack below image on mobile */
+  .about-one__funfact.count-box {
+    position: static !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+    border-radius: 8px;
+    padding: 14px 20px;
+    width: auto;
+  }
+
+  /* Mobile hero â€” clean above-fold */
+  .main-slider-one__content {
+    padding: 30px 0 24px;
+  }
+  .main-slider-one__title__text {
+    font-size: 30px !important;
+    line-height: 1.15 !important;
+  }
+  .main-slider-one__sub-title {
+    font-size: 12px !important;
+    margin-bottom: 10px !important;
+    letter-spacing: 0.5px;
+  }
+  .main-slider-one__btn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .main-slider-one__btn .wallox-btn {
+    padding: 10px 18px !important;
+    font-size: 13px !important;
+    flex: 0 0 auto;
+  }
+
+  /* Why choose us mobile stack */
+  .why-choose-one__right {
+    margin-top: 24px;
+  }
+  .why-choose-one__thumb img,
+  .why-choose-one__thumb-two img {
+    height: 220px;
+    margin-bottom: 12px;
+  }
+
+  /* Service card images mobile */
+  .service-one__item__thumb img {
+    height: 200px;
+  }
+}
+
+/* =====================================================
+   TABLET OVERRIDES (768â€“1024px)
+   ===================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-slider-one__title__text {
+    font-size: 42px !important;
+  }
+  .about-one__thumb__item img {
+    height: 380px;
+  }
+}
+
+/* =====================================================
+   FIX: GSAP split-text letter spacing issue
+   bw-split-in-right / bw-split-in-up use GSAP SplitText
+   which wraps each char in a span â€” force no extra spacing
+   ===================================================== */
+.bw-split-in-right .char,
+.bw-split-in-up .char,
+[class*="bw-split"] .char {
+  letter-spacing: normal !important;
+}
+
+/* Force headings to render normally even before GSAP runs */
+.sec-title__title,
+.sec-title__tagline,
+.page-header__title,
+h1, h2, h3, h4, h5 {
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+}
+
+/* Prevent GSAP from making headings invisible before animation */
+.bw-split-in-right,
+.bw-split-in-up {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+/* =====================================================
+   MOBILE HERO â€” stronger premium feel
+   ===================================================== */
+@media (max-width: 767px) {
+  /* Full-bleed hero on mobile */
+  .main-slider-one__item {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+  }
+
+  .main-slider-one__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .main-slider-one__content {
+    padding: 60px 0 40px;
+  }
+
+  .main-slider-one__sub-title {
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase;
+    margin-bottom: 12px !important;
+    opacity: 0.9;
+  }
+
+  .main-slider-one__title__text {
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    margin-bottom: 4px;
+  }
+
+  .main-slider-one__title__box {
+    overflow: visible !important;
+  }
+
+  .main-slider-one__btn {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Make primary CTA pop more on mobile */
+  .main-slider-one .wallox-btn--base {
+    font-size: 14px !important;
+    padding: 12px 22px !important;
+    font-weight: 700 !important;
+  }
+
+  /* Topbar hidden on mobile â€” reduce top clutter */
+  .topbar-two {
+    display: none !important;
+  }
+}
+
+/* =====================================================
+   SECTION RHYTHM + SPACING TIGHTENING
+   ===================================================== */
+
+/* About section â€” tighter padding */
+.about-one {
+  padding-top: 70px !important;
+  padding-bottom: 70px !important;
+}
+
+/* Remove excessive vertical whitespace between sections */
+.feature-two.feature-two--one {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+/* Section titles â€” remove bottom margin inflation */
+.sec-title {
+  margin-bottom: 40px !important;
+}
+
+.sec-title__tagline {
+  font-size: 12px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase;
+  margin-bottom: 8px !important;
+}
+
+/* =====================================================
+   FOOTER â€” more local, less generic
+   ===================================================== */
+.main-footer__top__inner {
+  padding: 30px 0 !important;
+}
+
+.main-footer__copyright {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* Local trust line in footer */
+.footer-widget__text {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+/* =====================================================
+   SERVICE CAROUSEL â€” less cluttered on mobile
+   ===================================================== */
+@media (max-width: 575px) {
+  /* Single card at a time on small mobile */
+  .service-one__carousel .owl-item {
+    min-width: 100% !important;
+  }
+  .service-one__item__thumb img {
+    height: 220px;
+  }
+  .service-one__item__content {
+    padding: 16px 20px !important;
+  }
+}
+
+/* =====================================================
+   CONTACT SECTION â€” more trustworthy feel
+   ===================================================== */
+.testimonials-contact .form-one__control input,
+.testimonials-contact .form-one__control textarea,
+.testimonials-contact .form-one__control select {
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  background: rgba(255,255,255,0.08) !important;
+  color: #fff !important;
+  border-radius: 4px;
+  padding: 12px 16px !important;
+  width: 100%;
+}
+
+.testimonials-contact .form-one__control input::placeholder,
+.testimonials-contact .form-one__control textarea::placeholder {
+  color: rgba(255,255,255,0.5) !important;
+}
+
+/* =====================================================
+   FIX: GSAP SplitText individual character divs
+   Each char gets its own inline-block div â€” collapse them
+   ===================================================== */
+.sec-title__title > div,
+.sec-title__title > div > div,
+.page-header__title > div,
+.page-header__title > div > div,
+h1 > div, h2 > div, h3 > div,
+h1 > div > div, h2 > div > div, h3 > div > div {
+  display: inline !important;
+  position: relative !important;
+  letter-spacing: normal !important;
+}
+
+/* Wallox GSAP split classes â€” force readable */
+.bw-split-in-right > div,
+.bw-split-in-right > div > div,
+.bw-split-in-up > div,
+.bw-split-in-up > div > div {
+  display: inline !important;
+  letter-spacing: normal !important;
+}
+
+/* =====================================================
+   FIX: Hero headline color â€” must be white on dark overlay
+   ===================================================== */
+.main-slider-one__title__text {
+  color: #ffffff !important;
+}
+.main-slider-one__sub-title {
+  color: rgba(255,255,255,0.9) !important;
+}
+
+/* =====================================================
+   FIX: About section funfact â€” better mobile positioning
+   ===================================================== */
+@media (max-width: 991px) {
+  .about-one__funfact.count-box {
+    position: static !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    border-radius: 8px;
+    padding: 16px 20px;
+    width: fit-content;
+  }
+}
+
+/* =====================================================
+   Service hub page â€” stronger visual hierarchy
+   ===================================================== */
+.page-header__title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.wallox-breadcrumb a,
+.wallox-breadcrumb span {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+/* =====================================================
+   Why choose us â€” fix text color on light background
+   ===================================================== */
+.why-choose-one__top__text,
+.why-choose-one__feature__text {
+  color: #4a4540 !important;
+}
+
+/* =====================================================
+   Footer â€” more local feel
+   ===================================================== */
+.main-footer__middle {
+  padding: 50px 0 !important;
+}
+
+.footer-widget__title {
+  font-size: 18px !important;
+  margin-bottom: 20px !important;
+}
+
+.footer-widget__links li {
+  margin-bottom: 8px !important;
+}
+
+.footer-widget__info li {
+  margin-bottom: 16px !important;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* =============================================================
+   MOBILE POLISH PASS â€” 2026-04-22 Claudia checkin items
+   ============================================================= */
+
+/* â”€â”€ 1. MOBILE HERO â€” Premium residential, clean first screen â”€ */
+@media (max-width: 991px) {
+  /* Hide topbar on mobile â€” clean first screen */
+  .topbar-two {
+    display: none !important;
+  }
+
+  /* Hero min-height and overlay */
+  .main-slider-one__item {
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Stronger overlay on mobile for text contrast */
+  .main-slider-one__item::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.30) 0%,
+      rgba(0,0,0,0.70) 40%,
+      rgba(0,0,0,0.80) 100%
+    ) !important;
+  }
+
+  .main-slider-one__content {
+    padding: 80px 0 60px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Subtitle tag above headline */
+  .main-slider-one__sub-title {
+    font-size: 11px !important;
+    letter-spacing: 2.5px !important;
+    text-transform: uppercase !important;
+    color: #3A5DAE !important;
+    margin-bottom: 14px !important;
+    font-weight: 600;
+  }
+
+  /* Big bold headline */
+  .main-slider-one__title__text {
+    font-size: 36px !important;
+    line-height: 1.15 !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin-bottom: 6px !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  /* Headline box stacking */
+  .main-slider-one__title__box {
+    display: block;
+    overflow: visible !important;
+  }
+
+  /* CTA buttons â€” clear flex row */
+  .main-slider-one__btn {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Primary CTA larger on mobile */
+  .main-slider-one .wallox-btn--base {
+    font-size: 15px !important;
+    padding: 14px 24px !important;
+    font-weight: 700 !important;
+    min-width: 160px;
+    text-align: center;
+  }
+
+  .main-slider-one .wallox-btn--border {
+    font-size: 14px !important;
+    padding: 13px 20px !important;
+    text-align: center;
+  }
+
+  /* Hide decorative floating elements on mobile */
+  .main-slider-one__element-one,
+  .main-slider-one__element-two,
+  .main-slider-one__element-three {
+    display: none !important;
+  }
+
+  /* Dots closer to content */
+  .main-slider-one .owl-dots {
+    bottom: 20px !important;
+  }
+}
+
+/* â”€â”€ 2. SERVICE CAROUSEL â€” Simplified mobile view â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 767px) {
+  /* Show exactly 1 card on mobile */
+  .service-one__carousel.owl-carousel .owl-item {
+    min-width: 100% !important;
+  }
+
+  .service-one__item__thumb {
+    height: 220px;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .service-one__item__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .service-one__item__content {
+    padding: 20px !important;
+  }
+
+  .service-one__item__title {
+    font-size: 18px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .service-one__item__text {
+    font-size: 14px !important;
+    line-height: 1.6;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* â”€â”€ 3. ABOUT SECTION â€” Colorado's Climate block â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 991px) {
+  .about-one {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  /* Stack cleanly: image first, then text */
+  .about-one .row {
+    flex-direction: column;
+  }
+
+  /* Full-width image on mobile */
+  .about-one__thumb {
+    margin-bottom: 40px;
+  }
+
+  /* Constrain to clean column */
+  .about-one__content {
+    padding: 0 !important;
+  }
+
+  /* Funfact pill â€” inline, not floating */
+  .about-one__funfact {
+    position: static !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding: 14px 20px !important;
+    border-radius: 8px;
+    width: auto;
+  }
+
+  .about-one__funfact .count-box__number,
+  .about-one__funfact .odometer {
+    font-size: 32px !important;
+  }
+
+  /* Vertical accent line â€” hide on mobile */
+  .about-one__thumb__item--two,
+  .about-one__thumb__bg {
+    display: none !important;
+  }
+
+  /* Bullets readable on mobile */
+  .about-one__content__list li {
+    font-size: 14px;
+    padding-left: 20px;
+    margin-bottom: 8px;
+  }
+}
+
+/* â”€â”€ 4. SECTION RHYTHM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Consistent heading hierarchy everywhere */
+.sec-title__tagline {
+  font-size: 11px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  margin-bottom: 10px !important;
+  opacity: 0.8;
+}
+
+.sec-title__title {
+  font-size: clamp(26px, 4vw, 42px) !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.3px !important;
+}
+
+/* Feature bars â€” padding above to separate from hero */
+.feature-two.feature-two--one {
+  padding-top: 50px !important;
+}
+
+/* Feature bars â€” tighter on mobile */
+@media (max-width: 767px) {
+  .feature-two.feature-two--one {
+    padding-top: 36px !important;
+  }
+  .feature-two__item {
+    padding: 20px 16px !important;
+  }
+  .feature-two__item__title {
+    font-size: 14px !important;
+  }
+}
+
+/* â”€â”€ 5. FOOTER â€” Local, trustworthy, readable on mobile â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 767px) {
+  .main-footer__middle {
+    padding: 40px 0 20px !important;
+  }
+
+  .footer-widget {
+    margin-bottom: 32px;
+  }
+
+  .footer-widget__title {
+    font-size: 16px !important;
+    margin-bottom: 16px !important;
+    font-weight: 700;
+  }
+
+  /* Phone number â€” larger and tappable */
+  .footer-widget__info a[href^="tel"] {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #3A5DAE !important;
+  }
+
+  .footer-widget__links li {
+    margin-bottom: 10px !important;
+  }
+
+  .footer-widget__links a {
+    font-size: 14px !important;
+  }
+
+  .main-footer__copyright {
+    font-size: 12px;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  .footer-widget__text {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+/* Footer contact info list â€” clear layout */
+.footer-widget__info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px !important;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-widget__info li i {
+  color: #3A5DAE;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* â”€â”€ 6. CONTACT SECTION MOBILE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 767px) {
+  .testimonials-contact {
+    padding: 50px 0 !important;
+  }
+
+  .testimonials-contact .sec-title__title {
+    font-size: 26px !important;
+  }
+
+  .form-one__control input,
+  .form-one__control textarea,
+  .form-one__control select {
+    font-size: 15px !important;
+    padding: 12px 14px !important;
+  }
+
+  /* Phone number in contact block â€” big and tappable */
+  .testimonials-contact a[href^="tel"] {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: #3A5DAE !important;
+    display: block;
+    margin-bottom: 8px;
+  }
+}
+
+/* =============================================================
+   CRITICAL: Mobile header â€” logo too tall, header too large
+   ============================================================= */
+@media (max-width: 991px) {
+  /* Constrain header to ~65px total */
+  .main-header {
+    padding: 10px 0 !important;
+    min-height: 0 !important;
+  }
+
+  .main-header__inner {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 8px 0 !important;
+  }
+
+  /* Constrain logo to 40px tall max */
+  .main-header .logo-wallox img,
+  .main-header .site-logo img,
+  .main-header img.logo,
+  .main-header a img {
+    max-height: 44px !important;
+    width: auto !important;
+    max-width: 140px !important;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Hamburger button â€” right side */
+  .mobile-nav__toggler,
+  .main-header__toggler,
+  [data-bs-target] {
+    padding: 8px !important;
+    font-size: 22px !important;
+  }
+
+  /* Header sticky transition */
+  .sticky-header.sticky {
+    padding: 8px 0 !important;
+  }
+}
+
+/* =============================================================
+   SERVICE SECTION â€” Static grid on mobile (no carousel)
+   ============================================================= */
+@media (max-width: 767px) {
+  /* Override owl carousel to show as static grid */
+  .service-one__carousel {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* Owl carousel internals â€” flatten to grid */
+  .service-one__carousel .owl-stage-outer,
+  .service-one__carousel .owl-stage {
+    display: contents !important;
+  }
+
+  .service-one__carousel .owl-item {
+    display: block !important;
+    width: 100% !important;
+    float: none !important;
+    transform: none !important;
+  }
+
+  /* Show all 6 items â€” no hiding */
+  .service-one__carousel .owl-item.cloned {
+    display: none !important;
+  }
+
+  /* Owl nav/dots hide on mobile */
+  .service-one__carousel .owl-nav,
+  .service-one__carousel .owl-dots {
+    display: none !important;
+  }
+
+  /* Card layout */
+  .service-one__item {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+  }
+
+  /* Circular thumb â€” clean square crop instead */
+  .service-one__item__thumb {
+    height: 130px !important;
+    border-radius: 0 !important;
+  }
+
+  .service-one__item__thumb img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+    clip-path: none !important;
+  }
+
+  .service-one__item__content {
+    padding: 12px !important;
+  }
+
+  .service-one__item__title {
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .service-one__item__text {
+    display: none !important;
+  }
+
+  .service-one__item__btn {
+    font-size: 12px !important;
+    padding: 6px 0 !important;
+  }
+}
+
+/* =============================================================
+   ABOUT SECTION â€” Cleaner composition on mobile
+   ============================================================= */
+@media (max-width: 991px) {
+  /* Remove gimmicky overlay/accent image */
+  .about-one__thumb__item--two,
+  .about-one__thumb__bg,
+  .about-one__thumb__shape {
+    display: none !important;
+  }
+
+  /* Constrain the main thumb image */
+  .about-one__thumb__item.real-image {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .about-one__thumb__item.real-image img {
+    width: 100% !important;
+    height: 260px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 8px !important;
+  }
+
+  /* Text column */
+  .about-one__content {
+    margin-top: 0 !important;
+  }
+
+  .about-one__content .sec-title__title {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+  }
+
+  .about-one__content p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* List items */
+  .about-one__content__list li {
+    font-size: 14px !important;
+    padding: 6px 0 !important;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  /* Funfact â€” bottom of section, not floating */
+  .about-one__funfact {
+    position: static !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-top: 20px !important;
+    padding: 14px 20px !important;
+    border-radius: 8px !important;
+  }
+
+  /* Section overall */
+  .about-one {
+    padding: 50px 0 !important;
+  }
+}
+
+/* =============================================================
+   HERO â€” Further cleanup
+   ============================================================= */
+@media (max-width: 767px) {
+  /* Ensure hero fills from below the shrunken header */
+  .main-slider-one {
+    margin-top: 0;
+  }
+
+  .main-slider-one__item {
+    min-height: 500px !important;
+    padding-top: 0 !important;
+  }
+
+  /* Content starts slightly lower than center */
+  .main-slider-one__content {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  /* Subtitle pill */
+  .main-slider-one__sub-title {
+    font-size: 10px !important;
+    letter-spacing: 2px !important;
+    padding: 6px 12px !important;
+    background: rgba(58,93,174,0.15) !important;
+    border: 1px solid rgba(58,93,174,0.4) !important;
+    border-radius: 20px !important;
+    display: inline-block !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* Main headline â€” bold and large */
+  .main-slider-one__title__box {
+    margin-bottom: 4px !important;
+  }
+
+  .main-slider-one__title__text {
+    font-size: 38px !important;
+    font-weight: 800 !important;
+    color: #fff !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  /* CTAs */
+  .main-slider-one__btn {
+    margin-top: 22px !important;
+    gap: 10px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+
+  .main-slider-one__btn .wallox-btn {
+    flex: 1 1 auto !important;
+    text-align: center !important;
+    min-width: 130px !important;
+    max-width: 200px !important;
+    font-size: 14px !important;
+    padding: 13px 20px !important;
+    font-weight: 700 !important;
+  }
+}
+
+/* =============================================================
+   HOMEPAGE RHYTHM â€” Final spacing pass
+   ============================================================= */
+
+/* Feature bars â€” tighter, consistent */
+.feature-two.feature-two--one {
+  padding: 30px 0 !important;
+}
+
+.feature-two__item {
+  padding: 24px 20px !important;
+}
+
+/* Why Choose Us â€” tighter */
+.why-choose-one {
+  padding: 70px 0 !important;
+}
+
+@media (max-width: 767px) {
+  .why-choose-one {
+    padding: 50px 0 !important;
+  }
+
+  /* Stack progress bars readable */
+  .why-choose-one__feature__item {
+    margin-bottom: 16px !important;
+  }
+
+  /* Image hidden on mobile â€” show content full width */
+  .why-choose-one__thumb {
+    display: none !important;
+  }
+}
+
+/* Service section wrapper */
+.service-one {
+  padding: 70px 0 !important;
+}
+
+@media (max-width: 767px) {
+  .service-one {
+    padding: 50px 0 !important;
+  }
+}
+
+/* Testimonials/contact section */
+.testimonials-contact.testimonials-contact--home {
+  padding: 70px 0 !important;
+}
+
+@media (max-width: 767px) {
+  .testimonials-contact.testimonials-contact--home {
+    padding: 50px 0 !important;
+  }
+
+  /* Contact right column â€” move below form */
+  .testimonials-contact__right {
+    margin-top: 30px !important;
+  }
+
+  /* Phone number â€” prominent */
+  .testimonials-contact__right a[href^="tel"] {
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    color: #3A5DAE !important;
+    display: block !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Trust badges */
+  .testimonials-contact__right p[style*="italic"] {
+    font-size: 13px !important;
+    color: rgba(255,255,255,0.7) !important;
+    margin-top: 16px !important;
+  }
+}
+
+/* =============================================================
+   CRITICAL FIX: Header logo height on mobile
+   The logo-white.png is 1856px tall â€” must constrain
+   ============================================================= */
+@media (max-width: 991px) {
+  /* Target the exact header logo */
+  .main-header__logo img,
+  .main-header .logo-wallox img,
+  .main-header__logo a img {
+    height: 42px !important;
+    width: auto !important;
+    max-width: 150px !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  /* Shrink header inner to minimal height */
+  .main-header__inner {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    min-height: 0 !important;
+  }
+
+  .main-header {
+    padding: 0 !important;
+  }
+
+  /* Mobile hamburger lines */
+  .mobile-nav__btn span {
+    display: block !important;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    margin: 5px 0;
+  }
+
+  /* CTA button in header â€” hide on mobile */
+  .main-header__right__link {
+    display: none !important;
+  }
+}
+
+/* =============================================================
+   FINAL POLISH PASS â€” 03:13 CDT Claudia direction
+   Remove template ornaments, tighten mobile, improve hero
+   ============================================================= */
+
+/* â”€â”€ REMOVE ALL TEMPLATE DECORATIVE ELEMENTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+/* Hide ALL floating shape/blob elements globally */
+.main-slider-one__element-one,
+.main-slider-one__element-two,
+.main-slider-one__element-three,
+.main-slider-one__element-four,
+.sec-title__img,
+.sec-title__shape,
+.feature-two__shape,
+.about-one__shape,
+.about-one__shape--two,
+.about-one__thumb__shape,
+.about-one__thumb__item--two,
+.why-choose-one__shape,
+.why-choose-one__bg,
+.service-one__shape,
+.service-one__bg,
+.testimonials-contact__shape,
+[class*="__shape"],
+[class*="__bg-shape"],
+[class*="__element"] {
+  display: none !important;
+}
+
+/* â”€â”€ HERO â€” Clean, painter-at-work feel â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Hero overlay â€” lighter gradient so bright house photos stay visible */
+.main-slider-one__item::before {
+  background: linear-gradient(
+    135deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(46,42,32,0.45) 50%,
+    rgba(0,0,0,0.25) 100%
+  ) !important;
+}
+
+/* Sub-title styling */
+.main-slider-one__sub-title {
+  background: rgba(58,93,174,0.18) !important;
+  border: 1px solid rgba(58,93,174,0.5) !important;
+  border-radius: 20px !important;
+  padding: 6px 16px !important;
+  display: inline-block !important;
+  color: #3A5DAE !important;
+  font-weight: 600 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  font-size: 11px !important;
+  margin-bottom: 16px !important;
+}
+
+/* â”€â”€ TRUST BARS â€” Tighter on mobile â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 767px) {
+  .feature-two.feature-two--one {
+    padding: 20px 0 !important;
+  }
+
+  .feature-two__item {
+    padding: 14px 12px !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .feature-two__item:last-child {
+    border-bottom: none;
+  }
+
+  .feature-two__item__icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 16px !important;
+    flex-shrink: 0;
+  }
+
+  .feature-two__item__title {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Make trust bars horizontal list on mobile */
+  .feature-two__list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+}
+
+/* â”€â”€ ABOUT â€” Remove ALL gimmicky vertical elements â”€â”€â”€â”€â”€â”€â”€ */
+.about-one__thumb__item:not(:first-child),
+.about-one__thumb__bg,
+.about-one__thumb__item--two,
+.about-one__count {
+  display: none !important;
+}
+
+/* Funfact â€” fully suppressed on mobile (it's decorative) */
+@media (max-width: 767px) {
+  .about-one__funfact,
+  .count-box {
+    display: none !important;
+  }
+}
+
+/* â”€â”€ SERVICES SECTION â€” Larger cards on mobile â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 767px) {
+  /* Reset grid to single column for bigger cards */
+  .service-one__carousel {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .service-one__item__thumb {
+    height: 200px !important;
+  }
+
+  .service-one__item__thumb img {
+    height: 200px !important;
+    object-fit: cover !important;
+    clip-path: none !important;
+    border-radius: 8px 8px 0 0 !important;
+  }
+
+  .service-one__item__title {
+    font-size: 18px !important;
+  }
+
+  /* Show text on mobile for single column */
+  .service-one__item__text {
+    display: block !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    -webkit-line-clamp: 2 !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  /* Limit to 3 visible items â€” hide others */
+  .service-one__carousel .owl-item:nth-child(n+4) {
+    display: none !important;
+  }
+}
+
+/* â”€â”€ CONTACT SECTION â€” Single column mobile â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 767px) {
+  /* Stack form and contact info vertically */
+  .testimonials-contact__inner {
+    flex-direction: column !important;
+    display: flex !important;
+  }
+
+  .testimonials-contact__left,
+  .testimonials-contact__right {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+
+  .testimonials-contact__right {
+    margin-top: 30px !important;
+    padding-top: 24px !important;
+    border-top: 1px solid rgba(255,255,255,0.12) !important;
+  }
+
+  /* Form inputs full width */
+  .form-one__group {
+    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  /* CTA button full width */
+  .form-one__btn {
+    width: 100% !important;
+  }
+
+  .form-one__btn .wallox-btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* â”€â”€ HEADING COPY SPACING â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Tighter heading/tagline/body hierarchy throughout */
+.sec-title {
+  margin-bottom: 36px !important;
+}
+
+.sec-title__tagline {
+  margin-bottom: 8px !important;
+}
+
+.sec-title__title {
+  margin-bottom: 14px !important;
+}
+
+/* Sub-text under headings */
+.sec-title__text {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  max-width: 560px;
+}
+
+/* â”€â”€ FOOTER â€” Clean mobile â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 767px) {
+  /* Stack footer columns */
+  .main-footer__middle .row > [class*="col-"] {
+    margin-bottom: 28px !important;
+  }
+
+  /* Separator line between footer cols */
+  .main-footer__bottom {
+    padding: 16px 0 !important;
+    text-align: center !important;
+  }
+
+  /* Social links */
+  .main-footer__social a {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 14px !important;
+    line-height: 34px !important;
+  }
+}
+
+/* =============================================================
+   SERVICE GRID â€” static HTML, no OWL JS dependency
+   ============================================================= */
+.service-one__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .service-one__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  .service-one__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Service card in static grid */
+.service-one__grid .service-one__item {
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-one__grid .service-one__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+}
+
+/* Image â€” clean rectangle, not circle */
+.service-one__grid .service-one__item__thumb {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 0;
+  clip-path: none !important;
+  shape-outside: none !important;
+}
+
+.service-one__grid .service-one__item__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  clip-path: none !important;
+  border-radius: 0;
+  transition: transform 0.4s ease;
+}
+
+.service-one__grid .service-one__item:hover .service-one__item__thumb img {
+  transform: scale(1.04);
+}
+
+/* Content */
+.service-one__grid .service-one__item__content {
+  padding: 20px 22px !important;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-one__grid .service-one__item__title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin-bottom: 10px !important;
+  line-height: 1.3;
+}
+
+.service-one__grid .service-one__item__title a {
+  color: #1B2A4A;
+  text-decoration: none;
+}
+
+.service-one__grid .service-one__item__title a:hover {
+  color: #3A5DAE;
+}
+
+.service-one__grid .service-one__item__text {
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  color: #666 !important;
+  display: block !important;
+  flex: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.service-one__grid .service-one__item__btn {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3A5DAE;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.service-one__grid .service-one__item__btn:hover {
+  gap: 10px;
+}
+
+/* =============================================================
+   HERO OVERLAY â€” Brighter, painter-first
+   ============================================================= */
+/* Lighter overlay for bright house/painter images */
+.main-slider-one__item::before {
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.40) 50%,
+    rgba(0,0,0,0.15) 100%
+  ) !important;
+}
+
+/* Hero BG images â€” position painter/house at center-right */
+.main-slider-one__bg {
+  background-position: center right !important;
+  background-size: cover !important;
+}
+
+/* =============================================================
+   HERO TEXT â€” Cleaner, bigger, more impactful
+   ============================================================= */
+.main-slider-one__title__text {
+  font-size: 56px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  line-height: 1.05 !important;
+  letter-spacing: -1px !important;
+}
+
+@media (max-width: 767px) {
+  .main-slider-one__title__text {
+    font-size: 40px !important;
+    letter-spacing: -0.5px !important;
+  }
+  
+  /* Content left-aligned, easier to read */
+  .main-slider-one__content {
+    text-align: left !important;
+  }
+}
+
+/* Hero sub-title */
+.main-slider-one__sub-title {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #3A5DAE !important;
+}
+
+/* =============================================================
+   FIX: Jarallax + GSAP inline transforms on about section
+   ============================================================= */
+.about-one__thumb__item.real-image,
+.about-one__thumb__item.real-image > *,
+.about-one__funfact {
+  transform: none !important;
+  -webkit-transform: none !important;
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+}
+
+/* About thumb main image â€” always visible, clean */
+.about-one__thumb__item.real-image img {
+  transform: none !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 400px !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
+}
+
+/* About thumb wrapper */
+.about-one__thumb {
+  position: relative;
+  overflow: visible !important;
+}
+
+/* Suppress jarallax container that wraps background */
+.about-one .jarallax,
+.about-one .jarallax-img {
+  transform: none !important;
+  position: relative !important;
+}
+
+/* =============================================================
+   HERO â€” Brighter, painter-first (force override any old rules)
+   ============================================================= */
+.main-slider-one__item {
+  position: relative;
+}
+
+.main-slider-one__item::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.40) 55%, rgba(0,0,0,0.10) 100%) !important;
+  z-index: 1 !important;
+}
+
+.main-slider-one__content {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* =============================================================
+   FORCE hide orange funfact on desktop too â€” it's a count-box
+   placed awkwardly in the about thumb column
+   ============================================================= */
+.about-one__funfact.count-box {
+  display: none !important;
+}
+
+/* =============================================================
+   FINAL PASS â€” Tyler B 05:14 direction
+   ============================================================= */
+
+/* â”€â”€ HERO CTA BUTTONS â€” plain, clear, no icon dependency â”€â”€â”€â”€â”€ */
+.tp-btn-hero {
+  display: inline-block;
+  padding: 15px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.tp-hero-primary {
+  background: #3A5DAE;
+  color: #fff !important;
+  border: 2px solid #3A5DAE;
+}
+
+.tp-hero-primary:hover {
+  background: #2d4d9a;
+  border-color: #2d4d9a;
+  color: #fff !important;
+}
+
+.tp-hero-secondary {
+  background: transparent;
+  color: #fff !important;
+  border: 2px solid rgba(255,255,255,0.7);
+}
+
+.tp-hero-secondary:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: #fff;
+  color: #fff !important;
+}
+
+@media (max-width: 767px) {
+  .main-slider-one__btn {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+    margin-top: 24px !important;
+  }
+
+  .tp-btn-hero {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 16px 24px !important;
+    font-size: 16px !important;
+  }
+}
+
+/* â”€â”€ KILL ALL LETTER-SPACING ON EYEBROW LABELS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.sec-title__tagline,
+.topbar-two__info__subtitle,
+h6.sec-title__tagline,
+.page-header .sec-title__tagline {
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  opacity: 0.75;
+}
+
+/* Remove ALL decorative underline/image from tagline rows */
+.sec-title .d-flex {
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.sec-title__image {
+  display: none !important;
+}
+
+/* â”€â”€ SERVICE SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Service section background image (sets dark context) */
+.service-one {
+  background: #f8f5f0 !important;
+}
+
+.service-one__bg {
+  display: none !important;
+}
+
+/* Service grid cards â€” clean, readable */
+.service-one__item__title {
+  color: #1B2A4A !important;
+}
+
+/* Service bottom bar */
+.service-one__bottom {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  margin-top: 32px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.service-one__bottom__nav {
+  display: none !important;
+}
+
+.service-one__bottom__call__number {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #3A5DAE !important;
+}
+
+/* â”€â”€ CONTACT SECTION â€” honest, local, preview-safe â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.testimonials-contact {
+  background: #1B2A4A !important;
+}
+
+/* Form note â€” honest preview state */
+.contact-preview-note {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 12px;
+  font-style: italic;
+}
+
+/* Submit button */
+.form-one__btn .wallox-btn,
+.form-one__btn button {
+  background: #3A5DAE !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 14px 32px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: 4px !important;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* â”€â”€ HEADER â€” remove noise â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Topbar on desktop: clean, compact */
+.topbar-two {
+  font-size: 13px;
+}
+
+.topbar-two__info__subtitle {
+  display: none !important;
+}
+
+.topbar-two__info__location,
+.topbar-two__info .topbar-two__info__content {
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+/* â”€â”€ ABOUT SECTION â€” less template, more local â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.about-one__list__item {
+  padding: 8px 0 !important;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.about-one__list__item:last-child {
+  border-bottom: none;
+}
+
+.about-one__list__item i {
+  color: #3A5DAE;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Stars row */
+.about-one__client__star {
+  color: #3A5DAE;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.about-one__client__text {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #4a4540 !important;
+}
+
+/* â”€â”€ WHY CHOOSE â€” cleaner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.why-choose-one__feature__title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #1B2A4A !important;
+}
+
+.why-choose-one__feature__text {
+  font-size: 14px !important;
+  color: #666 !important;
+  line-height: 1.7 !important;
+}
+
+.why-choose-one__top__text {
+  font-size: 15px !important;
+  color: #555 !important;
+  border-left: 3px solid #3A5DAE;
+  padding-left: 16px;
+  font-style: normal !important;
+  line-height: 1.7 !important;
+}
+
+/* Progress bar color */
+.progress-box__bar__inner {
+  background: #3A5DAE !important;
+}
+
+/* â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.main-footer {
+  background: #111827 !important;
+}
+
+.footer-widget__title {
+  color: #fff !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2px !important;
+  margin-bottom: 18px !important;
+}
+
+.footer-widget__links a {
+  color: rgba(255,255,255,0.65) !important;
+  font-size: 14px !important;
+  transition: color 0.2s;
+}
+
+.footer-widget__links a:hover {
+  color: #3A5DAE !important;
+}
+
+.footer-widget__text {
+  color: rgba(255,255,255,0.65) !important;
+  font-size: 13px !important;
+  line-height: 1.8 !important;
+}
+
+/* Footer logo */
+.main-footer__logo img {
+  height: 48px !important;
+  width: auto !important;
+  max-width: 160px !important;
+}
+
+/* =============================================================
+   NUCLEAR LETTER-SPACING FIX â€” force all eyebrows globally
+   Overrides any JS-injected inline style or split-text
+   ============================================================= */
+.sec-title__tagline,
+.sec-title__tagline *,
+h6.sec-title__tagline,
+h6.sec-title__tagline * {
+  letter-spacing: 0.5px !important;
+  word-spacing: normal !important;
+  text-transform: uppercase !important;
+}
+
+/* Also target the split-text divs wallox.js injects into taglines */
+.sec-title .d-flex h6 > div,
+.sec-title .d-flex h6 > span {
+  display: inline !important;
+  letter-spacing: inherit !important;
+}
+
+/* Topbar subtitle labels â€” hide to reduce clutter */
+.topbar-two__info__subtitle {
+  display: none !important;
+}
+
+/* â”€â”€ SERVICE CARDS â€” clean, no ornamental arrows â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Hide the arrow/link icon from service cards */
+.service-one__item__btn .fa-solid,
+.service-one__item__btn i {
+  display: none !important;
+}
+
+.service-one__item__btn {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #3A5DAE !important;
+  text-decoration: none !important;
+  display: block !important;
+  margin-top: 10px !important;
+}
+
+/* Service card hover â€” no movement */
+.service-one__grid .service-one__item:hover {
+  transform: none !important;
+}
+
+/* â”€â”€ HERO â€” final mobile tighten â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 767px) {
+  /* Ensure hero is full viewport height minus header */
+  .main-slider-one__item {
+    min-height: calc(100vh - 70px) !important;
+    max-height: 600px !important;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Subtitle pill â€” smaller, lighter */
+  .main-slider-one__sub-title {
+    font-size: 10px !important;
+    padding: 5px 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Headline */
+  .main-slider-one__title__text {
+    font-size: 36px !important;
+    line-height: 1.1 !important;
+  }
+
+  /* CTA pair */
+  .tp-btn-hero {
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+  }
+}
+
+/* =============================================================
+   HEADER TIGHTENING â€” Tyler B 2026-04-22
+   Topbar was ~200px tall due to oversized logo
+   Target: compact topbar ~60px, full header ~110px total
+   ============================================================= */
+
+/* Topbar â€” compact strip */
+.topbar-two {
+  padding: 0 !important;
+  height: 40px !important;
+  min-height: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.topbar-two .container-fluid {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+.topbar-two__inner {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* Logo inside topbar â€” constrain height tightly */
+.topbar-two__logo img,
+.topbar-two .logo-wallox img {
+  height: 44px !important;
+  width: auto !important;
+  max-width: 160px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Info items â€” compact, single line */
+.topbar-two__info {
+  display: flex !important;
+  align-items: center !important;
+  gap: 24px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-wrap: nowrap !important;
+  width: auto !important;
+}
+
+.topbar-two__info__item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  width: auto !important;
+  flex-direction: row !important;
+}
+
+.topbar-two__info__icon {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  min-height: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 13px !important;
+  border-radius: 50% !important;
+}
+
+.topbar-two__info__content {
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1.2 !important;
+}
+
+.topbar-two__info__subtitle {
+  display: none !important;
+}
+
+.topbar-two__info__location,
+.topbar-two__info__content a,
+.topbar-two__info__content p {
+  font-size: 13px !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+}
+
+/* Right side â€” vertically centered */
+.topbar-two__right {
+  display: flex !important;
+  align-items: center !important;
+  margin-left: auto !important;
+}
+
+/* Social icons â€” compact */
+.topbar-two__social {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.topbar-two__social a {
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 13px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Main header nav â€” also tighten */
+.main-header__inner {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  min-height: 0 !important;
+}
+
+.main-header {
+  padding: 0 !important;
+}
+
+/* Nav logo â€” consistent with topbar */
+.main-header__logo img {
+  height: 44px !important;
+  width: auto !important;
+  max-width: 160px !important;
+  object-fit: contain !important;
+}
+
+/* Sticky header â€” same compact size */
+.sticky-header.sticky .main-header__inner {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+/* =================================================================
+   PASS 3 â€” Visual cleanup: service cards, hero, mobile, difference
+   ================================================================= */
+
+/* â”€â”€ Mobile topbar â€” hide entirely on small screens â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 991px) {
+  .topbar-two { display: none !important; }
+}
+
+/* â”€â”€ Hero â€” tighter mobile, better overlay â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.main-slider-one__bg {
+  background-position: center 30% !important;
+  background-size: cover !important;
+}
+
+/* Slightly deeper overlay so white text pops on any image */
+.main-slider-one__item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(10,10,20,0.68) 0%, rgba(10,10,20,0.32) 70%, rgba(10,10,20,0.10) 100%);
+  z-index: 1;
+}
+.main-slider-one__content { position: relative; z-index: 2; }
+
+@media (max-width: 767px) {
+  .main-slider-one__item {
+    min-height: 88vh !important;
+    padding-top: 80px !important;
+    display: flex;
+    align-items: center;
+  }
+  .main-slider-one__item::before {
+    background: rgba(10,10,20,0.58) !important;
+  }
+  .main-slider-one__sub-title {
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+    padding: 6px 14px !important;
+    margin-bottom: 16px !important;
+  }
+  .main-slider-one__title__text {
+    font-size: 38px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 8px !important;
+  }
+  .main-slider-one__btn {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    margin-top: 24px !important;
+  }
+  .tp-btn-hero {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 16px 24px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+  }
+}
+
+/* â”€â”€ Service cards â€” clean layout â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.service-one__item__content {
+  padding: 20px 22px 22px !important;
+  background: #fff !important;
+}
+
+.service-one__item__title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+  line-height: 1.2 !important;
+}
+.service-one__item__title a {
+  color: #1a1a2e !important;
+  text-decoration: none !important;
+}
+.service-one__item__title a:hover { color: #3A5DAE !important; }
+
+.service-one__item__tagline {
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  color: #555 !important;
+  margin: 0 0 12px !important;
+}
+
+.service-one__item__link {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #3A5DAE !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+}
+.service-one__item__link:hover { color: #c8882e !important; }
+
+/* Hide old arrow button (wallox-btn) inside service cards */
+.service-one__item .wallox-btn,
+.service-one__item__btn { display: none !important; }
+
+/* Service card thumb â€” consistent height */
+.service-one__item__thumb {
+  height: 200px !important;
+  overflow: hidden !important;
+}
+.service-one__item__thumb img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.4s ease !important;
+}
+.service-one__item:hover .service-one__item__thumb img {
+  transform: scale(1.04) !important;
+}
+
+/* Service grid â€” clean 3-col, no carousel junk */
+.service-one__grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+@media (max-width: 991px) {
+  .service-one__grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 575px) {
+  .service-one__grid { grid-template-columns: 1fr !important; }
+}
+.service-one__grid .item { display: block !important; }
+.service-one__item {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  background: #fff !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07) !important;
+  transition: box-shadow 0.3s ease !important;
+}
+.service-one__item:hover {
+  box-shadow: 0 4px 28px rgba(0,0,0,0.13) !important;
+}
+
+/* â”€â”€ "Difference" / why-choose-one â€” simplify stacked images â”€â”€â”€â”€â”€ */
+/* Single image, drop the stacked second one on mobile */
+@media (max-width: 991px) {
+  .why-choose-one__thumb-two { display: none !important; }
+  .why-choose-one__thumb-box-two { display: none !important; }
+  .why-choose-one__thumb { width: 100% !important; }
+  .why-choose-one__thumb img {
+    width: 100% !important;
+    height: 280px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+  }
+}
+
+.why-choose-one__thumb img {
+  border-radius: 8px !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+.why-choose-one__thumb-two img {
+  border-radius: 8px !important;
+  object-fit: cover !important;
+}
+
+/* blockquote style for the "difference" callout */
+.why-choose-one__top__text {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: #444 !important;
+  border-left: 3px solid #3A5DAE !important;
+  padding-left: 16px !important;
+  margin-bottom: 24px !important;
+}
+
+/* â”€â”€ Feature bar â€” icons display properly â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.feature-two__item__icon i {
+  font-size: 32px !important;
+  color: #3A5DAE !important;
+  display: block !important;
+  margin-bottom: 8px !important;
+}
+
+/* â”€â”€ About thumb â€” single clean image â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.about-one__thumb .real-image img {
+  width: 100% !important;
+  border-radius: 8px !important;
+  object-fit: cover !important;
+}
+

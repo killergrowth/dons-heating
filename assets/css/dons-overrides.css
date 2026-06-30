@@ -1,0 +1,234 @@
+﻿/* ================================================
+   Don's Heating & Air - Site Overrides  v2
+   ================================================ */
+
+/* Custom topbar replaces wallox topbar-two - no override needed */
+
+/* Header - kill the white gap between topbar and nav */
+.main-header {
+  background-color: var(--wallox-text-dark, #1B2A4A) !important;
+}
+.main-header__logo {
+  flex-shrink: 0;
+}
+.main-header__inner {
+  padding: 0 !important;
+}
+
+/* Nav CTA button - smaller pill shape, same font */
+.main-header__right__btn.wallox-btn {
+  padding: 8px 20px !important;
+  font-size: 14px !important;
+}
+
+/* Nav - slim vertical padding; no left push so items align with container edge */
+.main-header--three .main-header__nav {
+  padding-left: 0 !important;
+}
+.main-header--three .main-menu .main-menu__list > li {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+
+
+/* Why Choose section - hide animated gold decorative shapes */
+.why-choose-one__thumb-box,
+.why-choose-one__thumb-box-two {
+  display: none !important;
+}
+
+/* Footer - no gap between CTA section and footer */
+.main-footer {
+  margin-top: 0 !important;
+}
+
+/* Feature boxes - breathing room between hero and feature strip */
+.feature-two--one {
+  padding-top: 80px !important;
+}
+
+/* Painting Services section */
+.service-one .sec-title__tagline {
+  color: var(--wallox-base, #3A5DAE) !important;
+}
+.service-one {
+  background-color: var(--wallox-text-dark, #1B2A4A) !important;
+}
+.service-one .service-one__item__title a {
+  color: #1a1a2e !important;
+}
+
+/* Service cards - grid layout */
+.service-one__middle {
+  max-width: 1320px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+.service-one__grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+.service-one__item {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: #1B2A4A !important;
+}
+.service-one__item__thumb {
+  height: 420px !important;
+  overflow: hidden !important;
+}
+.service-one__item__thumb img {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+.service-one__item__title a {
+  color: #1a1a2e !important;
+}
+.service-one__item__title a:hover {
+  color: var(--wallox-base, #3A5DAE) !important;
+}
+@media (max-width: 991px) {
+  .service-one__grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 575px) {
+  .service-one__grid { grid-template-columns: 1fr !important; }
+}
+
+/* Hero headline - prevent clipping */
+.main-slider-one__content {
+  overflow: visible !important;
+}
+.main-slider-one__title__box {
+  padding-bottom: 12px !important;
+  overflow: hidden !important;
+}
+
+/* Slider sub-title - dark brand bg, no border pill */
+.main-slider-one__sub-title {
+  background-color: #1B2A4A !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 4px !important;
+}
+
+/* Josh about photo - disable wallox clipping */
+.about-one__thumb img {
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  height: auto !important;
+}
+.about-one__thumb {
+  overflow: visible !important;
+}
+
+
+}
+
+/* â”€â”€ Utility bar: responsive â€” hide email at <900px, location at <600px
+       so bar doesn't wrap to multi-line at narrow screens â”€â”€ */
+@media (max-width: 899px) {
+  .topbar-email { display: none !important; }
+}
+@media (max-width: 599px) {
+  .topbar-location { display: none !important; }
+}
+/* Hero "Our Services" button â€” outline/ghost with same pill + slide animation as nav */
+.wallox-btn--hero-secondary {
+  background: transparent !important;
+  border: 2px solid rgba(255,255,255,0.65) !important;
+  color: #fff !important;
+}
+.wallox-btn--hero-secondary::before {
+  background-color: rgba(255,255,255,0.15) !important;
+}
+.wallox-btn--hero-secondary:hover {
+  color: #fff !important;
+  background: transparent !important;
+}
+/* Hero "Get a Free Quote" â€” white slide-in animation to match nav button behavior */
+.main-slider-one__btn .wallox-btn--base::before {
+  background-color: #fff !important;
+}
+.main-slider-one__btn .wallox-btn--base:hover {
+  color: #1B2A4A !important;
+}
+/* Feature cards - icon colors */
+/* Default: dark brown icon on white circle */
+.feature-two__item .feature-two__item__icon,
+.feature-two__item .feature-two__item__icon i {
+  color: #1B2A4A !important;
+}
+/* Hover: dark card, red circle, white icon */
+.feature-two__item:hover {
+  background-color: #1B2A4A !important;
+}
+.feature-two__item:hover .feature-two__item__icon {
+  background-color: #3A5DAE !important;
+  color: #fff !important;
+}
+.feature-two__item:hover .feature-two__item__icon i {
+  color: #fff !important;
+}
+.feature-two__item:hover .feature-two__item__icon::after {
+  opacity: 0 !important;
+}
+/* About section left col - center the 5-star + button under the photo */
+.about-one__thumb ~ .about-one__client {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 16px !important;
+}
+/* Reviews: hide extra cards on mobile, show on desktop */
+.review-desktop-only { display: none !important; }
+@media (min-width: 992px) { .review-desktop-only { display: block !important; } }
+
+/* Fix breadcrumb separator - replace missing icomoon char with Font Awesome angle */
+.wallox-breadcrumb__list li:not(:last-of-type)::after {
+  content: "\f105" !important;
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  padding: 0 10px !important;
+}
+/* Fix hero container at 1550px+ â€” wallox overrides Bootstrap container to 1550px at this breakpoint */
+@media (min-width: 1550px) {
+  .main-slider-one .container {
+    max-width: 1200px !important;
+  }
+}
+
+/* Hero sub-text - matches wallox slide-in animation pattern */
+.main-slider-one__sub-text {
+  color: rgba(255,255,255,0.90);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 16px 0 28px;
+  max-width: 540px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1000ms ease, transform 1000ms ease;
+  transition-delay: 1600ms;
+}
+.main-slider-one .active .main-slider-one__sub-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Force hero item height: auto at all viewports â€” wallox locks to fixed height above 1350px */
+.main-slider-one__item {
+  height: auto !important;
+}
+
+/* About page - What We Do: right-align Learn More buttons on mobile */
+@media (max-width: 767px) {
+  .about-services-grid .feature-two__item {
+    justify-content: space-between !important;
+  }
+}
