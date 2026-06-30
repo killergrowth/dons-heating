@@ -176,7 +176,7 @@ function buildHomepage() {
 
   const sliders = [
     {
-      bg: 'dons-hero-gpt2.png',
+      bg: 'dons-hero-gpt2.webp',
       sub: 'Trusted HVAC Experts Since 1959',
       lines: ["Heating \u0026 Cooling", "Done Right"],
       btn1: { t: 'Schedule Service Today', h: '/contact/' },

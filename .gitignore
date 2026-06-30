@@ -3,3 +3,12 @@ node_modules/
 .wrangler/
 *.env
 .env.local
+
+deploy-all.mjs
+deploy.mjs
+deploy-prod.mjs
+push-staging.mjs
+install-gpt-images.mjs
+compress-gpt-images.mjs
+*-tmp.ps1
+
