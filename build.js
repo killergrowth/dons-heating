@@ -381,7 +381,7 @@ ${T.pageHeader('About Don\'s Heating & Air', '<li><span>About Us</span></li>')}
     <div class="row align-items-center gutter-y-30">
       <div class="col-lg-6" style="text-align:center;">
         <div style="overflow:visible;">
-          <img src="/assets/images/about/logo-dark.png" alt="Don  -  Owner, Don\'s Heating & Air" style="width:100%;max-width:460px;display:block;margin:0 auto;">
+          <img src="/assets/images/logo-main.png" alt="Don's Heating &amp; Air logo" style="width:100%;max-width:460px;display:block;margin:0 auto;">
           <p style="margin-top:12px;font-weight:600;font-size:1rem;color:#3a2e1e;">Don, Owner</p>
           <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:inline-block;">Get a Free Quote</a>
         </div>
