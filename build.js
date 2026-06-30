@@ -766,7 +766,7 @@ function buildServiceAreas() {
     return `
   <div class="col-md-6 col-lg-4 col-xl-3">
     <div class="wow fadeInUp" data-wow-duration="1500ms" style="background:#f4ede4;padding:25px;border-radius:8px;margin-bottom:20px;">
-      <h4 style="margin-bottom:14px;"><a href="/areas-served/${c.slug}/index.html" style="color:#1B2A4A;text-decoration:none;">${c.label}, CO</a></h4>
+      <h4 style="margin-bottom:14px;"><a href="/areas-served/${c.slug}/index.html" style="color:#1B2A4A;text-decoration:none;">${c.label}, KS</a></h4>
       <ul style="list-style:none;padding:0;margin:0 0 14px;">${serviceLinks}</ul>
       <a href="/areas-served/${c.slug}/index.html" style="font-size:12px;font-weight:700;color:#3A5DAE;text-decoration:none;text-transform:uppercase;letter-spacing:1px;">All services in ${c.label} &rarr;</a>
     </div>
@@ -782,9 +782,12 @@ ${T.pageHeader('Areas Served  -  Central Kansas', '<li><span>Areas Served</span>
   <div class="container">
     <div class="sec-title text-center">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">where we work</p></div>
-      <h3 class="sec-title__title">Painting Services Across Central Kansas</h3>
+      <h3 class="sec-title__title">HVAC Services Across Central Kansas</h3>
     </div>
-    <p class="text-center" style="margin:20px auto 50px;max-width:700px;">${CLIENT.name} serves homeowners and commercial property owners throughout the Central Kansas I-25 corridor. Select your city below to learn more about our services in your area.</p>
+    <div style="text-align:center;margin:0 auto 40px;max-width:860px;">
+      <img src="/assets/images/Dons-Website-Location-Map.jpg" alt="Service area map for Central Kansas" style="width:100%;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.12);" loading="lazy">
+    </div>
+    <p class="text-center" style="margin:20px auto 50px;max-width:700px;">${CLIENT.name} serves homeowners and businesses throughout Central Kansas. Select your city below to see all HVAC services we offer in your area.</p>
     <div class="row gutter-y-30">${cityGrid}</div>
   </div>
 </section>
@@ -1612,6 +1615,7 @@ function buildGetAQuote() {
 buildGetAQuote();
 // Generate sitemap from actual dist/ contents
 generateSitemap({ distDir: DIST, siteRoot: ROOT, domain: SITE_DOMAIN });
+
 
 
 

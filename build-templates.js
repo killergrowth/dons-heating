@@ -356,7 +356,7 @@ function serviceCarouselItems() {
     </div>
   </div></div>`).join('\n');
   const areasBox = `<div class="item"><div class="service-one__item" style="background:#f4ede4;">
-    <div class="service-one__item__thumb"><img src="/assets/images/service/areas-served-map.jpg" alt="Central Kansas service area map" loading="lazy"></div>
+    <div class="service-one__item__thumb"><img src="/assets/images/Dons-Website-Location-Map.jpg" alt="Don's Heating &amp; Air service area map - Central Kansas" loading="lazy"></div>
     <div class="service-one__item__content">
       <h4 class="service-one__item__title"><a href="/areas-served/index.html">See Areas We Serve</a></h4>
       <p class="service-one__item__tagline">Serving El Dorado, Hillsboro, Emporia and more across Central Kansas.</p>
@@ -462,6 +462,7 @@ onTTFB(sendVital);
 }
 
 module.exports = { htmlHead, htmlScripts, topbar, pageHeader, mobileNav, contactFormSection, faqBlock, serviceCarouselItems, wrapBody };
+
 
 
 
