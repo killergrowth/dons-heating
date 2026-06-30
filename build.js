@@ -355,7 +355,7 @@ ${T.topbar()}
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
     </div>
   </div>
 </section>
@@ -469,7 +469,7 @@ ${T.pageHeader('About Don\'s Heating & Air', '<li><span>About Us</span></li>')}
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
     </div>
   </div>
 </section>
@@ -651,7 +651,7 @@ ${serviceReviewsSection}
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
     </div>
   </div>
 </section>
@@ -784,11 +784,11 @@ ${T.pageHeader('Areas Served  -  Central Kansas', '<li><span>Areas Served</span>
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">where we work</p></div>
       <h3 class="sec-title__title">HVAC Services Across Central Kansas</h3>
     </div>
-    <div style="text-align:center;margin:0 auto 40px;max-width:860px;">
+    <p class="text-center" style="margin:20px auto 50px;max-width:700px;">${CLIENT.name} serves homeowners and businesses throughout Central Kansas. Select your city below to see all HVAC services we offer in your area.</p>
+    <div class="row justify-content-center gutter-y-30">${cityGrid}</div>
+    <div style="text-align:center;margin:60px auto 0;max-width:860px;">
       <img src="/assets/images/Dons-Website-Location-Map.jpg" alt="Service area map for Central Kansas" style="width:100%;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.12);" loading="lazy">
     </div>
-    <p class="text-center" style="margin:20px auto 50px;max-width:700px;">${CLIENT.name} serves homeowners and businesses throughout Central Kansas. Select your city below to see all HVAC services we offer in your area.</p>
-    <div class="row gutter-y-30">${cityGrid}</div>
   </div>
 </section>
 
@@ -803,7 +803,7 @@ ${T.pageHeader('Areas Served  -  Central Kansas', '<li><span>Areas Served</span>
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
     </div>
   </div>
 </section>
@@ -872,7 +872,7 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
     </div>
   </div>
 </section>
@@ -1022,7 +1022,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
     </div>
   </div>
 </section>
@@ -1102,7 +1102,7 @@ ${T.pageHeader('Project Gallery', '<li><span>Gallery</span></li>')}
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
     </div>
   </div>
 </section>
@@ -1421,7 +1421,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
     </div>
   </div>
 </section>
