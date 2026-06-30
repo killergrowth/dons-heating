@@ -12,3 +12,6 @@ install-gpt-images.mjs
 compress-gpt-images.mjs
 *-tmp.ps1
 
+
+_*.mjs
+

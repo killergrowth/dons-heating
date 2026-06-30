@@ -1,1 +1,42 @@
-{ "rating": null, "userRatingCount": 0, "reviews": [] }
+{
+  "rating": 4.9,
+  "userRatingCount": 279,
+  "fetchedAt": "2026-06-30T03:24:13.348Z",
+  "reviews": [
+    {
+      "author": "Jerrie Mathews",
+      "rating": 5,
+      "relativeTime": "2 weeks ago",
+      "text": "Had HVAC service done. Chandler was very nice and well knowledgeable. Dons was able to come out within an hour after being called. The work was done very quickly and we were back to being comfortable in our home.",
+      "publishTime": "2026-06-12T13:33:33.673519565Z"
+    },
+    {
+      "author": "Holly Ramsett",
+      "rating": 5,
+      "relativeTime": "3 weeks ago",
+      "text": "The gentlemen that came out to fix air conditioner were very nice.  They explained the issue clearly and did the work quickly.  We definitely will use Don's again!",
+      "publishTime": "2026-06-05T09:33:46.268879094Z"
+    },
+    {
+      "author": "Shari Thompson",
+      "rating": 5,
+      "relativeTime": "3 months ago",
+      "text": "I'm picky and precise. This at times causes me anxiety however I'm completely satisfied with the work the guys done out here today for me! They were on time, professional and worked hard to get the job done correctly and in timely manner. I'm very thankful! Moving forward I will definitely be using Don's heating and Air for any and all of my future needs. I want to thank the ladies in the offices too for all their hard work. Their friendliness is unmatched.\nThanks everyone 😊",
+      "publishTime": "2026-03-09T20:38:37.838396848Z"
+    },
+    {
+      "author": "Alyce L.",
+      "rating": 5,
+      "relativeTime": "2 months ago",
+      "text": "Service was very quick; within just over an hour. Serviceman was knowledgeable, courteous, and efficient. He had our air conditioner up & running within minutes it seemed like!",
+      "publishTime": "2026-04-28T18:04:01.892131084Z"
+    },
+    {
+      "author": "Herb Llewellyn",
+      "rating": 5,
+      "relativeTime": "a year ago",
+      "text": "My system died!  Called Don’s and they got right on it.  Took all of my priorities and put together a plan and replaced all the mechanical equipment.  From failure to back up was just four days!  Luckily, the weather was nice over the weekend.  The team at Don’s made it easy.  Definitely would have met Dons expectations.",
+      "publishTime": "2025-03-12T14:14:08.199273Z"
+    }
+  ]
+}
