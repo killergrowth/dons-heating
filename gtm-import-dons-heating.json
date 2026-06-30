@@ -1,0 +1,197 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-06-30 15:53:00",
+  "containerVersion": {
+    "path": "accounts/ACCOUNT_ID/containers/CONTAINER_ID/versions/0",
+    "accountId": "ACCOUNT_ID",
+    "containerId": "CONTAINER_ID",
+    "containerVersionId": "0",
+    "container": {
+      "path": "accounts/ACCOUNT_ID/containers/CONTAINER_ID",
+      "accountId": "ACCOUNT_ID",
+      "containerId": "CONTAINER_ID",
+      "name": "donsheatingandair.com",
+      "publicId": "GTM-NBQ3H8W9",
+      "usageContext": ["WEB"]
+    },
+    "builtInVariable": [
+      { "accountId": "ACCOUNT_ID", "containerId": "CONTAINER_ID", "type": "CLICK_URL",    "name": "Click URL" },
+      { "accountId": "ACCOUNT_ID", "containerId": "CONTAINER_ID", "type": "CLICK_CLASSES", "name": "Click Classes" },
+      { "accountId": "ACCOUNT_ID", "containerId": "CONTAINER_ID", "type": "CLICK_TEXT",    "name": "Click Text" },
+      { "accountId": "ACCOUNT_ID", "containerId": "CONTAINER_ID", "type": "SCROLL_DEPTH_THRESHOLD", "name": "Scroll Depth Threshold" }
+    ],
+    "trigger": [
+      {
+        "accountId": "ACCOUNT_ID",
+        "containerId": "CONTAINER_ID",
+        "triggerId": "1",
+        "name": "KG - Phone Click",
+        "type": "CLICK",
+        "filter": [
+          {
+            "type": "CONTAINS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "tel:" }
+            ]
+          }
+        ],
+        "parameter": [
+          { "type": "BOOLEAN", "key": "waitForTags",      "value": "true"  },
+          { "type": "BOOLEAN", "key": "checkValidation",  "value": "true"  },
+          { "type": "BOOLEAN", "key": "waitForTagsTimeout", "value": "2000" }
+        ]
+      },
+      {
+        "accountId": "ACCOUNT_ID",
+        "containerId": "CONTAINER_ID",
+        "triggerId": "2",
+        "name": "KG - Form Submit Success",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "form_submit_success" }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "ACCOUNT_ID",
+        "containerId": "CONTAINER_ID",
+        "triggerId": "3",
+        "name": "KG - CTA Click",
+        "type": "CLICK",
+        "filter": [
+          {
+            "type": "CONTAINS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{Click Classes}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "wallox-btn" }
+            ]
+          }
+        ],
+        "parameter": [
+          { "type": "BOOLEAN", "key": "waitForTags",        "value": "true"  },
+          { "type": "BOOLEAN", "key": "checkValidation",    "value": "true"  },
+          { "type": "TEMPLATE", "key": "waitForTagsTimeout","value": "2000" }
+        ]
+      },
+      {
+        "accountId": "ACCOUNT_ID",
+        "containerId": "CONTAINER_ID",
+        "triggerId": "4",
+        "name": "KG - Scroll Depth 50pct",
+        "type": "SCROLL_DEPTH",
+        "parameter": [
+          { "type": "BOOLEAN",  "key": "verticalThresholdPercents", "value": "true"  },
+          { "type": "TEMPLATE", "key": "verticalThresholdsPercent", "value": "50,90" },
+          { "type": "BOOLEAN",  "key": "orDepthGreaterThan",        "value": "false" }
+        ]
+      },
+      {
+        "accountId": "ACCOUNT_ID",
+        "containerId": "CONTAINER_ID",
+        "triggerId": "5",
+        "name": "KG - All Pages",
+        "type": "PAGEVIEW"
+      }
+    ],
+    "tag": [
+      {
+        "accountId": "ACCOUNT_ID",
+        "containerId": "CONTAINER_ID",
+        "tagId": "10",
+        "name": "GA4 - Configuration",
+        "type": "googtag",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "id", "value": "G-YD6EGCMW41" }
+        ],
+        "firingTriggerId": ["5"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "ACCOUNT_ID",
+        "containerId": "CONTAINER_ID",
+        "tagId": "11",
+        "name": "GA4 - phone_click",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "eventName",    "value": "phone_click" },
+          { "type": "TEMPLATE", "key": "measurementId", "value": "G-YD6EGCMW41" },
+          { "type": "LIST", "key": "eventParameters", "list": [
+            { "type": "MAP", "map": [
+              { "type": "TEMPLATE", "key": "name",  "value": "click_url" },
+              { "type": "TEMPLATE", "key": "value", "value": "{{Click URL}}" }
+            ]}
+          ]},
+          { "type": "BOOLEAN", "key": "sendEcommerceData", "value": "false" }
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "ACCOUNT_ID",
+        "containerId": "CONTAINER_ID",
+        "tagId": "12",
+        "name": "GA4 - generate_lead (form submit)",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "eventName",     "value": "generate_lead" },
+          { "type": "TEMPLATE", "key": "measurementId", "value": "G-YD6EGCMW41" },
+          { "type": "LIST", "key": "eventParameters", "list": [
+            { "type": "MAP", "map": [
+              { "type": "TEMPLATE", "key": "name",  "value": "form_type" },
+              { "type": "TEMPLATE", "key": "value", "value": "contact_form" }
+            ]}
+          ]},
+          { "type": "BOOLEAN", "key": "sendEcommerceData", "value": "false" }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "ACCOUNT_ID",
+        "containerId": "CONTAINER_ID",
+        "tagId": "13",
+        "name": "GA4 - cta_click",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "eventName",     "value": "cta_click" },
+          { "type": "TEMPLATE", "key": "measurementId", "value": "G-YD6EGCMW41" },
+          { "type": "LIST", "key": "eventParameters", "list": [
+            { "type": "MAP", "map": [
+              { "type": "TEMPLATE", "key": "name",  "value": "cta_text" },
+              { "type": "TEMPLATE", "key": "value", "value": "{{Click Text}}" }
+            ]}
+          ]},
+          { "type": "BOOLEAN", "key": "sendEcommerceData", "value": "false" }
+        ],
+        "firingTriggerId": ["3"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "ACCOUNT_ID",
+        "containerId": "CONTAINER_ID",
+        "tagId": "14",
+        "name": "GA4 - scroll_depth",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "eventName",     "value": "scroll_depth" },
+          { "type": "TEMPLATE", "key": "measurementId", "value": "G-YD6EGCMW41" },
+          { "type": "LIST", "key": "eventParameters", "list": [
+            { "type": "MAP", "map": [
+              { "type": "TEMPLATE", "key": "name",  "value": "percent_scrolled" },
+              { "type": "TEMPLATE", "key": "value", "value": "{{Scroll Depth Threshold}}" }
+            ]}
+          ]},
+          { "type": "BOOLEAN", "key": "sendEcommerceData", "value": "false" }
+        ],
+        "firingTriggerId": ["4"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      }
+    ]
+  }
+}
