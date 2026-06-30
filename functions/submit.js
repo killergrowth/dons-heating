@@ -6,7 +6,7 @@
  */
 
 const RECIPIENT = 'brickley@killergrowth.com';
-const SUBJECT   = "New Quote Request — Don's Heating & Air";
+const SUBJECT   = "New Form Submission | Don's Heating & Air";
 
 const ALLOWED_ORIGINS = [
   'https://donsheatingandair.com',
