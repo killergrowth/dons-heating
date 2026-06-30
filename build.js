@@ -246,7 +246,7 @@ ${T.topbar()}
     <div class="row align-items-start gutter-y-30">
       <div class="col-lg-6">
         <div class="about-one__thumb">
-          <div class="about-one__thumb__item real-image"><picture><source srcset="/assets/images/backgrounds/dons-hero.webp" type="image/webp"><img src="/assets/images/backgrounds/dons-hero.jpg" loading="lazy" width="570" height="600" alt="Don&apos;s Heating &amp; Air - HVAC Experts in El Dorado, KS"></picture></div>
+          <div class="about-one__thumb__item real-image"><picture><source srcset="/assets/images/backgrounds/dons-hero-wide.png" type="image/webp"><img src="/assets/images/backgrounds/dons-hero-wide.png" loading="lazy" width="570" height="600" alt="Don&apos;s Heating &amp; Air - HVAC Experts in El Dorado, KS"></picture></div>
           <div class="about-one__funfact count-box">
             <h3 class="about-one__count"><span class="count-text" data-stop="65" data-speed="1500"></span><span>+</span></h3>
             <p class="about-one__funfact__text">years of<br>trusted service</p>
@@ -365,7 +365,7 @@ ${T.contactFormSection()}`;
   // Inject reviews section and schema
   const finalContent = schemaTag + '\n' + content.replace('<!-- REVIEWS -->', reviewsSection);
 
-  write('index.html', `${T.htmlHead(`${CLIENT.name} | Trusted HVAC Services in Central Kansas`, CLIENT.description, 'https://donsheatingandair.com/', '/assets/images/backgrounds/dons-hero.jpg')}
+  write('index.html', `${T.htmlHead(`${CLIENT.name} | Trusted HVAC Services in Central Kansas`, CLIENT.description, 'https://donsheatingandair.com/', '/assets/images/backgrounds/dons-hero-wide.png')}
 ${T.wrapBody(finalContent)}`);
 }
 
@@ -1612,6 +1612,7 @@ function buildGetAQuote() {
 buildGetAQuote();
 // Generate sitemap from actual dist/ contents
 generateSitemap({ distDir: DIST, siteRoot: ROOT, domain: SITE_DOMAIN });
+
 
 
 
