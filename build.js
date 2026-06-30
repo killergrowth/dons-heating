@@ -246,7 +246,7 @@ ${T.topbar()}
     <div class="row align-items-start gutter-y-30">
       <div class="col-lg-6">
         <div class="about-one__thumb">
-          <div class="about-one__thumb__item real-image"><picture><source srcset="/assets/images/backgrounds/dons-hero-wide.png" type="image/webp"><img src="/assets/images/backgrounds/dons-hero-wide.png" loading="lazy" width="570" height="600" alt="Don&apos;s Heating &amp; Air - HVAC Experts in El Dorado, KS"></picture></div>
+          <div class="about-one__thumb__item real-image"><picture><source srcset="/assets/images/backgrounds/dons-about-thermostat.png" type="image/png"><img src="/assets/images/backgrounds/dons-about-thermostat.png" loading="lazy" width="570" height="600" alt="Smart thermostat HVAC control by Don&apos;s Heating &amp; Air in El Dorado, KS"></picture></div>
           <div class="about-one__funfact count-box">
             <h3 class="about-one__count"><span class="count-text" data-stop="65" data-speed="1500"></span><span>+</span></h3>
             <p class="about-one__funfact__text">years of<br>trusted service</p>
@@ -584,6 +584,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
           <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">${d.tagline}</p></div>
           <h3 class="sec-title__title" style="margin-bottom:0;">${d.heroTitle}</h3>
         </div>
+        ${(() => { const svc = SERVICES.find(s => s.slug === slug); return svc ? `<div style="margin:24px 0 32px;"><picture><img src="/assets/images/service/${svc.img}" alt="${svc.label} in Central Kansas" loading="lazy" style="width:100%;height:360px;object-fit:cover;border-radius:10px;"></picture></div>` : ''; })()}
         ${d.intro.split('\n\n').map(p => `<p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">${p}</p>`).join('\n')}
         <div style="margin:40px 0;">
           <div class="sec-title text-start" style="padding-bottom:0;">

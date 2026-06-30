@@ -1,0 +1,79 @@
+{
+  "clientSlug": "dons-heating",
+  "clientName": "Don's Heating & Air",
+  "domain": "donsheatingandair.com",
+  "runDate": "2026-06-30",
+  "type": "baseline",
+  "checksRun": 12,
+  "checksPassed": 8,
+  "checksFailed": 4,
+  "openCritical": 0,
+  "openWarnings": 4,
+  "pagesIndexed": 0,
+  "onpageScore": 99.14,
+  "domainChecks": {
+    "sitemap": true,
+    "robotsTxt": true,
+    "ssl": true,
+    "httpsRedirect": true
+  },
+  "pageHealth": {
+    "broken4xx": 0,
+    "broken5xx": 0,
+    "brokenLinks": 0,
+    "duplicateTitles": 0,
+    "duplicateContent": 12,
+    "missingTitles": 0,
+    "missingDescriptions": 8,
+    "missingH1": 0,
+    "missingAltText": 1,
+    "renderBlocking": 96,
+    "slowPages": 0,
+    "linksToRedirects": 4
+  },
+  "pagespeed": {
+    "mobile": {
+      "performance": 58,
+      "seo": null,
+      "accessibility": null,
+      "bestPractices": null,
+      "lcp": "12.7 s",
+      "cls": "0",
+      "fcp": "5.6 s",
+      "tbt": "160 ms"
+    },
+    "desktop": {
+      "performance": 70,
+      "seo": null,
+      "accessibility": null,
+      "bestPractices": null,
+      "lcp": "2.1 s",
+      "cls": "0.345",
+      "fcp": "1.0 s",
+      "tbt": "80 ms"
+    }
+  },
+  "issuesFlagged": [
+    {
+      "checkId": "V2",
+      "severity": "warning",
+      "description": "12 duplicate content pages"
+    },
+    {
+      "checkId": "M4",
+      "severity": "warning",
+      "description": "8 pages missing meta descriptions"
+    },
+    {
+      "checkId": "M9",
+      "severity": "warning",
+      "description": "1 pages missing image alt text"
+    },
+    {
+      "checkId": "W4",
+      "severity": "warning",
+      "description": "Render-blocking resources on 96 pages"
+    }
+  ],
+  "notes": "Baseline audit — Month 1 one-time run"
+}
