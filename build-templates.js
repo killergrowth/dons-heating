@@ -296,7 +296,6 @@ function contactFormSection() {
                   style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;border-radius:5px;padding:10px 14px;width:100%;min-height:110px;"></textarea>
               </div>
               <div class="form-one__control form-one__control--full" style="grid-column:1/-1;">
-                <div class="cf-turnstile" data-sitekey="0x4AAAAAADpT5f2gM80jpJHh" data-theme="dark" style="margin-bottom:12px;"></div>
                 <button type="submit" class="wallox-btn wallox-btn--base" style="width:100%;">Request a Quote</button>
               </div>
             </div>
@@ -385,7 +384,7 @@ document.addEventListener("DOMContentLoaded", function fixTransforms() {
   if (funfact) { funfact.style.transform = "none"; }
 });
 </script>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
 <script>
 (function () {
   function attachFormHandler(formId, formType, successHtml) {
@@ -410,12 +409,10 @@ document.addEventListener("DOMContentLoaded", function fixTransforms() {
           form.replaceWith(thankYou);
         } else {
           if (btn) { btn.disabled = false; btn.textContent = orig; }
-          if (window.turnstile) window.turnstile.reset();
           alert('Something went wrong. Please call us at (316) 321-9438.');
         }
       } catch (err) {
         if (btn) { btn.disabled = false; btn.textContent = orig; }
-        if (window.turnstile) window.turnstile.reset();
         alert('Something went wrong. Please call us at (316) 321-9438.');
       }
     });
@@ -427,7 +424,7 @@ document.addEventListener("DOMContentLoaded", function fixTransforms() {
     );
     attachFormHandler(
       'contact-form', 'contact_form',
-      '<p style="color:#3A5DAE;font-size:22px;font-weight:700;margin-bottom:12px;">Message Sent!</p><p style="color:#5a5650;font-size:15px;line-height:1.7;">We received your message and will get back to you same-day. Josh replies to everything personally.</p>'
+      '<p style="color:#3A5DAE;font-size:22px;font-weight:700;margin-bottom:12px;">Message Sent!</p><p style="color:#5a5650;font-size:15px;line-height:1.7;">We received your message and will get back to you same-day.</p>'
     );
   });
 }());

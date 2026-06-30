@@ -704,7 +704,7 @@ ${T.topbar()}
       <div>
         <div class="contact-card">
           <h3 style="margin:0 0 6px;font-size:20px;font-weight:700;color:#1B2A4A;">Send Us a Message</h3>
-          <p style="margin:0 0 20px;font-size:14px;color:#5a5650;line-height:1.55;">Use the form below or call us directly. Every message gets a personal reply from Josh.</p>
+          <p style="margin:0 0 20px;font-size:14px;color:#5a5650;line-height:1.55;">Use the form below or call us directly. We respond same-day.</p>
           <form id="contact-form" action="/submit" method="POST">
             <div style="display:flex;flex-direction:column;gap:12px;">
               <input class="contact-input" type="text" name="name" placeholder="Your Name *" required>
@@ -715,7 +715,6 @@ ${T.topbar()}
                 ${SERVICES.map(s => `<option value="${s.slug}">${s.label}</option>`).join('')}
               </select>
               <textarea class="contact-textarea" name="message" placeholder="Tell us about your project" rows="5"></textarea>
-              <div class="cf-turnstile" data-sitekey="0x4AAAAAADpT5f2gM80jpJHh" style="margin-bottom:4px;"></div>
               <button type="submit" class="contact-submit">Send Message</button>
             </div>
           </form>

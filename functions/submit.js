@@ -1,8 +1,29 @@
 /**
- * Cloudflare Pages Function — /submit
- * Returns JSON { ok: true } or { ok: false, error: string }
+ * Cloudflare Pages Function → /submit
+ * Don's Heating & Air — contact form handler
  * Sends a branded HTML email via Gmail API (service account JWT auth).
+ * Returns JSON { ok: true } or { ok: false, error: string }
  */
+
+const RECIPIENT = 'brickley@killergrowth.com';
+const SUBJECT   = "New Quote Request — Don's Heating & Air";
+
+const ALLOWED_ORIGINS = [
+  'https://donsheatingandair.com',
+  'https://www.donsheatingandair.com',
+  'https://dons-heating.pages.dev',
+  'https://staging.dons-heating.pages.dev',
+];
+
+function corsHeaders(origin) {
+  const allowed = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  return {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': allowed,
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+}
 
 function objToB64url(obj) {
   const json = JSON.stringify(obj);
@@ -65,56 +86,56 @@ function buildHtmlEmail(name, email, phone, service, message) {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body style="margin:0;padding:0;background:#f4f0eb;font-family:'Open Sans',Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f0eb;padding:40px 0;">
+<body style="margin:0;padding:0;background:#f0f4fb;font-family:'Open Sans',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f0f4fb;padding:40px 0;">
     <tr><td align="center">
       <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
 
         <!-- Header -->
-        <tr><td style="background:#2E2A20;padding:36px 40px;text-align:center;border-radius:8px 8px 0 0;">
-          <img src="https://timnathpainting.com/assets/images/logo-email-v3.png" alt="Timnath Painting" style="max-width:280px;width:100%;height:auto;display:block;margin:0 auto 20px;">
-          <div style="color:#DF9E42;font-family:'Oswald',Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:3px;text-transform:uppercase;">New Quote Request</div>
+        <tr><td style="background:#1B2A4A;padding:36px 40px;text-align:center;border-radius:8px 8px 0 0;">
+          <div style="color:#3A5DAE;font-family:'Oswald',Arial,sans-serif;font-size:22px;font-weight:700;letter-spacing:1px;">DON'S HEATING &amp; AIR</div>
+          <div style="color:#fff;font-family:'Oswald',Arial,sans-serif;font-size:13px;font-weight:400;letter-spacing:3px;text-transform:uppercase;margin-top:6px;">New Quote Request</div>
         </td></tr>
 
         <!-- Body -->
         <tr><td style="background:#ffffff;padding:36px 40px;">
-          <p style="margin:0 0 24px;color:#2E2A20;font-family:'Open Sans',Arial,sans-serif;font-size:15px;line-height:1.6;">
-            A new quote request was submitted through the Timnath Painting website. Here are the details:
+          <p style="margin:0 0 24px;color:#1B2A4A;font-family:'Open Sans',Arial,sans-serif;font-size:15px;line-height:1.6;">
+            A new quote request was submitted through the Don's Heating &amp; Air website. Here are the details:
           </p>
 
           <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
             <tr>
-              <td style="padding:12px 16px;background:#f9f5f0;border-left:3px solid #DF9E42;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;width:120px;">Name</td>
-              <td style="padding:12px 16px;background:#f9f5f0;font-size:15px;color:#2E2A20;font-weight:bold;">${name}</td>
+              <td style="padding:12px 16px;background:#f0f4fb;border-left:3px solid #3A5DAE;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;width:120px;">Name</td>
+              <td style="padding:12px 16px;background:#f0f4fb;font-size:15px;color:#1B2A4A;font-weight:bold;">${name}</td>
             </tr>
             <tr>
               <td style="padding:12px 16px;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;">Email</td>
-              <td style="padding:12px 16px;font-size:15px;color:#2E2A20;"><a href="mailto:${email}" style="color:#DF9E42;">${email}</a></td>
+              <td style="padding:12px 16px;font-size:15px;color:#1B2A4A;"><a href="mailto:${email}" style="color:#3A5DAE;">${email}</a></td>
             </tr>
             <tr>
-              <td style="padding:12px 16px;background:#f9f5f0;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;">Phone</td>
-              <td style="padding:12px 16px;background:#f9f5f0;font-size:15px;color:#2E2A20;">${phone || 'Not provided'}</td>
+              <td style="padding:12px 16px;background:#f0f4fb;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;">Phone</td>
+              <td style="padding:12px 16px;background:#f0f4fb;font-size:15px;color:#1B2A4A;">${phone || 'Not provided'}</td>
             </tr>
             <tr>
               <td style="padding:12px 16px;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;">Service</td>
-              <td style="padding:12px 16px;font-size:15px;color:#2E2A20;">${serviceLabel}</td>
+              <td style="padding:12px 16px;font-size:15px;color:#1B2A4A;">${serviceLabel}</td>
             </tr>
           </table>
 
           ${message ? `
           <div style="margin-top:24px;">
             <div style="font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Message</div>
-            <div style="background:#f9f5f0;border-left:3px solid #DF9E42;padding:16px;font-size:15px;color:#2E2A20;line-height:1.7;">${message.replace(/\n/g,'<br>')}</div>
+            <div style="background:#f0f4fb;border-left:3px solid #3A5DAE;padding:16px;font-size:15px;color:#1B2A4A;line-height:1.7;">${message.replace(/\n/g,'<br>')}</div>
           </div>` : ''}
 
-          ${phone ? `<div style="margin-top:32px;text-align:center;"><a href="tel:${phone.replace(/\D/g,'')}" style="display:inline-block;background:#DF9E42;color:#2E2A20;font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:16px;font-weight:700;padding:14px 36px;border-radius:4px;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">Call ${phone}</a></div>` : ''}
+          ${phone ? `<div style="margin-top:32px;text-align:center;"><a href="tel:${phone.replace(/\D/g,'')}" style="display:inline-block;background:#3A5DAE;color:#fff;font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:16px;font-weight:700;padding:14px 36px;border-radius:4px;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">Call ${phone}</a></div>` : ''}
         </td></tr>
 
         <!-- Footer -->
-        <tr><td style="background:#2E2A20;padding:24px 40px;text-align:center;border-radius:0 0 8px 8px;">
+        <tr><td style="background:#1B2A4A;padding:24px 40px;text-align:center;border-radius:0 0 8px 8px;">
           <p style="margin:0;color:#888;font-size:12px;">
-            Timnath Painting &bull; Timnath, CO 80547 &bull;
-            <a href="mailto:josh@timnathpainting.com" style="color:#DF9E42;">josh@timnathpainting.com</a>
+            Don's Heating &amp; Air &bull; 306 S. Main St, El Dorado, KS 67042 &bull;
+            <a href="tel:3163219438" style="color:#3A5DAE;">(316) 321-9438</a>
           </p>
         </td></tr>
 
@@ -125,12 +146,15 @@ function buildHtmlEmail(name, email, phone, service, message) {
 </html>`;
 }
 
-const JSON_HEADERS = {
-  'Content-Type': 'application/json',
-  'Access-Control-Allow-Origin': 'https://timnathpainting.com',
-};
+export async function onRequestOptions({ request }) {
+  const origin = request.headers.get('Origin') || '';
+  return new Response(null, { status: 204, headers: corsHeaders(origin) });
+}
 
 export async function onRequestPost({ request, env }) {
+  const origin = request.headers.get('Origin') || '';
+  const headers = corsHeaders(origin);
+
   try {
     const form    = await request.formData();
     const name    = form.get('name')    || '(no name)';
@@ -139,38 +163,18 @@ export async function onRequestPost({ request, env }) {
     const service = form.get('service') || '';
     const message = form.get('message') || '';
 
-    // --- Cloudflare Turnstile verification ---
-    const turnstileToken = form.get('cf-turnstile-response') || '';
-    const turnstileSecret = env.TURNSTILE_SECRET || '1x0000000000000000000000000000000AA'; // fallback = test secret
-    const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `secret=${encodeURIComponent(turnstileSecret)}&response=${encodeURIComponent(turnstileToken)}`,
-    });
-    const verifyData = await verifyRes.json();
-    if (!verifyData.success) {
-      return new Response(JSON.stringify({ ok: false, error: 'Bot check failed. Please try again.' }), {
-        status: 400,
-        headers: JSON_HEADERS,
-      });
-    }
-    // --- end Turnstile verification ---
-
     const accessToken = await getGmailAccessToken(
       env.GMAIL_SERVICE_EMAIL,
       env.GMAIL_PRIVATE_KEY,
       env.GMAIL_FROM
     );
 
-    const subject = 'New Quote Request - Timnath Painting';
     const htmlBody = buildHtmlEmail(name, email, phone, service, message);
 
-    // Build MIME multipart message (HTML only)
     const mimeLines = [
-      `From: Timnath Painting <${env.GMAIL_FROM}>`,
-      `To: ${env.GMAIL_TO}`,
-      `Cc: josh@timnathpainting.com`,
-      `Subject: ${subject}`,
+      `From: Don's Heating & Air <${env.GMAIL_FROM}>`,
+      `To: ${RECIPIENT}`,
+      `Subject: ${SUBJECT}`,
       `MIME-Version: 1.0`,
       `Content-Type: text/html; charset=UTF-8`,
       '',
@@ -196,13 +200,13 @@ export async function onRequestPost({ request, env }) {
       throw new Error('Gmail send ' + sendRes.status + ': ' + err.slice(0, 200));
     }
 
-    return new Response(JSON.stringify({ ok: true }), { headers: JSON_HEADERS });
+    return new Response(JSON.stringify({ ok: true }), { headers });
 
   } catch (err) {
     console.error('submit error:', err.message);
     return new Response(JSON.stringify({ ok: false, error: err.message.slice(0, 200) }), {
       status: 500,
-      headers: JSON_HEADERS,
+      headers,
     });
   }
 }
