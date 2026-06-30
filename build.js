@@ -449,9 +449,14 @@ ${T.pageHeader('About Don\'s Heating & Air', '<li><span>About Us</span></li>')}
         </div>
       </div>`).join('\n')}
       <div class="col-md-6 col-lg-4">
-        <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:space-between;min-height:140px;">
-          <p class="feature-two__item__title" style="margin-bottom:10px;"><a href="/areas-served/index.html">See Areas We Serve</a></p>
-          <a href="/areas-served/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;">View All Areas</a>
+        <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:0;border:1px solid #e4dacc;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;">
+          <a href="/areas-served/index.html" style="display:block;">
+            <img src="/assets/images/dons-service-area-map.png" alt="Don's Heating & Air service area — Central Kansas" style="width:100%;height:160px;object-fit:cover;display:block;" loading="lazy">
+          </a>
+          <div style="padding:20px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;justify-content:center;">
+            <p class="feature-two__item__title" style="margin:0;"><a href="/areas-served/index.html">See Areas We Serve</a></p>
+            <a href="/areas-served/index.html" class="wallox-btn wallox-btn--base">View All Areas</a>
+          </div>
         </div>
       </div>
     </div>
@@ -787,7 +792,7 @@ ${T.pageHeader('Areas Served  -  Central Kansas', '<li><span>Areas Served</span>
     <p class="text-center" style="margin:20px auto 50px;max-width:700px;">${CLIENT.name} serves homeowners and businesses throughout Central Kansas. Select your city below to see all HVAC services we offer in your area.</p>
     <div class="row justify-content-center gutter-y-30">${cityGrid}</div>
     <div style="text-align:center;margin:60px auto 0;max-width:860px;">
-      <img src="/assets/images/Dons-Website-Location-Map.jpg" alt="Service area map for Central Kansas" style="width:100%;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.12);" loading="lazy">
+      <img src="/assets/images/dons-service-area-map.png" alt="Don's Heating & Air service area map — El Dorado, Hillsboro, and Emporia, Central Kansas" style="width:100%;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.12);" loading="lazy">
     </div>
   </div>
 </section>
