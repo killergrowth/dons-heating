@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 const { CLIENT, SERVICES } = require('./_build-data.js');
 
 function htmlHead(title, desc, canonicalUrl, preloadImage, noindex = false) {
@@ -19,14 +19,14 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${desc}">
 <meta property="og:url" content="${canonicalUrl || 'https://www.donsheatingandair.com/'}">
-<meta property="og:image" content="https://www.donsheatingandair.com/assets/images/social-share.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://www.donsheatingandair.com/assets/images/og-preview.png">
+<meta property="og:image:width" content="1536">
+<meta property="og:image:height" content="1024">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${desc}">
-<meta name="twitter:image" content="https://www.donsheatingandair.com/assets/images/social-share.png">
+<meta name="twitter:image" content="https://www.donsheatingandair.com/assets/images/og-preview.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/dons-icon.jpg">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/dons-icon.jpg">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/dons-icon.jpg">
@@ -136,7 +136,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .hero-static .main-slider-one__bg { opacity: 1 !important; transform: none !important; transition: none !important; }
 /* Hero bg img positioning (same as before) */
 .hero-static .main-slider-one__bg img { position:absolute;top:-5%;left:0;width:100%;height:110%;object-fit:cover;object-position:center; }
-/* CSS-only text entrance animations ï¿½" fire on load, no JS required */
+/* CSS-only text entrance animations �" fire on load, no JS required */
 @keyframes heroSlideUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
 .hero-static .main-slider-one__sub-title { animation: heroSlideUp 0.55s ease 0.15s both; }
 .hero-static .main-slider-one__title__box:nth-child(1) h2 { animation: heroSlideUp 0.55s ease 0.3s both; }
@@ -161,7 +161,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 @media(max-width:1199px){.main-header__right__link{display:none!important}}
 @media(min-width:1200px){.mobile-nav__btn{display:none!important}}
 
-/* CWV: Tagline letter-spacing via CSS ï¿½ eliminates fixTaglines JS setTimeout (which caused CLS) */
+/* CWV: Tagline letter-spacing via CSS � eliminates fixTaglines JS setTimeout (which caused CLS) */
 .sec-title__tagline { letter-spacing: 0.5px !important; word-spacing: normal !important; }
 .sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
 </style>
@@ -429,13 +429,13 @@ document.addEventListener("DOMContentLoaded", function fixTransforms() {
   });
 }());
 </script>
-<!-- Web Vitals â†’ GA4 (real user Core Web Vitals measurement) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1XTQPEKLW"></script>
+<!-- Web Vitals → GA4 (real user Core Web Vitals measurement) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YD6EGCMW41"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-M1XTQPEKLW', {send_page_view: false});
+gtag('config', 'G-YD6EGCMW41', {send_page_view: false});
 </script>
 <script type="module">
 import {onLCP, onCLS, onINP, onFCP, onTTFB} from 'https://unpkg.com/web-vitals@4/dist/web-vitals.attribution.js';
