@@ -41,49 +41,49 @@ const SERVICES = [
     label:   'Furnace Repair',
     slug:    'furnace-repair',
     icon:    'fa-solid fa-fire-flame-curved',
-    img:     'service/dons-furnace-flames.png',
+    img:     'dons-furnace-flames.png',
     tagline: 'Fast, reliable furnace repair â€” same-day service across central Kansas.',
   },
   {
     label:   'Furnace Installation',
     slug:    'furnace-installation',
     icon:    'fa-solid fa-house-chimney',
-    img:     'service/dons-furnace-install.png',
+    img:     'dons-furnace-install.png',
     tagline: 'High-efficiency furnace installs by licensed HVAC technicians.',
   },
   {
     label:   'AC Repair',
     slug:    'air-conditioning-repair',
     icon:    'fa-solid fa-snowflake',
-    img:     'service/dons-ac-fins.png',
+    img:     'dons-ac-fins.png',
     tagline: 'Cool down fast â€” expert AC repair with a guaranteed fix.',
   },
   {
     label:   'AC Installation',
     slug:    'air-conditioning-installation',
     icon:    'fa-solid fa-temperature-low',
-    img:     'service/dons-ac-residential.png',
+    img:     'dons-ac-residential.png',
     tagline: 'New AC installs from trusted brands â€” Rheem, Mitsubishi & more.',
   },
   {
     label:   'Heat Pump Services',
     slug:    'heat-pump-services',
     icon:    'fa-solid fa-arrows-rotate',
-    img:     'service/dons-heat-pump.png',
+    img:     'dons-heat-pump.png',
     tagline: 'Heat pump repair, replacement & installation for year-round comfort.',
   },
   {
     label:   'Indoor Air Quality',
     slug:    'indoor-air-quality',
     icon:    'fa-solid fa-wind',
-    img:     'service/dons-air-quality.png',
+    img:     'dons-air-quality.png',
     tagline: 'Breathe easier with whole-home air quality solutions.',
   },
   {
     label:   'Commercial HVAC',
     slug:    'commercial-hvac',
     icon:    'fa-solid fa-building',
-    img:     'service/dons-commercial-hvac.png',
+    img:     'dons-commercial-hvac.png',
     tagline: 'Commercial heating & cooling solutions for businesses across central Kansas.',
   },
 ];
@@ -405,6 +405,7 @@ module.exports = {
   ABOUT,
   CONTACT,
 };
+
 
 
 
