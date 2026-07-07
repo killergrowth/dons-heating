@@ -376,59 +376,77 @@ ${T.topbar()}
 <!-- HEADER -->
 ${T.pageHeader('About Don\'s Heating & Air', '<li><span>About Us</span></li>')}
 
+<!-- OWNER INTRO SECTION -->
 <section class="about-one" style="padding-top:80px;padding-bottom:80px;">
   <div class="container">
     <div class="row align-items-center gutter-y-30">
       <div class="col-lg-6" style="text-align:center;">
-        <div style="overflow:visible;">
-          <img src="/assets/images/logo-main.png" alt="Don's Heating &amp; Air logo" style="width:100%;max-width:460px;display:block;margin:0 auto;">
-          <p style="margin-top:12px;font-weight:600;font-size:1rem;color:#3a2e1e;">Don, Owner</p>
-          <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:inline-block;">Get a Free Quote</a>
+        <div style="overflow:hidden;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.14);">
+          <img src="/assets/images/Dons_Owner_Tom.png" alt="Tom Storrer, owner of Don's Heating &amp; Air in El Dorado, KS" style="width:100%;height:auto;display:block;">
         </div>
+        <p style="margin-top:16px;font-weight:700;font-size:1.05rem;color:#1B2A4A;">Tom Storrer, Owner</p>
+        <p style="margin-top:4px;font-size:0.9rem;color:#5a5650;">Son of founder Don Storrer &mdash; carrying on the family legacy since 1959</p>
+        <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:inline-block;">Get a Free Quote</a>
       </div>
       <div class="col-lg-6">
         <div class="about-one__right">
           <div class="sec-title text-start">
             <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">Our Story</p></div>
-            <h3 class="sec-title__title">HVAC Excellence Since 1959</h3>
+            <h3 class="sec-title__title">A Family Legacy of HVAC Excellence Since 1959</h3>
           </div>
-          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Don's Heating & Air was founded in El Dorado, Kansas in 1959 and has been a trusted name in home comfort ever since. For over 65 years, our licensed technicians have kept Central Kansas families warm in winter and cool in summer.</p>
-          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="150ms">We service all major brands and models of HVAC equipment. Whether you need emergency furnace repair in January or a new central air system before summer, we show up fast and get it done right the first time.</p>
-          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">Locally owned, licensed, and insured. Proud to serve El Dorado, Hillsboro, Emporia and the surrounding communities. When your comfort is on the line, call Don's.</p>
+          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Don's Heating &amp; Air was founded in El Dorado, Kansas in 1959 with a simple but powerful vision: deliver honest, quality HVAC service to Central Kansas families. Today, that legacy is carried on by Tom Storrer &mdash; Don's son &mdash; with the same commitment to integrity and craftsmanship his father built this company on.</p>
+          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="150ms">For over 65 years, our licensed technicians have kept homes and businesses comfortable across Butler County, Hillsboro, and Emporia. We service all makes and models of HVAC equipment and hold an A+ rating from the Better Business Bureau &mdash; every year.</p>
+          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">Locally owned, licensed, and insured. When your comfort is on the line, you can count on Don's.</p>
+          <ul class="about-one__list list-unstyled wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="250ms" style="margin-top:20px;">
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Kansas</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> BBB A+ Rated Every Year</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> All Makes &amp; Models Serviced</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Free In-Home Estimates</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Family Owned &amp; Operated Since 1959</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- OUR COMMITMENT SECTION -->
 <section class="why-choose-one" style="background:#f4ede4;padding:80px 0;">
   <div class="container">
     <div class="row gutter-y-30">
       <div class="col-lg-6">
         <div class="sec-title text-start">
           <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">Why We Do It Differently</p></div>
-          <h3 class="sec-title__title">Why Central Kansas Homes Trust Don\'s Heating & Air</h3>
+          <h3 class="sec-title__title">Top-Quality Products. Unmatched Service. No Shortcuts.</h3>
         </div>
-        <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Most HVAC contractors are reactive. You call when something's wrong. They show up, quote the job, and disappear until the next crisis. That's not how we operate.</p>
-        <ul class="about-one__list list-unstyled wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms" style="margin-top:20px;">
-            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Kansas</li>
-            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> 24/7 Emergency HVAC Service</li>
-            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> All Makes &amp; Models Serviced</li>
-            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Free In-Home Estimates</li>
-            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Family Owned Since 1959</li>
-          </ul>
+        <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">At Don's Heating &amp; Air, we don't believe in taking shortcuts. The easy way and the right way are never the same to us. Our team of front office professionals, lead installers, and lead service technicians each bring years of experience and ongoing education to every job.</p>
+        <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="150ms">We offer comprehensive Don's Performance Plans &mdash; maintenance programs designed to keep your HVAC systems running efficiently for years. Prevention beats emergency repair every time.</p>
+        <div style="margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+          <div style="background:#fff;border-radius:10px;padding:24px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+            <div style="font-size:36px;font-weight:800;color:#3A5DAE;">65+</div>
+            <div style="font-size:14px;font-weight:600;color:#1B2A4A;margin-top:4px;">Years of Service</div>
+          </div>
+          <div style="background:#fff;border-radius:10px;padding:24px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+            <div style="font-size:36px;font-weight:800;color:#3A5DAE;">A+</div>
+            <div style="font-size:14px;font-weight:600;color:#1B2A4A;margin-top:4px;">BBB Rating</div>
+          </div>
+          <div style="background:#fff;border-radius:10px;padding:24px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+            <div style="font-size:36px;font-weight:800;color:#3A5DAE;">4.9</div>
+            <div style="font-size:14px;font-weight:600;color:#1B2A4A;margin-top:4px;">Google Rating</div>
+          </div>
+          <div style="background:#fff;border-radius:10px;padding:24px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+            <div style="font-size:36px;font-weight:800;color:#3A5DAE;">279+</div>
+            <div style="font-size:14px;font-weight:600;color:#1B2A4A;margin-top:4px;">5-Star Reviews</div>
+          </div>
+        </div>
       </div>
       <div class="col-lg-6">
-        <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms" style="margin-top:40px;">
-          <h4 class="progress-box__title">Surface Preparation Standards</h4>
-          <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="100%"><div class="progress-box__number count-text">100%</div></div></div>
+        <div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms" style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.12);">
+          <img src="/assets/images/dons-photos/photoshoot_IMG_5940.jpg" alt="Don's Heating &amp; Air technician at work in Central Kansas" style="width:100%;height:420px;object-fit:cover;display:block;" loading="lazy">
         </div>
-        <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
-          <h4 class="progress-box__title">Customer Satisfaction Rate</h4>
-          <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="100%"><div class="progress-box__number count-text">100%</div></div></div>
-        </div>
-        <div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms" style="margin-top:32px;border-radius:10px;overflow:hidden;">
-          <img src="/assets/images/about/about-kitchen.jpg" alt="Painting project by Don\'s Heating & Air" style="width:100%;height:auto;display:block;border-radius:10px;">
+        <div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms" style="background:#1B2A4A;border-radius:10px;padding:28px 30px;margin-top:24px;">
+          <h4 style="color:#fff;margin-bottom:12px;">Community Rooted in El Dorado</h4>
+          <p style="color:#c8c0b8;font-size:15px;line-height:1.7;margin:0;">Tom has served 16 years on the school board, is active in the Rotary Club, adopts families at Christmas, and supports Toys for Tots and local high schools. Don's isn't just your HVAC company &mdash; we're your neighbors.</p>
         </div>
       </div>
     </div>
