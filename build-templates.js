@@ -167,7 +167,6 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
 </style>
 
-
 </head>`;
 }
 
