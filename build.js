@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 /**
  * build.js  -  Don\'s Heating & Air Site Builder
  * Generates all pillar pages from data + templates
@@ -34,7 +34,7 @@ const HEADER = fs.readFileSync(path.join(PARTS, 'header.html'), 'utf8');
 const HEADER_STRIPPED = fs.readFileSync(path.join(PARTS, 'header-stripped.html'), 'utf8');
 const FOOTER_MINIMAL = fs.readFileSync(path.join(PARTS, 'footer-minimal.html'), 'utf8');
 
-// Custom SVG icons Ã¯Â¿Â½" inline with brand color
+// Custom SVG icons ï¿½" inline with brand color
 const BRAND_COLOR = '#3A5DAE';
 function inlineSvg(filename, size) {
   const raw = fs.readFileSync(path.join(__dirname, 'assets/images', filename), 'utf8')
@@ -63,10 +63,10 @@ function writeStripped(relPath, html) {
   console.log('Built:', relPath);
 }
 
-// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ Setup ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
+// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ Setup Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
 ensureDir(DIST);
 copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
-// Generate mobile hero variant (800px @ q68 ~70KB) Ã¯Â¿Â½" desktop is pre-compressed in source
+// Generate mobile hero variant (800px @ q68 ~70KB) ï¿½" desktop is pre-compressed in source
 // Source: assets/images/backgrounds/dons-hero.webp (151KB @ 1440px q50)
 {
   const sharp = require('sharp');
@@ -84,9 +84,9 @@ copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DIST, f));
 });
 
-// Root index.html Ã¯Â¿Â½" built by buildHomepage()
+// Root index.html ï¿½" built by buildHomepage()
 
-// Copy coming-soon landing page to root (DISABLED Ã¯Â¿Â½" site is live)
+// Copy coming-soon landing page to root (DISABLED ï¿½" site is live)
 /* const COMING_SOON = path.join(ROOT, '..', 'El Dorado-painting-coming-soon');
 if (fs.existsSync(COMING_SOON)) {
   fs.copyFileSync(path.join(COMING_SOON, 'index.html'), path.join(DIST, 'index.html'));
@@ -98,7 +98,7 @@ if (fs.existsSync(COMING_SOON)) {
   fs.writeFileSync(path.join(DIST, 'index.html'), csHtml, 'utf8');
   console.log('Coming-soon landing page copied to root.');
 } */
-// Remove _worker.js and _routes.json Ã¯Â¿Â½" Pages Functions handle routing now
+// Remove _worker.js and _routes.json ï¿½" Pages Functions handle routing now
 // _worker.js in dist/ disables ALL Pages Functions (CF limitation)
 const workerFile = path.join(DIST, '_worker.js');
 const routesFile = path.join(DIST, '_routes.json');
@@ -107,15 +107,15 @@ if (fs.existsSync(routesFile)) fs.unlinkSync(routesFile);
 
 console.log('Assets copied.\n');
 
-// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ HOMEPAGE ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
+// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ HOMEPAGE Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
 function buildHomepage() {
-  // Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½ Reviews data Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½
+  // ï¿½"ï¿½ï¿½"ï¿½ Reviews data ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½
   const reviewsFile = path.join(ROOT, 'data', 'reviews.json');
   const reviewData = fs.existsSync(reviewsFile)
     ? JSON.parse(fs.readFileSync(reviewsFile, 'utf8'))
     : { rating: null, userRatingCount: 0, reviews: [] };
 
-  // Build review cards â€” filter 5-star only, max 6 total, carousel slides
+  // Build review cards — filter 5-star only, max 6 total, carousel slides
   const fiveStarReviews = reviewData.reviews.filter(r => r.rating === 5).slice(0, 6);
   const reviewCards = fiveStarReviews.map((r) => {
     const initial = (r.author || 'A').charAt(0).toUpperCase();
@@ -369,7 +369,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(finalContent)}`);
 }
 
-// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ ABOUT PAGE ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
+// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ ABOUT PAGE Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
 function buildAbout() {
   const content = `
 ${T.topbar()}
@@ -469,7 +469,7 @@ ${T.pageHeader('About Don\'s Heating & Air', '<li><span>About Us</span></li>')}
       <div class="col-md-6 col-lg-4">
         <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:0;border:1px solid #e4dacc;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;">
           <a href="/areas-served/index.html" style="display:block;">
-            <img src="/assets/images/dons-service-area-map.png" alt="Don's Heating & Air service area — Central Kansas" style="width:100%;height:160px;object-fit:cover;display:block;" loading="lazy">
+            <img src="/assets/images/dons-service-area-map.png" alt="Don's Heating & Air service area � Central Kansas" style="width:100%;height:160px;object-fit:cover;display:block;" loading="lazy">
           </a>
           <div style="padding:20px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;justify-content:center;">
             <p class="feature-two__item__title" style="margin:0;"><a href="/areas-served/index.html">See Areas We Serve</a></p>
@@ -503,7 +503,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(content)}`);
 }
 
-// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ SERVICE HUB PAGES ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
+// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ SERVICE HUB PAGES Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
 function buildServiceHub(slug) {
   const d = SERVICE_DATA[slug];
   if (!d) { console.warn('No data for', slug); return; }
@@ -642,7 +642,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
             <ul class="list-unstyled" style="line-height:2.2;">
               <li><i class="fa-solid fa-phone" style="color:var(--wallox-base);margin-right:8px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-weight:700;font-size:18px;">${CLIENT.phone}</a></li>
               <li><i class="fa-solid fa-envelope" style="color:var(--wallox-base);margin-right:8px;"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
-              <li><i class="fa-solid fa-location-dot" style="color:var(--wallox-base);margin-right:8px;"></i>${CLIENT.city}, ${CLIENT.state}</li>
+              <li><i class="fa-solid fa-location-dot" style="color:var(--wallox-base);margin-right:8px;"></i><a href="https://www.google.com/maps/place/Don's+Heating+%26+Air/@37.8178,-96.8640,17z" target="_blank" rel="noopener noreferrer">${CLIENT.city}, ${CLIENT.state}</a></li>
             </ul>
             <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:block;text-align:center;">Request a Quote</a>
           </div>
@@ -688,7 +688,7 @@ ${T.wrapBody(content)}`);
 
 
 
-// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ CONTACT PAGE ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
+// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ CONTACT PAGE Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
 function buildContact() {
   const content = `
 ${T.topbar()}
@@ -733,6 +733,7 @@ ${T.topbar()}
               <input class="contact-input" type="text" name="name" placeholder="Your Name *" required>
               <input class="contact-input" type="email" name="email" placeholder="Email Address *" required>
               <input class="contact-input" type="tel" name="phone" placeholder="Phone Number">
+              <input class="contact-input" type="text" name="service_location" placeholder="Location of Service (City, Address, or ZIP) *" required>
               <select class="contact-select" name="service">
                 <option value="">Service Needed</option>
                 ${SERVICES.map(s => `<option value="${s.slug}">${s.label}</option>`).join('')}
@@ -780,7 +781,7 @@ ${T.topbar()}
 ${T.wrapBody(content)}`);
 }
 
-// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ Areas Served INDEX ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
+// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ Areas Served INDEX Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
 function buildServiceAreas() {
   const cityGrid = CITIES.map(c => {
     const serviceLinks = SERVICES.map(s =>
@@ -810,7 +811,7 @@ ${T.pageHeader('Areas Served  -  Central Kansas', '<li><span>Areas Served</span>
     <p class="text-center" style="margin:20px auto 50px;max-width:700px;">${CLIENT.name} serves homeowners and businesses throughout Central Kansas. Select your city below to see all HVAC services we offer in your area.</p>
     <div class="row justify-content-center gutter-y-30">${cityGrid}</div>
     <div style="text-align:center;margin:60px auto 0;max-width:860px;">
-      <img src="/assets/images/dons-service-area-map.png" alt="Don's Heating & Air service area map — El Dorado, Hillsboro, and Emporia, Central Kansas" style="width:100%;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.12);" loading="lazy">
+      <img src="/assets/images/dons-service-area-map.png" alt="Don's Heating & Air service area map � El Dorado, Hillsboro, and Emporia, Central Kansas" style="width:100%;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.12);" loading="lazy">
     </div>
   </div>
 </section>
@@ -837,7 +838,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(content)}`);
 }
 
-// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ RUN ALL ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
+// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ RUN ALL Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
 buildHomepage();
 buildAbout();
 Object.keys(SERVICE_DATA).forEach(buildServiceHub);
@@ -905,7 +906,7 @@ ${T.contactFormSection()}`;
   write('services/index.html', `${T.htmlHead('Services | Don\'s Heating & Air | Central Kansas', 'Furnace repair, AC installation, heat pump services, indoor air quality and more. Professional HVAC services across Central Kansas.', 'https://donsheatingandair.com/services/')}
 ${T.wrapBody(content)}`);
 }
-// Ã¢â€¢ÂÃ¢â€¢Â CITY HUB PAGES Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
+// â•â• CITY HUB PAGES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function buildCityHub(city) {
   const d = CITY_DATA[city.slug];
   if (!d) { console.warn('No city data for', city.slug); return; }
@@ -990,7 +991,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
 
         <div style="margin-bottom:32px;">
           <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3A5DAE;margin-bottom:8px;">common questions</p>
-          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:20px;">Frequently Asked Questions Ã¯Â¿Â½" ${d.label}, CO</h2>
+          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:20px;">Frequently Asked Questions ï¿½" ${d.label}, CO</h2>
           ${T.faqBlock(d.faqs, city.slug + '-faq')}
         </div>
 
@@ -1007,7 +1008,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
           <ul class="list-unstyled" style="line-height:2.4;margin-bottom:16px;">
             <li><i class="fa-solid fa-phone" style="color:#3A5DAE;margin-right:8px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-weight:700;font-size:18px;color:#1B2A4A;">${CLIENT.phone}</a></li>
             <li><i class="fa-solid fa-envelope" style="color:#3A5DAE;margin-right:8px;"></i><a href="mailto:${CLIENT.email}" style="color:#5a5650;">${CLIENT.email}</a></li>
-            <li><i class="fa-solid fa-location-dot" style="color:#3A5DAE;margin-right:8px;"></i><span style="color:#5a5650;">Based in ${CLIENT.city}, ${CLIENT.state}</span></li>
+            <li><i class="fa-solid fa-location-dot" style="color:#3A5DAE;margin-right:8px;"></i><a href="https://www.google.com/maps/search/Don+Heating+Air+El+Dorado+KS" target="_blank" rel="noopener noreferrer" style="color:#5a5650;">Based in ${CLIENT.city}, ${CLIENT.state}</a></li>
           </ul>
           <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="display:block;text-align:center;">Request a Quote</a>
         </div>
@@ -1061,8 +1062,8 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢â€¢ÂÃ¢â€¢Â GALLERY PAGE Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
-function buildGallery_OLD() { // OLD Ã¯Â¿Â½" replaced by template-based version below
+// â•â• GALLERY PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+function buildGallery_OLD() { // OLD ï¿½" replaced by template-based version below
   const galleryCSS = `
 .gallery-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
 .filter-btn{padding:7px 18px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#5a5650;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;}
@@ -1222,7 +1223,7 @@ function buildGallery() {
   console.log('Built: gallery/index.html');
 }
 
-// Ã¢â€¢ÂÃ¢â€¢Â UPLOAD ADMIN PAGE Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
+// â•â• UPLOAD ADMIN PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function buildUploadAdmin() {
   // Read the pre-built upload page from the dist template file if it exists,
   // otherwise write the standalone file directly (not injected through wrapBody
@@ -1398,7 +1399,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
           <ul class="list-unstyled" style="line-height:2.4;margin-bottom:16px;">
             <li><i class="fa-solid fa-phone" style="color:#3A5DAE;margin-right:8px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-weight:700;font-size:18px;color:#1B2A4A;">${CLIENT.phone}</a></li>
             <li><i class="fa-solid fa-envelope" style="color:#3A5DAE;margin-right:8px;"></i><a href="mailto:${CLIENT.email}" style="color:#5a5650;">${CLIENT.email}</a></li>
-            <li><i class="fa-solid fa-location-dot" style="color:#3A5DAE;margin-right:8px;"></i><span style="color:#5a5650;">Based in ${CLIENT.city}, ${CLIENT.state}</span></li>
+            <li><i class="fa-solid fa-location-dot" style="color:#3A5DAE;margin-right:8px;"></i><a href="https://www.google.com/maps/search/Don+Heating+Air+El+Dorado+KS" target="_blank" rel="noopener noreferrer" style="color:#5a5650;">Based in ${CLIENT.city}, ${CLIENT.state}</a></li>
           </ul>
           <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="display:block;text-align:center;">Request a Quote</a>
         </div>
@@ -1476,7 +1477,7 @@ buildBlog({
   siteName: 'Don\'s Heating & Air'
 });
 
-// Ã¢â€â‚¬Ã¢â€â‚¬ Spread recent posts to all inner pages Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+// â”€â”€ Spread recent posts to all inner pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 (function spreadRecentPosts() {
   const blogIndexPath = path.join(ROOT, 'blog-posts', 'blog-index.json');
   if (!fs.existsSync(blogIndexPath)) return;
@@ -1526,7 +1527,7 @@ console.log('\n? All pillar pages built successfully.');
 
 
 // ============================================================
-// GET A QUOTE PAGE Ã¯Â¿Â½ High-conversion standalone landing page
+// GET A QUOTE PAGE ï¿½ High-conversion standalone landing page
 // ============================================================
 function buildGetAQuote() {
   const HEADER_STRIPPED_HTML = fs.readFileSync(path.join(PARTS, 'header-stripped.html'), 'utf8');
