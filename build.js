@@ -269,7 +269,7 @@ ${T.topbar()}
             </div>
             <h3 class="sec-title__title">HVAC Expertise Built on 65 Years of Trust</h3>
           </div>
-          <p class="about-one__top__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Don's Heating & Air has been keeping Central Kansas families comfortable since 1959. Locally owned and operated, we service all makes and models of heating and cooling equipment. From emergency furnace repair in January to AC installation before summer, our licensed technicians get it done right the first time.</p>
+          <p class="about-one__top__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Don's Heating & Air has been keeping Central Kansas families comfortable since 1959. Locally owned and operated, we service all makes and models of heating and cooling equipment. From emergency furnace repair to AC installation, our licensed technicians get it done right the first time.</p>
           <ul class="about-one__list list-unstyled wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Kansas</li>
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> 24/7 Emergency HVAC Service</li>
@@ -469,7 +469,7 @@ ${T.pageHeader('About Don\'s Heating & Air', '<li><span>About Us</span></li>')}
       <div class="col-md-6 col-lg-4">
         <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:0;border:1px solid #e4dacc;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;">
           <a href="/areas-served/index.html" style="display:block;">
-            <img src="/assets/images/dons-service-area-map.png" alt="Don's Heating & Air service area — Central Kansas" style="width:100%;height:160px;object-fit:cover;display:block;" loading="lazy">
+            <img src="/assets/images/dons-service-area-map.png" alt="Don's Heating & Air service area ï¿½ Central Kansas" style="width:100%;height:160px;object-fit:cover;display:block;" loading="lazy">
           </a>
           <div style="padding:20px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;justify-content:center;">
             <p class="feature-two__item__title" style="margin:0;"><a href="/areas-served/index.html">See Areas We Serve</a></p>
@@ -811,7 +811,7 @@ ${T.pageHeader('Areas Served  -  Central Kansas', '<li><span>Areas Served</span>
     <p class="text-center" style="margin:20px auto 50px;max-width:700px;">${CLIENT.name} serves homeowners and businesses throughout Central Kansas. Select your city below to see all HVAC services we offer in your area.</p>
     <div class="row justify-content-center gutter-y-30">${cityGrid}</div>
     <div style="text-align:center;margin:60px auto 0;max-width:860px;">
-      <img src="/assets/images/dons-service-area-map.png" alt="Don's Heating & Air service area map — El Dorado, Hillsboro, and Emporia, Central Kansas" style="width:100%;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.12);" loading="lazy">
+      <img src="/assets/images/dons-service-area-map.png" alt="Don's Heating & Air service area map ï¿½ El Dorado, Hillsboro, and Emporia, Central Kansas" style="width:100%;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.12);" loading="lazy">
     </div>
   </div>
 </section>
