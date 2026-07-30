@@ -50,7 +50,7 @@ async function getGmailAccessToken(serviceEmail, privateKeyPem, impersonateEmail
   });
   const signingInput = `${headerB64}.${claimB64}`;
 
-  const b64 = privateKeyPem.replace(/-----[A-Z ]+-----/g, '').replace(/\s+/g, '');
+  const b64 = privateKeyPem.replace(/\\n/g, '\n').replace(/-----[A-Z ]+-----/g, '').replace(/\s+/g, '');
   const decoded = atob(b64);
   const keyBuffer = new Uint8Array(decoded.length);
   for (let i = 0; i < decoded.length; i++) keyBuffer[i] = decoded.charCodeAt(i);
