@@ -1538,7 +1538,7 @@ function buildGetAQuote() {
   }
 
   const head = T.htmlHead(
-    'Get a Free Painting Quote | Don\'s Heating & Air | (316) 321-9438',
+    'Get a Free HVAC Estimate | Don\'s Heating & Air | (316) 321-9438',
     'Request a free HVAC estimate from Don\'s Heating & Air. No pressure, no surprises. Serving El Dorado, Hillsboro, Emporia & Central Kansas. We respond within 2 hours.',
     'https://donsheatingandair.com/get-a-quote/'
   );
@@ -1581,17 +1581,54 @@ function buildGetAQuote() {
 <section class="gaq-wrap">
   <div class="container">
     <div class="gaq-page-header">
-      <h1 class="gaq-headline">An Honest Painting Quote</h1>
-      <p class="gaq-subtext">We'll come to your location and give you a no obligation estimate</p>
+      <h1 class="gaq-headline">Get a Free HVAC Estimate</h1>
+      <p class="gaq-subtext">We'll come to your home and give you an honest, no-obligation quote</p>
     </div>
     <div class="gaq-grid">
       <div class="gaq-col-form">
         <div class="gaq-card" style="padding:24px;">
-          <h3 style="margin:0 0 12px;font-size:20px;font-weight:700;color:#1B2A4A;">Schedule Your Free In-Home Quote</h3>
-          <p style="margin:0 0 16px;font-size:14px;color:#5a5650;line-height:1.55;">One of our estimators will visit your home to assess the project and give you an accurate, honest price - no guessing, no online estimates.</p>
-          <div id="2d355475-e9e2-4025-be1d-9768705789fb-4555532"></div>
-          <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
-          <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js" clienthub_id="2d355475-e9e2-4025-be1d-9768705789fb-4555532" form_url="https://clienthub.getjobber.com/client_hubs/2d355475-e9e2-4025-be1d-9768705789fb/public/work_request/embedded_work_request_form?form_id=4555532"></script>
+          <h3 style="margin:0 0 12px;font-size:20px;font-weight:700;color:#1B2A4A;">Request a Free Estimate</h3>
+          <p style="margin:0 0 16px;font-size:14px;color:#5a5650;line-height:1.55;">Tell us what you need. A licensed technician will follow up same-day to schedule your free in-home estimate — no pressure, no guesswork.</p>
+          <form id="gaq-form" action="/submit" method="POST">
+            <div class="gaq-fields">
+              <input class="gaq-input" type="text" name="name" placeholder="Your Name" required>
+              <input class="gaq-input" type="tel" name="phone" placeholder="Phone Number" required>
+              <input class="gaq-input" type="email" name="email" placeholder="Email Address">
+              <select class="gaq-input" name="service">
+                <option value="">Service Needed</option>
+                <option>Furnace Repair</option>
+                <option>Furnace Installation</option>
+                <option>AC Repair</option>
+                <option>AC Installation</option>
+                <option>Heat Pump Services</option>
+                <option>Indoor Air Quality</option>
+                <option>Commercial HVAC</option>
+                <option>Not Sure — Need Diagnosis</option>
+              </select>
+              <textarea class="gaq-input" name="message" rows="3" placeholder="Describe the issue or project (optional)"></textarea>
+              <button type="submit" class="gaq-submit">Request Free Estimate <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i></button>
+            </div>
+          </form>
+          <div class="gaq-trust-line"><i class="fa-solid fa-lock"></i> Your info stays private. No spam.</div>
+          <div id="gaq-success" style="display:none;margin-top:16px;padding:16px;background:#e8f5e9;border-radius:8px;color:#1B2A4A;font-weight:600;">\u2705 Got it! We\'ll reach out same-day to schedule your estimate.</div>
+          <script>
+            document.getElementById(\'gaq-form\').addEventListener(\'submit\', async function(e) {
+              e.preventDefault();
+              const btn = this.querySelector(\'button[type=submit]\');
+              btn.disabled = true; btn.textContent = \'Sending...\';
+              try {
+                const res = await fetch(\'/submit\', { method: \'POST\', body: new FormData(this) });
+                const data = await res.json();
+                if (data.ok) {
+                  this.style.display = \'none\';
+                  document.getElementById(\'gaq-success\').style.display = \'block\';
+                } else { throw new Error(data.error || \'Unknown error\'); }
+              } catch(err) {
+                btn.disabled = false; btn.textContent = \'Request Free Estimate\';
+                alert(\'Something went wrong. Please call us at (316) 321-9438.\');
+              }
+            });
+          </script>
         </div>
       </div>
       <div class="gaq-col-copy">
