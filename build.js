@@ -216,7 +216,7 @@ function buildHomepage() {
 </div>`; }).join('\n');
 
   const features = [
-    { icon:'fa-solid fa-lightbulb', title:'10 Year Systems', link:'/exterior-painting/index.html' },
+    { icon:'fa-solid fa-lightbulb', title:'Trusted Since 1959', link:'/about/' },
     { icon:'fa-solid fa-wrench', title:'Licensed &amp; Insured.', link:'/about/' },
     { icon:'fa-solid fa-users', title:'$1M Liability Coverage', link:'/about/' },
     { icon:'fa-solid fa-shield-halved', title:'Free On-Site Quotes', link:'/get-a-quote/' },
@@ -313,9 +313,9 @@ ${T.topbar()}
           <div class="why-choose-one__feature wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
             <div class="why-choose-one__feature__item"><div class="why-choose-one__feature__item__inner">
               <div class="why-choose-one__feature__icon"><i class="fa-solid fa-check"></i></div>
-              <h4 class="why-choose-one__feature__title">Same-Day Service Available.</h4>
+              <h4 class="why-choose-one__feature__title">Fast, Responsive Service.</h4>
             </div></div>
-            <p class="why-choose-one__feature__text">We know how critical your home comfort is. That's why we prioritize same-day calls for heating and cooling emergencies.</p>
+            <p class="why-choose-one__feature__text">We know how critical your home comfort is. We respond promptly during business hours, Monday through Friday, and get you scheduled fast.</p>
           </div>
           <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
             <h4 class="progress-box__title">First-Time Fix Rate</h4>
@@ -727,7 +727,7 @@ ${T.topbar()}
       <div>
         <div class="contact-card">
           <h3 style="margin:0 0 6px;font-size:20px;font-weight:700;color:#1B2A4A;">Send Us a Message</h3>
-          <p style="margin:0 0 20px;font-size:14px;color:#5a5650;line-height:1.55;">Use the form below or call us directly. We respond same-day.</p>
+          <p style="margin:0 0 20px;font-size:14px;color:#5a5650;line-height:1.55;">Use the form below or call us directly. We respond during business hours, Monday through Friday.</p>
           <form id="contact-form" action="/submit" method="POST">
             <div style="display:flex;flex-direction:column;gap:12px;">
               <input class="contact-input" type="text" name="name" placeholder="Your Name *" required>
@@ -850,9 +850,6 @@ function buildServicesHub() {
     <div class="col-lg-4 col-md-6">
       <div style="background:#fff;border-radius:10px;padding:32px 24px;text-align:center;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;align-items:center;">
         <div style="font-size:48px;color:#3A5DAE;margin-bottom:16px;line-height:1;">${
-          s.slug === 'fence-staining'   ? inlineSvg('icon-wooden-fence.svg', 52) :
-          s.slug === 'exterior-staining' ? inlineSvg('icon-gazebo.svg', 52) :
-          s.slug === 'hoa-painting'      ? inlineSvg('icon-hoa-house.svg', 52) :
           `<i class="${s.icon}"></i>`
         }</div>
         <h4 style="font-size:20px;font-weight:700;color:#1B2A4A;margin-bottom:8px;">${s.label}</h4>
@@ -870,8 +867,8 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">what we do</p></div>
-      <h3 class="sec-title__title">Professional Painting Services in Central Kansas</h3>
-      <p style="margin:20px auto 0;max-width:680px;color:#5a5650;">From full exterior repaint to HOA common areas, Don\'s Heating & Air handles it all with crews quality HVAC equipment from leading brands.</p>
+      <h3 class="sec-title__title">Professional HVAC Services in Central Kansas</h3>
+      <p style="margin:20px auto 0;max-width:680px;color:#5a5650;">From furnace repair and AC installation to heat pumps and indoor air quality, Don\'s Heating & Air has Central Kansas covered.</p>
     </div>
     <div class="row gutter-y-30">${serviceGrid}
     <div class="col-lg-4 col-md-6">
@@ -960,7 +957,7 @@ function buildCityHub(city) {
   const content = `
 ${T.topbar()}
 <!-- HEADER -->
-${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-served/index.html">Areas Served</a></li><li><span>${d.label}</span></li>`)}
+${T.pageHeader(`HVAC Services in ${d.label}, KS`, `<li><a href="/areas-served/index.html">Areas Served</a></li><li><span>${d.label}</span></li>`)}
 
 <script type="application/ld+json">${JSON.stringify(schema)}</script>
 
@@ -971,7 +968,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
       <!-- MAIN CONTENT -->
       <div class="col-lg-8">
         <div style="margin-bottom:32px;">
-          <h1 style="font-size:32px;font-weight:700;color:#1B2A4A;margin-bottom:10px;">Painting Services in ${d.label}, CO</h1>
+          <h1 style="font-size:32px;font-weight:700;color:#1B2A4A;margin-bottom:10px;">HVAC Services in ${d.label}, KS</h1>
           <p style="font-size:15px;color:#5a5650;margin-bottom:0;"><strong>${d.context}.</strong></p>
         </div>
 
@@ -997,7 +994,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
 
         <div style="background:#1B2A4A;color:#f4ede4;border-radius:8px;padding:28px 32px;margin-top:32px;">
           <h4 style="color:#fff;margin:0 0 10px;font-size:20px;">Ready to Get Started in ${d.label}?</h4>
-          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call or text <a href="tel:${CLIENT.phoneTel}" style="color:#3A5DAE;font-weight:700;">${CLIENT.phone}</a> or use the form below. We respond same-day and always provide free on-site quotes.</p>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call or text <a href="tel:${CLIENT.phoneTel}" style="color:#3A5DAE;font-weight:700;">${CLIENT.phone}</a> or use the form below. We respond during business hours (Mon–Fri) and always provide free on-site quotes.</p>
         </div>
       </div>
 
@@ -1055,7 +1052,7 @@ ${T.contactFormSection()}`;
 
   write(`areas-served/${city.slug}/index.html`,
     `${T.htmlHead(
-      `Painting Services in ${d.label}, CO | Don\'s Heating & Air`,
+      `HVAC Services in ${d.label}, KS | Don\'s Heating & Air`,
       `Professional HVAC services in ${d.label}, KS. Furnace repair, AC installation, heat pumps and more. Licensed & insured. Call (316) 321-9438.`,
       `https://donsheatingandair.com/areas-served/${city.slug}/`
     )}
@@ -1314,7 +1311,7 @@ function buildServiceLocation(service, city) {
     { icon: 'fa-solid fa-shield-halved', title: 'Licensed &amp; Insured in Kansas', text: 'Licensed HVAC contractor. Certificates of insurance available on request.' },
     { icon: 'fa-solid fa-tools',          title: 'All Makes &amp; Models.',              text: 'Licensed HVAC technicians serving El Dorado and Central Kansas since 1959.' },
     { icon: 'fa-solid fa-users',         title: 'Quality Parts & Repairs',                  text: 'Licensed technicians. Quality parts. Honest pricing. HVAC done right the first time.' },
-    { icon: 'fa-solid fa-clock',         title: 'Same-Day Response',              text: 'Every quote request gets a same-day response during business hours. On-site assessments scheduled fast.' },
+    { icon: 'fa-solid fa-clock',         title: 'Fast Response',              text: 'We respond to every quote request during business hours, Monday through Friday. On-site assessments scheduled fast.' },
   ];
 
   const content = `
@@ -1386,7 +1383,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
         <!-- Bottom CTA -->
         <div style="background:#1B2A4A;color:#f4ede4;border-radius:8px;padding:28px 32px;margin-top:16px;">
           <h4 style="color:#fff;margin:0 0 10px;font-size:20px;">Ready to Get a Free Quote in ${cd.label}?</h4>
-          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call or text <a href="tel:${CLIENT.phoneTel}" style="color:#3A5DAE;font-weight:700;">${CLIENT.phone}</a> or fill out the form below. We respond same-day and provide free on-site assessments.</p>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call or text <a href="tel:${CLIENT.phoneTel}" style="color:#3A5DAE;font-weight:700;">${CLIENT.phone}</a> or fill out the form below. We respond during business hours (Mon–Fri) and provide free on-site assessments.</p>
         </div>
 
       </div>
@@ -1588,7 +1585,7 @@ function buildGetAQuote() {
       <div class="gaq-col-form">
         <div class="gaq-card" style="padding:24px;">
           <h3 style="margin:0 0 12px;font-size:20px;font-weight:700;color:#1B2A4A;">Request a Free Estimate</h3>
-          <p style="margin:0 0 16px;font-size:14px;color:#5a5650;line-height:1.55;">Tell us what you need. A licensed technician will follow up same-day to schedule your free in-home estimate — no pressure, no guesswork.</p>
+          <p style="margin:0 0 16px;font-size:14px;color:#5a5650;line-height:1.55;">Tell us what you need. A licensed technician will follow up during business hours to schedule your free in-home estimate — no pressure, no guesswork.</p>
           <form id="gaq-form" action="/submit" method="POST">
             <div class="gaq-fields">
               <input class="gaq-input" type="text" name="name" placeholder="Your Name" required>
@@ -1610,7 +1607,7 @@ function buildGetAQuote() {
             </div>
           </form>
           <div class="gaq-trust-line"><i class="fa-solid fa-lock"></i> Your info stays private. No spam.</div>
-          <div id="gaq-success" style="display:none;margin-top:16px;padding:16px;background:#e8f5e9;border-radius:8px;color:#1B2A4A;font-weight:600;">\u2705 Got it! We\'ll reach out same-day to schedule your estimate.</div>
+          <div id="gaq-success" style="display:none;margin-top:16px;padding:16px;background:#e8f5e9;border-radius:8px;color:#1B2A4A;font-weight:600;">\u2705 Got it! We\'ll reach out during business hours to schedule your estimate.</div>
           <script>
             document.getElementById(\'gaq-form\').addEventListener(\'submit\', async function(e) {
               e.preventDefault();

@@ -300,7 +300,7 @@ function contactFormSection() {
               </div>
             </div>
           </form>
-          <p style="margin-top:16px;font-size:13px;color:#aaa;text-align:center;">We respond same-day. Prefer to call or text? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#3A5DAE);text-decoration:underline;">${CLIENT.phone}</a></p>
+          <p style="margin-top:16px;font-size:13px;color:#aaa;text-align:center;">We respond during business hours, Mon–Fri. Prefer to call or text? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#3A5DAE);text-decoration:underline;">${CLIENT.phone}</a></p>
         </div>
       </div>
 
@@ -308,7 +308,7 @@ function contactFormSection() {
       <div class="col-lg-6">
         <div class="wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="150ms" style="padding:20px 10px;">
           <span style="color:#fff;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Reach Us Directly</span>
-          <h3 style="color:#fff;margin-top:8px;margin-bottom:30px;">We Respond Same-Day</h3>
+          <h3 style="color:#fff;margin-top:8px;margin-bottom:30px;">Call or Text Anytime</h3>
           <ul class="list-unstyled" style="line-height:2.6;">
             <li><i class="fa-solid fa-phone" style="color:var(--wallox-base,#3A5DAE);margin-right:12px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:#fff;">${CLIENT.phone}</a></li>
             <li style="font-size:13px;color:#aaa;"><i class="fa-solid fa-comment-sms" style="color:var(--wallox-base,#3A5DAE);margin-right:12px;"></i>Text us to schedule a quote or talk to a team member</li>
@@ -424,7 +424,7 @@ document.addEventListener("DOMContentLoaded", function fixTransforms() {
     );
     attachFormHandler(
       'contact-form', 'contact_form',
-      '<p style="color:#3A5DAE;font-size:22px;font-weight:700;margin-bottom:12px;">Message Sent!</p><p style="color:#5a5650;font-size:15px;line-height:1.7;">We received your message and will get back to you same-day.</p>'
+      '<p style="color:#3A5DAE;font-size:22px;font-weight:700;margin-bottom:12px;">Message Sent!</p><p style="color:#5a5650;font-size:15px;line-height:1.7;">We received your message and will get back to you during business hours, Monday through Friday.</p>'
     );
   });
 }());

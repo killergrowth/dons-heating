@@ -20,7 +20,7 @@ const CLIENT = {
   facebook:    'https://www.facebook.com/DonsHeatingAndAir',  // ⚠️ Verify URL with Tyler B
   instagram:   '',  // ⚠️ Not found — confirm with Stephanie if they have one
   tagline:     'Trusted HVAC Experts Since 1959',
-  description: 'Don\'s Heating & Air delivers expert HVAC repair, installation & maintenance across El Dorado, Hillsboro & Emporia, KS. Call (316) 321-9438 for same-day service.',
+  description: 'Don\'s Heating & Air delivers expert HVAC repair, installation & maintenance across El Dorado, Hillsboro & Emporia, KS. Call (316) 321-9438 for fast, reliable service.',
   placeId:     'ChIJ2Q46PnGzu4cRridw0AfTeV8',
   cfProject:   'dons-heating',
   siteId:      'dons-heating',
@@ -42,7 +42,7 @@ const SERVICES = [
     slug:    'furnace-repair',
     icon:    'fa-solid fa-fire-flame-curved',
     img:     'gpt2-furnace-burner.png',
-    tagline: 'Fast, reliable furnace repair — same-day service across central Kansas.',
+    tagline: 'Fast, reliable furnace repair across Central Kansas.',
   },
   {
     label:   'Furnace Installation',
@@ -106,14 +106,14 @@ const SERVICE_DATA = {
     intro:           `When your furnace breaks down in the middle of a Kansas winter, you need a team you can trust — fast. Don's Heating & Air has been repairing furnaces across El Dorado, Hillsboro, and Emporia since 1959. Our licensed technicians arrive fully stocked and ready to diagnose and fix furnace problems on the spot.\n\nWe service all major furnace brands including Rheem, Mitsubishi, Carrier, Lennox, Trane, and more. Whether you're dealing with a cracked heat exchanger, a faulty ignitor, a blower motor issue, or a thermostat that won't respond — we've seen it all and fixed it all.\n\nEvery repair comes with our workmanship guarantee. If it's not right, we make it right — no questions asked.`,
     process:         `Our furnace repair process is straightforward. We start with a thorough diagnostic to pinpoint the exact issue, then walk you through your options with honest, upfront pricing. No surprises on the bill. Once you approve the repair, we get to work immediately using quality parts that are built to last. Before we leave, we test the full system to make sure everything is running safely and efficiently.`,
     whyUs:           `Don's Heating & Air has served central Kansas since 1959 — that's over 65 years of earning trust one repair at a time. Our technicians are licensed, background-checked, and trained on all major brands. We show up on time, tell you exactly what's wrong, and fix it right the first time. We back every repair with a workmanship warranty and offer Synchrony financing for larger jobs.`,
-    timeline:        `Most furnace repairs are completed in a single visit, typically 1–3 hours. If a specialty part is needed, we'll let you know the estimated delivery time upfront. We offer same-day appointments for urgent situations — don't spend the night in the cold.`,
+    timeline:        `Most furnace repairs are completed in a single visit, typically 1–3 hours. If a specialty part is needed, we'll let you know the estimated delivery time upfront. We respond promptly during business hours for urgent situations — don't spend the night in the cold.`,
     relatedServices: [
       { label: 'Furnace Installation', slug: 'furnace-installation', desc: 'Sometimes a repair isn\'t the right answer. We\'ll give you an honest assessment and handle the full replacement if needed.' },
       { label: 'Heat Pump Services',   slug: 'heat-pump-services',   desc: 'Heat pumps are an efficient alternative that heat and cool year-round. Ask us if one is right for your home.' },
     ],
     faqs: [
       { q: 'How do I know if my furnace needs repair or replacement?', a: 'A good rule of thumb: if the furnace is under 15 years old and the repair cost is less than half of a new unit, repair is usually the better value. We\'ll give you an honest recommendation either way.' },
-      { q: 'Do you offer same-day furnace repair?', a: 'Yes — we offer same-day appointments for urgent situations. Call (316) 321-9438 and we\'ll get someone out as fast as possible.' },
+      { q: 'How quickly can you respond for furnace repair?', a: 'We respond during business hours, Monday through Friday. For heating emergencies, call (316) 321-9438 and we\'ll get someone out as fast as possible.' },
       { q: 'What brands of furnaces do you repair?', a: 'We service all major brands including Rheem, Mitsubishi, Carrier, Lennox, Trane, Goodman, and more.' },
       { q: 'Is the repair work guaranteed?', a: 'Yes. Every furnace repair comes with our workmanship warranty. If the same issue recurs, we\'ll come back and make it right at no additional charge.' },
       { q: 'Do you offer financing for furnace repairs?', a: 'We offer financing through Synchrony for larger repairs and replacements. Ask us about options when you call.' },
@@ -196,7 +196,7 @@ const SERVICE_DATA = {
     intro:           `Heat pumps are one of the most efficient ways to heat and cool your home year-round — one system, two seasons. Don's Heating & Air has been installing, repairing, and maintaining heat pumps across El Dorado, Hillsboro, and Emporia since 1959. Whether you need emergency heat pump repair or you\'re considering installing one for the first time, our team has the experience to handle it.\n\nWe service all major heat pump brands including Rheem, Mitsubishi ductless systems, and geothermal heat pumps.`,
     process:         `For repairs, we run a full diagnostic to identify the issue — refrigerant levels, reversing valve, compressor, fan motors, electrical components. For installations, we assess your home, recommend the right system, and complete the full install including any ductwork modifications needed.`,
     whyUs:           `Decades of heat pump experience across Kansas. We service all brands, back our work with a guarantee, and offer Synchrony financing for installations.`,
-    timeline:        `Repairs are typically completed same-day. Installations take 1–2 days depending on the system type.`,
+    timeline:        `Repairs are typically completed in a single visit. Installations take 1–2 days depending on the system type.`,
     relatedServices: [
       { label: 'Furnace Repair',    slug: 'furnace-repair',    desc: 'Need a backup heating system? We handle furnace repair and installation too.' },
       { label: 'AC Installation',   slug: 'air-conditioning-installation', desc: 'Traditional central air is still a great option for many Kansas homes.' },
@@ -259,11 +259,11 @@ const CITY_DATA = {
     metaDesc:  "Expert HVAC repair, installation & maintenance in El Dorado, KS. Don's Heating & Air — your local HVAC company since 1959. Call (316) 321-9438.",
     heroTitle: "HVAC Service in El Dorado, KS — Trusted Since 1959",
     intro:     `El Dorado is home. Don's Heating & Air has been the go-to HVAC company for El Dorado, KS homeowners and businesses since 1959 — that's over 65 years of keeping this community comfortable through every Kansas winter and summer.\n\nOur main office is right here on S. Main St., so when you call, a local technician responds. No call centers, no strangers — just your neighbors showing up with the tools and experience to fix it right the first time.`,
-    body:      `From the older homes in the historic district to newer builds in the surrounding Butler County area, we've worked on every type of heating and cooling system El Dorado has. We service all major brands, offer same-day appointments, and back every job with our workmanship guarantee.\n\nEl Dorado residents can also take advantage of Synchrony financing for larger system replacements, and ask about our Don's Performance Plans for scheduled annual maintenance.`,
+    body:      `From the older homes in the historic district to newer builds in the surrounding Butler County area, we've worked on every type of heating and cooling system El Dorado has. We service all major brands, respond promptly during business hours, and back every job with our workmanship guarantee.\n\nEl Dorado residents can also take advantage of Synchrony financing for larger system replacements, and ask about our Don's Performance Plans for scheduled annual maintenance.`,
     services:  ['furnace-repair', 'furnace-installation', 'air-conditioning-repair', 'air-conditioning-installation', 'heat-pump-services', 'indoor-air-quality', 'commercial-hvac'],
     faqs: [
       { q: 'Do you offer emergency HVAC service in El Dorado?', a: 'Yes - we offer 24/7 emergency service. Call (316) 321-9438 any time.' },
-      { q: 'How quickly can you respond in El Dorado?', a: 'Our main office is on S. Main St. in El Dorado - we typically respond same-day.' },
+      { q: 'How quickly can you respond in El Dorado?', a: 'Our main office is on S. Main St. in El Dorado. We respond during business hours, Monday through Friday, and get you scheduled fast.' },
       { q: 'What HVAC brands do you service in El Dorado?', a: 'We service all major brands including Rheem, Mitsubishi, Carrier, Lennox, and Trane.' },
       { q: 'Do you offer maintenance plans in El Dorado?', a: 'Yes - ask about our Performance Plans for annual scheduled maintenance with priority service.' },
     ],
