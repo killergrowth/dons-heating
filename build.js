@@ -181,7 +181,7 @@ function buildHomepage() {
       lines: ["Heating \u0026 Cooling", "Done Right"],
       btn1: { t: 'Schedule Service Today', h: '/contact/' },
       btn2: { t: 'Our Services', h: '/services/' },
-      subText: 'Same-day HVAC service across El Dorado, Hillsboro, and Emporia, KS. Licensed, insured, and trusted since 1959.'
+      subText: 'Fast, reliable HVAC service across El Dorado, Hillsboro, and Emporia, KS. Licensed, insured, and trusted since 1959.'
     },
   ];
 
