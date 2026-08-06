@@ -228,7 +228,7 @@ function mobileNav() {
   <div class="mobile-nav__overlay mobile-nav__toggler"></div>
   <div class="mobile-nav__content">
     <span class="mobile-nav__close mobile-nav__toggler"><i class="fa-solid fa-xmark"></i></span>
-    <div class="logo-box"><a href="/index.html"><img src="/assets/images/logo-vertical-white.png" width="140" alt="${CLIENT.name}" style="display:block;margin:0 auto;" loading="lazy"></a></div>
+    <div class="logo-box"><a href="/"><img src="/assets/images/Dons_logo.jpg" width="160" alt="${CLIENT.name}" style="display:block;margin:0 auto;background:#fff;border-radius:4px;padding:6px;" loading="lazy"></a></div>
     <div class="mobile-nav__container"></div>
     <ul class="mobile-nav__contact list-unstyled">
       <li><i class="fa-solid fa-envelope"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
