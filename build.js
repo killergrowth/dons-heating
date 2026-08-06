@@ -731,9 +731,13 @@ ${T.topbar()}
           <li><i class="fa-solid fa-check"></i><span>Every quote is based on a real in-person assessment, not a number pulled from thin air.</span></li>
         </ul>
         <div class="contact-info-cards">
-          <a href="https://www.google.com/maps/dir/?api=1&destination=306+S.+Main+St+El+Dorado+KS+67042&destination_place_id=ChIJ2Q46PnGzu4cRridw0AfTeV8" target="_blank" rel="noopener noreferrer" class="contact-info-card" style="text-decoration:none;display:block;">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=306+S.+Main+St+El+Dorado+KS+67042" target="_blank" rel="noopener noreferrer" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-diamond-turn-right"></i></div>
-            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Directions</h4>
+            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Directions — El Dorado</h4>
+          </a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Emporia+KS" target="_blank" rel="noopener noreferrer" class="contact-info-card" style="text-decoration:none;display:block;">
+            <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-diamond-turn-right"></i></div>
+            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Directions — Emporia</h4>
           </a>
           <a href="tel:${CLIENT.phoneTel}" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-phone"></i></div>
