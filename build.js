@@ -735,13 +735,20 @@ ${T.topbar()}
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-diamond-turn-right"></i></div>
             <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Directions — El Dorado</h4>
           </a>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Emporia+KS" target="_blank" rel="noopener noreferrer" class="contact-info-card" style="text-decoration:none;display:block;">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=421+E+6th+Ave+Emporia+KS+66801" target="_blank" rel="noopener noreferrer" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-diamond-turn-right"></i></div>
             <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Directions — Emporia</h4>
+            <p style="margin:4px 0 0;font-size:12px;color:#666;">421 E 6th Ave, Emporia KS 66801</p>
           </a>
           <a href="tel:${CLIENT.phoneTel}" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-phone"></i></div>
-            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Call or Text</h4>
+            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">El Dorado — Call or Text</h4>
+            <p style="margin:4px 0 0;font-size:12px;color:#666;">(316) 321-9438</p>
+          </a>
+          <a href="tel:+16202615885" class="contact-info-card" style="text-decoration:none;display:block;">
+            <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-phone"></i></div>
+            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Emporia — Call or Text</h4>
+            <p style="margin:4px 0 0;font-size:12px;color:#666;">(620) 261-5885</p>
           </a>
           <a href="mailto:${CLIENT.email}" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-envelope"></i></div>
