@@ -734,6 +734,7 @@ ${T.topbar()}
           <a href="https://www.google.com/maps/dir/?api=1&destination=306+S.+Main+St+El+Dorado+KS+67042" target="_blank" rel="noopener noreferrer" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-diamond-turn-right"></i></div>
             <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Directions — El Dorado</h4>
+            <p style="margin:4px 0 0;font-size:12px;color:#666;">306 S Main St, El Dorado KS 67042</p>
           </a>
           <a href="https://www.google.com/maps/dir/?api=1&destination=421+E+6th+Ave+Emporia+KS+66801" target="_blank" rel="noopener noreferrer" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-diamond-turn-right"></i></div>
