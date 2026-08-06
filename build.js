@@ -895,7 +895,7 @@ function buildCityHub(city) {
       </div>
       <div style="flex:1;">
         <div style="font-weight:700;color:#1B2A4A;margin-bottom:4px;">
-          <a href="/${s.slug}-${city.slug}/index.html" style="color:#1B2A4A;text-decoration:none;">${s.label} in ${d.label}, CO</a>
+          <a href="/${s.slug}-${city.slug}/index.html" style="color:#1B2A4A;text-decoration:none;">${s.label} in ${d.label}, KS</a>
         </div>
         <div style="color:#5a5650;font-size:14px;line-height:1.6;margin-bottom:6px;">${s.tagline}</div>
         <a href="/${s.slug}-${city.slug}/index.html" style="font-size:12px;font-weight:700;color:#3A5DAE;text-decoration:none;">Learn more &rarr;</a>
@@ -937,7 +937,7 @@ function buildCityHub(city) {
   const content = `
 ${T.topbar()}
 <!-- HEADER -->
-${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-served/index.html">Areas Served</a></li><li><span>${d.label}</span></li>`)}
+${T.pageHeader(`HVAC Services in ${d.label}, KS`, `<li><a href="/areas-served/index.html">Areas Served</a></li><li><span>${d.label}</span></li>`)}
 
 <script type="application/ld+json">${JSON.stringify(schema)}</script>
 
@@ -948,7 +948,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
       <!-- MAIN CONTENT -->
       <div class="col-lg-8">
         <div style="margin-bottom:32px;">
-          <h1 style="font-size:32px;font-weight:700;color:#1B2A4A;margin-bottom:10px;">Painting Services in ${d.label}, CO</h1>
+          <h1 style="font-size:32px;font-weight:700;color:#1B2A4A;margin-bottom:10px;">HVAC Services in ${d.label}, KS</h1>
           <p style="font-size:15px;color:#5a5650;margin-bottom:0;"><strong>${d.context}.</strong></p>
         </div>
 
@@ -958,7 +958,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
 
         <div style="margin-bottom:32px;">
           <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3A5DAE;margin-bottom:8px;">what we offer</p>
-          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:20px;">Our Services in ${d.label}, CO</h2>
+          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:20px;">Our Services in ${d.label}, KS</h2>
           <ul style="list-style:none;padding:0;margin:0;border-top:1px solid #e4dacc;">
             ${serviceFeatures}
           </ul>
@@ -968,7 +968,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
 
         <div style="margin-bottom:32px;">
           <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3A5DAE;margin-bottom:8px;">common questions</p>
-          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:20px;">Frequently Asked Questions Ã¯Â¿Â½" ${d.label}, CO</h2>
+          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:20px;">Frequently Asked Questions &#8212; ${d.label}, KS</h2>
           ${T.faqBlock(d.faqs, city.slug + '-faq')}
         </div>
 
@@ -1032,7 +1032,7 @@ ${T.contactFormSection()}`;
 
   write(`areas-served/${city.slug}/index.html`,
     `${T.htmlHead(
-      `Painting Services in ${d.label}, CO | Don\'s Heating & Air`,
+      `HVAC Services in ${d.label}, KS | Don\'s Heating & Air`,
       `Professional HVAC services in ${d.label}, KS. Furnace repair, AC installation, heat pumps and more. Licensed & insured. Call (316) 321-9438.`,
       `https://donsheatingandair.com/areas-served/${city.slug}/`
     )}
@@ -1278,7 +1278,7 @@ function buildServiceLocation(service, city) {
   // Other services this city page links to
   const otherServiceLinks = SERVICES
     .filter(s => s.slug !== service.slug)
-    .map(s => `<li><a href="/${s.slug}-${city.slug}/index.html" style="display:block;padding:8px 0;color:#1B2A4A;font-size:14px;text-decoration:none;border-bottom:1px solid #e4dacc;">${s.label} in ${cd.label}, CO</a></li>`)
+    .map(s => `<li><a href="/${s.slug}-${city.slug}/index.html" style="display:block;padding:8px 0;color:#1B2A4A;font-size:14px;text-decoration:none;border-bottom:1px solid #e4dacc;">${s.label} in ${cd.label}, KS</a></li>`)
     .join('');
 
   // Other cities for this service
@@ -1321,7 +1321,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
         <!-- Service Intro -->
         <div style="margin-bottom:32px;">
           <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3A5DAE;margin-bottom:8px;">${sd.tagline}</p>
-          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:16px;">${sd.heroTitle.includes(cd.label) ? sd.heroTitle : sd.heroTitle + ' &#8212; ' + cd.label + ', CO'}</h2>
+          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:16px;">${sd.heroTitle.includes(cd.label) ? sd.heroTitle : sd.heroTitle + ' &#8212; ' + cd.label + ', KS'}</h2>
           ${sd.intro.split('\n\n').map(p => `<p style="color:#5a5650;line-height:1.8;margin-bottom:16px;">${p}</p>`).join('')}
         </div>
 
@@ -1350,7 +1350,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
         <!-- FAQs -->
         <div style="margin-bottom:32px;">
           <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3A5DAE;margin-bottom:8px;">common questions</p>
-          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:20px;">Frequently Asked Questions &#8212; ${service.label} in ${cd.label}, CO</h2>
+          <h2 style="font-size:24px;font-weight:700;color:#1B2A4A;margin-bottom:20px;">Frequently Asked Questions &#8212; ${service.label} in ${cd.label}, KS</h2>
           ${T.faqBlock(blendedFaqs, pageSlug + '-faq')}
         </div>
 
@@ -1394,7 +1394,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
         </div>
 
         <div style="padding:28px;border:1px solid #e4dacc;border-radius:8px;margin-bottom:24px;">
-          <p style="color:#1B2A4A;margin-bottom:14px;font-size:15px;font-weight:600;">Our Services in ${cd.label}, CO</p>
+          <p style="color:#1B2A4A;margin-bottom:14px;font-size:15px;font-weight:600;">Our Services in ${cd.label}, KS</p>
           <ul class="list-unstyled" style="margin:0;">
             ${otherServiceLinks}
             <li><a href="/${service.slug}-${city.slug}/index.html" style="display:block;padding:8px 0;color:#3A5DAE;font-size:14px;font-weight:700;text-decoration:none;">${service.label} in ${cd.label} &rarr;</a></li>
