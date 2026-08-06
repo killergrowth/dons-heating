@@ -65,56 +65,56 @@ function buildHtmlEmail(name, email, phone, service, message) {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body style="margin:0;padding:0;background:#f4f0eb;font-family:'Open Sans',Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f0eb;padding:40px 0;">
+<body style="margin:0;padding:0;background:#f0f2f5;font-family:'Open Sans',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f0f2f5;padding:40px 0;">
     <tr><td align="center">
       <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
 
         <!-- Header -->
-        <tr><td style="background:#2E2A20;padding:36px 40px;text-align:center;border-radius:8px 8px 0 0;">
-          <img src="https://timnathpainting.com/assets/images/logo-email-v3.png" alt="Timnath Painting" style="max-width:280px;width:100%;height:auto;display:block;margin:0 auto 20px;">
-          <div style="color:#DF9E42;font-family:'Oswald',Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:3px;text-transform:uppercase;">New Quote Request</div>
+        <tr><td style="background:#1B2A4A;padding:36px 40px;text-align:center;border-radius:8px 8px 0 0;">
+          <img src="https://dons-heating.pages.dev/assets/images/Dons_logo.jpg" alt="Don's Heating & Air" style="max-width:220px;width:100%;height:auto;display:block;margin:0 auto 20px;background:#fff;padding:8px;border-radius:4px;">
+          <div style="color:#D4601A;font-family:'Oswald',Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:3px;text-transform:uppercase;">New Quote Request</div>
         </td></tr>
 
         <!-- Body -->
         <tr><td style="background:#ffffff;padding:36px 40px;">
-          <p style="margin:0 0 24px;color:#2E2A20;font-family:'Open Sans',Arial,sans-serif;font-size:15px;line-height:1.6;">
-            A new quote request was submitted through the Timnath Painting website. Here are the details:
+          <p style="margin:0 0 24px;color:#1B2A4A;font-family:'Open Sans',Arial,sans-serif;font-size:15px;line-height:1.6;">
+            A new quote request was submitted through the Don's Heating &amp; Air website. Here are the details:
           </p>
 
           <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
             <tr>
-              <td style="padding:12px 16px;background:#f9f5f0;border-left:3px solid #DF9E42;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;width:120px;">Name</td>
-              <td style="padding:12px 16px;background:#f9f5f0;font-size:15px;color:#2E2A20;font-weight:bold;">${name}</td>
+              <td style="padding:12px 16px;background:#f5f7fa;border-left:3px solid #D4601A;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;width:120px;">Name</td>
+              <td style="padding:12px 16px;background:#f5f7fa;font-size:15px;color:#1B2A4A;font-weight:bold;">${name}</td>
             </tr>
             <tr>
               <td style="padding:12px 16px;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;">Email</td>
-              <td style="padding:12px 16px;font-size:15px;color:#2E2A20;"><a href="mailto:${email}" style="color:#DF9E42;">${email}</a></td>
+              <td style="padding:12px 16px;font-size:15px;color:#1B2A4A;"><a href="mailto:${email}" style="color:#D4601A;">${email}</a></td>
             </tr>
             <tr>
-              <td style="padding:12px 16px;background:#f9f5f0;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;">Phone</td>
-              <td style="padding:12px 16px;background:#f9f5f0;font-size:15px;color:#2E2A20;">${phone || 'Not provided'}</td>
+              <td style="padding:12px 16px;background:#f5f7fa;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;">Phone</td>
+              <td style="padding:12px 16px;background:#f5f7fa;font-size:15px;color:#1B2A4A;">${phone || 'Not provided'}</td>
             </tr>
             <tr>
               <td style="padding:12px 16px;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;">Service</td>
-              <td style="padding:12px 16px;font-size:15px;color:#2E2A20;">${serviceLabel}</td>
+              <td style="padding:12px 16px;font-size:15px;color:#1B2A4A;">${serviceLabel}</td>
             </tr>
           </table>
 
           ${message ? `
           <div style="margin-top:24px;">
             <div style="font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Message</div>
-            <div style="background:#f9f5f0;border-left:3px solid #DF9E42;padding:16px;font-size:15px;color:#2E2A20;line-height:1.7;">${message.replace(/\n/g,'<br>')}</div>
+            <div style="background:#f5f7fa;border-left:3px solid #D4601A;padding:16px;font-size:15px;color:#1B2A4A;line-height:1.7;">${message.replace(/\n/g,'<br>')}</div>
           </div>` : ''}
 
-          ${phone ? `<div style="margin-top:32px;text-align:center;"><a href="tel:${phone.replace(/\D/g,'')}" style="display:inline-block;background:#DF9E42;color:#2E2A20;font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:16px;font-weight:700;padding:14px 36px;border-radius:4px;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">Call ${phone}</a></div>` : ''}
+          ${phone ? `<div style="margin-top:32px;text-align:center;"><a href="tel:${phone.replace(/\D/g,'')}" style="display:inline-block;background:#D4601A;color:#ffffff;font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:16px;font-weight:700;padding:14px 36px;border-radius:4px;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">Call ${phone}</a></div>` : ''}
         </td></tr>
 
         <!-- Footer -->
-        <tr><td style="background:#2E2A20;padding:24px 40px;text-align:center;border-radius:0 0 8px 8px;">
-          <p style="margin:0;color:#888;font-size:12px;">
-            Timnath Painting &bull; Timnath, CO 80547 &bull;
-            <a href="mailto:josh@timnathpainting.com" style="color:#DF9E42;">josh@timnathpainting.com</a>
+        <tr><td style="background:#1B2A4A;padding:24px 40px;text-align:center;border-radius:0 0 8px 8px;">
+          <p style="margin:0;color:#8a9bbf;font-size:12px;">
+            Don's Heating &amp; Air &bull; 306 S Main St, El Dorado, KS 67042 &bull;
+            <a href="mailto:csr@donsheatingandair.com" style="color:#D4601A;">csr@donsheatingandair.com</a>
           </p>
         </td></tr>
 
@@ -127,7 +127,7 @@ function buildHtmlEmail(name, email, phone, service, message) {
 
 const JSON_HEADERS = {
   'Content-Type': 'application/json',
-  'Access-Control-Allow-Origin': 'https://timnathpainting.com',
+  'Access-Control-Allow-Origin': '*',
 };
 
 export async function onRequestPost({ request, env }) {
@@ -162,14 +162,13 @@ export async function onRequestPost({ request, env }) {
       env.GMAIL_FROM
     );
 
-    const subject = 'New Quote Request - Timnath Painting';
+    const subject = "New Quote Request - Don's Heating & Air";
     const htmlBody = buildHtmlEmail(name, email, phone, service, message);
 
     // Build MIME multipart message (HTML only)
     const mimeLines = [
-      `From: Timnath Painting <${env.GMAIL_FROM}>`,
+      `From: Don's Heating & Air <${env.GMAIL_FROM}>`,
       `To: ${env.GMAIL_TO}`,
-      `Cc: josh@timnathpainting.com`,
       `Subject: ${subject}`,
       `MIME-Version: 1.0`,
       `Content-Type: text/html; charset=UTF-8`,
