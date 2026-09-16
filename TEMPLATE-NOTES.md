@@ -1,7 +1,7 @@
-# Template: contractor-1b — Timnath Painting (Clean Build)
+# Template: contractor-1b — Keystone Painting (Clean Build)
 
 **Slug:** `contractor-1b`
-**Based on:** Timnath Painting (`killergrowth/timnath-painting`)
+**Based on:** Keystone Painting (`killergrowth/keystone-painting`)
 **Parent template:** contractor-1 (Wallox)
 **Created:** 2026-06-29
 **Owner:** Tyler Brickley
@@ -11,7 +11,7 @@
 ## What This Is
 
 This is the production-grade KillerGrowth version of the Wallox contractor template.
-Timnath Painting was built from contractor-1 (raw Wallox), cleaned up significantly,
+Keystone Painting was built from contractor-1 (raw Wallox), cleaned up significantly,
 and this template captures that clean state as a reusable starting point.
 
 Use this instead of contractor-1 when building contractor, painting, or
@@ -60,7 +60,7 @@ general home-services sites. It includes the full KillerGrowth build system
 
 ## Sample Images
 
-The `assets/images/` directory contains Timnath Painting's actual photos.
+The `assets/images/` directory contains Keystone Painting's actual photos.
 These are here for visual reference only — replace with client-specific images before launch.
 
 ---

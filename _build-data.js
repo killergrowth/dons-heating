@@ -4,7 +4,7 @@
 // CLIENT: Don's Heating & Air
 // Site ID: dons-heating
 // Built: 2026-06-29 by Brickley Jr.
-// Template: contractor-1b (Timnath Painting clean build)
+// Template: contractor-1b (Keystone Painting clean build)
 // ─────────────────────────────────────────────────────────────────────────────
 
 const CLIENT = {
@@ -86,13 +86,20 @@ const SERVICES = [
     img:     'gpt2-ductwork.png',
     tagline: 'Commercial heating & cooling solutions for businesses across central Kansas.',
   },
+  {
+    label:   'HVAC Maintenance',
+    slug:    'hvac-maintenance',
+    icon:    'fa-solid fa-screwdriver-wrench',
+    img:     'gpt2-hvac-maintenance.png',
+    tagline: "Tune-ups, inspections & maintenance plans to keep your system running right.",
+  },
 ];
 
 // ─── CITIES ──────────────────────────────────────────────────────────────────
 const CITIES = [
-  { label: 'El Dorado',  slug: 'hvac-el-dorado-ks'  },
-  { label: 'Hillsboro',  slug: 'hvac-hillsboro-ks'  },
-  { label: 'Emporia',    slug: 'hvac-emporia-ks'    },
+  { label: 'El Dorado',  slug: 'hvac-el-dorado-ks',  phone: '(316) 321-9438', phoneTel: '3163219438', address: '306 S Main St',    city: 'El Dorado',  state: 'KS', zip: '67042', mapsUrl: 'https://www.google.com/maps/dir/?api=1&destination=306+S+Main+St+El+Dorado+KS+67042'    },
+  { label: 'Hillsboro',  slug: 'hvac-hillsboro-ks',  phone: '(316) 321-9438', phoneTel: '3163219438', address: '306 S Main St',    city: 'El Dorado',  state: 'KS', zip: '67042', mapsUrl: 'https://www.google.com/maps/dir/?api=1&destination=306+S+Main+St+El+Dorado+KS+67042'   },
+  { label: 'Emporia',    slug: 'hvac-emporia-ks',    phone: '(620) 261-5885', phoneTel: '6202615885', address: '421 E 6th Ave',   city: 'Emporia',    state: 'KS', zip: '66801', mapsUrl: 'https://www.google.com/maps/dir/?api=1&destination=421+E+6th+Ave+Emporia+KS+66801'      },
 ];
 
 // ─── SERVICE DATA ─────────────────────────────────────────────────────────────
@@ -248,6 +255,29 @@ const SERVICE_DATA = {
       { q: 'Are you licensed for commercial HVAC work?', a: 'Yes — our technicians hold all required Kansas HVAC licenses for commercial installations and service.' },
     ],
   },
+
+  'hvac-maintenance': {
+    title:           "HVAC Maintenance in El Dorado, KS | Don's Heating & Air",
+    metaTitle:       "HVAC Maintenance El Dorado KS | Don's Heating & Air | (316) 321-9438",
+    metaDesc:        "HVAC maintenance, tune-ups & Performance Plans in El Dorado, Hillsboro & Emporia, KS. Don's Heating & Air — trusted since 1959. Call (316) 321-9438.",
+    tagline:         'Prevent breakdowns before they happen.',
+    heroTitle:       'HVAC Maintenance in El Dorado & Central Kansas',
+    intro:           `Regular HVAC maintenance is the single best thing you can do to extend the life of your heating and cooling system, lower your energy bills, and avoid expensive emergency repairs. Don's Heating & Air has been maintaining furnaces, air conditioners, and heat pumps across El Dorado, Hillsboro, and Emporia since 1959.\n\nOur Don's Performance Plans give you scheduled annual tune-ups, priority service when something goes wrong, and peace of mind knowing your system has been inspected by licensed technicians before the season hits.`,
+    process:         `A standard maintenance visit includes a full system inspection, filter check and replacement, electrical connection tightening, thermostat calibration, refrigerant level check, coil cleaning, and a complete operational test. We document everything we find and walk you through any concerns before we leave.`,
+    whyUs:           `Over 65 years of experience means we've seen what happens when systems aren't maintained — and we've seen how much longer well-maintained systems last. Our licensed technicians catch small problems before they become big ones. Ask about Don's Performance Plans for priority scheduling and annual tune-ups at a flat rate.`,
+    timeline:        `A routine maintenance visit typically takes 1–2 hours. We work around your schedule and offer flexible appointment windows.`,
+    relatedServices: [
+      { label: 'Furnace Repair',  slug: 'furnace-repair',  desc: 'If we find a problem during maintenance, we can usually fix it the same visit.' },
+      { label: 'AC Repair',       slug: 'air-conditioning-repair', desc: 'Catch cooling issues early before the heat of summer.' },
+    ],
+    faqs: [
+      { q: 'How often should I have my HVAC system serviced?', a: 'We recommend two visits per year — once in the spring to prep your AC, and once in the fall to prep your furnace. At minimum, one annual tune-up keeps most systems running well.' },
+      { q: 'What is a Don\'s Performance Plan?', a: 'It\'s our annual maintenance agreement. You get scheduled tune-ups, priority service, and flat-rate pricing on the visit. Call us for current plan options and pricing.' },
+      { q: 'Can you maintain any brand of HVAC equipment?', a: 'Yes — we service all major brands including Rheem, Mitsubishi, Carrier, Lennox, Trane, Goodman, and more.' },
+      { q: 'Do I need maintenance if my system is new?', a: 'Yes. Even new systems benefit from annual tune-ups. Some manufacturer warranties also require documented annual maintenance to remain valid.' },
+      { q: 'What happens if you find a problem during a maintenance visit?', a: 'We\'ll tell you exactly what we found and what it will cost to fix. You decide whether to proceed. We never perform work without your approval.' },
+    ],
+  },
 };
 
 // ─── CITY DATA ────────────────────────────────────────────────────────────────
@@ -273,15 +303,15 @@ const CITY_DATA = {
     label:     'Hillsboro',
     state:     'KS',
     metaTitle: "HVAC Hillsboro KS | Heating & Cooling Service | Don's Heating & Air",
-    metaDesc:  "Heating & cooling repair and installation in Hillsboro, KS. Don's Heating & Air serves Marion County from our Hillsboro office. Call (620) 947-2247.",
+    metaDesc:  "Heating & cooling repair and installation in Hillsboro, KS. Don's Heating & Air serves Marion County from our Hillsboro office. Call (316) 321-9438.",
     heroTitle: "HVAC Service in Hillsboro, KS — Local Experts You Can Trust",
-    intro:     `Don's Heating & Air has served Hillsboro and the surrounding Marion County area for decades from our local office at 607 N. Ash St. When your furnace goes out in the middle of a Hillsboro winter, you don't want to wait on a company from Wichita to make the drive. You want someone who's already here.\n\nOur Hillsboro team provides the same quality service as our El Dorado headquarters — licensed technicians, guaranteed work, and honest pricing.`,
+    intro:     `Don's Heating & Air has served Hillsboro and the surrounding Marion County area for decades. When your furnace goes out in the middle of a Hillsboro winter, you don't want to wait on a company from Wichita to make the drive. We're based in El Dorado and cover the area fast.\n\nOur team provides licensed, guaranteed work and honest pricing — the same quality service we've delivered across Central Kansas since 1959.`,
     body:      `We handle all HVAC needs for Hillsboro homeowners and businesses, including furnace repair and installation, AC repair and installation, heat pump services, and commercial HVAC. Ask about our Don's Performance Plans for scheduled maintenance to keep your system running efficiently year-round.`,
     services:  ['furnace-repair', 'furnace-installation', 'air-conditioning-repair', 'air-conditioning-installation', 'heat-pump-services', 'commercial-hvac'],
     faqs: [
-      { q: 'Do you have a local office in Hillsboro?', a: 'Yes - our Hillsboro office is at 607 N. Ash St. Call (620) 947-2247.' },
+      { q: 'Do you serve Hillsboro, KS?', a: 'Yes - we serve Hillsboro and all of Marion County from our El Dorado headquarters. Call (316) 321-9438.' },
       { q: 'Do you offer emergency HVAC service in Hillsboro?', a: 'Yes - 24/7 emergency service available. Call (316) 321-9438.' },
-      { q: 'What HVAC services do you offer in Hillsboro?', a: 'Furnace repair, furnace installation, AC repair, AC installation, heat pump services, and commercial HVAC.' },
+      { q: 'What HVAC services do you offer in Hillsboro?', a: 'Furnace repair, furnace installation, AC repair, AC installation, heat pump services, commercial HVAC, and HVAC maintenance.' },
     ],
   },
 
@@ -296,8 +326,8 @@ const CITY_DATA = {
     services:  ['furnace-repair', 'furnace-installation', 'air-conditioning-repair', 'air-conditioning-installation', 'heat-pump-services', 'indoor-air-quality', 'commercial-hvac'],
     faqs: [
       { q: 'Do you have a local office in Emporia?', a: 'Yes - our Emporia office is at 421 E. 6th St. Call (620) 261-5885.' },
-      { q: 'Do you offer emergency HVAC service in Emporia?', a: 'Yes - 24/7 emergency service available. Call (316) 321-9438.' },
-      { q: 'What HVAC services are available in Emporia, KS?', a: 'Full range: furnace repair/installation, AC repair/installation, heat pump services, indoor air quality, and commercial HVAC.' },
+      { q: 'Do you offer emergency HVAC service in Emporia?', a: 'At this time, our Emporia location does not offer emergency HVAC service. For emergency needs, please call our El Dorado location at (316) 321-9438.' },
+      { q: 'What HVAC services are available in Emporia, KS?', a: 'Full range: furnace repair/installation, AC repair/installation, heat pump services, indoor air quality, commercial HVAC, and HVAC maintenance.' },
     ],
   },
 };

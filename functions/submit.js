@@ -2,6 +2,7 @@
  * Cloudflare Pages Function — /submit
  * Returns JSON { ok: true } or { ok: false, error: string }
  * Sends a branded HTML email via Gmail API (service account JWT auth).
+ * Supports optional resume file attachment (careers form).
  */
 
 function objToB64url(obj) {
@@ -16,6 +17,13 @@ function bufToB64url(buffer) {
   let binary = '';
   for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
   return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+function bufToB64(buffer) {
+  const bytes = new Uint8Array(buffer);
+  let binary = '';
+  for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+  return btoa(binary);
 }
 
 async function getGmailAccessToken(serviceEmail, privateKeyPem, impersonateEmail) {
@@ -58,6 +66,7 @@ async function getGmailAccessToken(serviceEmail, privateKeyPem, impersonateEmail
 
 function buildHtmlEmail(name, email, phone, service, message) {
   const serviceLabel = service ? service.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) : 'Not specified';
+
   return `<!DOCTYPE html>
 <html>
 <head>
@@ -125,6 +134,49 @@ function buildHtmlEmail(name, email, phone, service, message) {
 </html>`;
 }
 
+// Build a multipart/mixed MIME message with optional file attachment
+function buildMimeMessage(headers, htmlBody, attachment) {
+  const boundary = 'KG_BOUNDARY_' + Math.random().toString(36).slice(2);
+
+  if (!attachment) {
+    // Simple HTML-only message
+    return [
+      ...headers,
+      'MIME-Version: 1.0',
+      'Content-Type: text/html; charset=UTF-8',
+      '',
+      htmlBody,
+    ].join('\r\n');
+  }
+
+  // Multipart/mixed with HTML + attachment
+  const { filename, mimeType, b64data } = attachment;
+
+  // Wrap base64 at 76 chars per line (RFC 2045)
+  const wrapped = b64data.match(/.{1,76}/g).join('\r\n');
+
+  return [
+    ...headers,
+    'MIME-Version: 1.0',
+    `Content-Type: multipart/mixed; boundary="${boundary}"`,
+    '',
+    `--${boundary}`,
+    'Content-Type: text/html; charset=UTF-8',
+    'Content-Transfer-Encoding: 7bit',
+    '',
+    htmlBody,
+    '',
+    `--${boundary}`,
+    `Content-Type: ${mimeType}; name="${filename}"`,
+    'Content-Transfer-Encoding: base64',
+    `Content-Disposition: attachment; filename="${filename}"`,
+    '',
+    wrapped,
+    '',
+    `--${boundary}--`,
+  ].join('\r\n');
+}
+
 const JSON_HEADERS = {
   'Content-Type': 'application/json',
   'Access-Control-Allow-Origin': '*',
@@ -156,27 +208,49 @@ export async function onRequestPost({ request, env }) {
     }
     // --- end Turnstile verification ---
 
+    // --- Optional resume attachment (careers form only) ---
+    let attachment = null;
+    const resumeFile = form.get('resume');
+    if (resumeFile && resumeFile.size > 0) {
+      const MAX_BYTES = 5 * 1024 * 1024; // 5MB server-side guard
+      if (resumeFile.size > MAX_BYTES) {
+        return new Response(JSON.stringify({ ok: false, error: 'Resume file too large. Please keep it under 5MB.' }), {
+          status: 400,
+          headers: JSON_HEADERS,
+        });
+      }
+      const resumeBuffer = await resumeFile.arrayBuffer();
+      attachment = {
+        filename: resumeFile.name || 'resume.pdf',
+        mimeType: resumeFile.type || 'application/octet-stream',
+        b64data: bufToB64(resumeBuffer),
+      };
+    }
+
     const accessToken = await getGmailAccessToken(
       env.GMAIL_SERVICE_EMAIL,
       env.GMAIL_PRIVATE_KEY,
       env.GMAIL_FROM
     );
 
-    const subject = "New Quote Request - Don's Heating & Air";
+    // Subject line — flag careers applications
+    const isCareers = service === 'careers-application';
+    const subject = isCareers
+      ? `New Career Application - Don's Heating & Air`
+      : `New Quote Request - Don's Heating & Air`;
+
     const htmlBody = buildHtmlEmail(name, email, phone, service, message);
 
-    // Build MIME multipart message (HTML only)
-    const mimeLines = [
+    const mimeHeaders = [
       `From: Don's Heating & Air <${env.GMAIL_FROM}>`,
       `To: ${env.GMAIL_TO}`,
+      ...(email ? [`Reply-To: ${name} <${email}>`] : []),
       `Subject: ${subject}`,
-      `MIME-Version: 1.0`,
-      `Content-Type: text/html; charset=UTF-8`,
-      '',
-      htmlBody,
-    ].join('\r\n');
+    ];
 
-    const emailBytes = new TextEncoder().encode(mimeLines);
+    const mimeMessage = buildMimeMessage(mimeHeaders, htmlBody, attachment);
+
+    const emailBytes = new TextEncoder().encode(mimeMessage);
     let emailBinary = '';
     for (let i = 0; i < emailBytes.length; i++) emailBinary += String.fromCharCode(emailBytes[i]);
     const encoded = btoa(emailBinary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');

@@ -132,6 +132,11 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 
 /* .real-image: GSAP xPercent reveal removed. Images visible by default. */
 .real-image { overflow: hidden; }
+/* PAGE LOADER */
+#dons-page-loader{position:fixed;inset:0;background:#1B2A4A;display:flex;align-items:center;justify-content:center;z-index:99999;transition:opacity .35s ease}
+#dons-page-loader.hidden{opacity:0;pointer-events:none}
+.dons-spinner{width:48px;height:48px;border:4px solid rgba(255,255,255,.2);border-top-color:#F5A623;border-radius:50%;animation:dons-spin .7s linear infinite}
+@keyframes dons-spin{to{transform:rotate(360deg)}}
 /* === STATIC HERO (no Owl carousel, no wallox.js dep for LCP) === */
 /* Hero bg: immediately visible, no wallox opacity:0 initial state */
 .hero-static .main-slider-one__bg { opacity: 1 !important; transform: none !important; transition: none !important; }
@@ -166,7 +171,10 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .sec-title__tagline { letter-spacing: 0.5px !important; word-spacing: normal !important; }
 .sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
 </style>
-
+<script>
+function openHCPModal(){window.open('https://book.housecallpro.com/book/Dons-Heating-and-Air/74c83572624343e580ce5e41660a46b3?v2=true','_blank','noopener,noreferrer');}
+function closeHCPModal(){}
+</script>
 
 </head>`;
 }
@@ -261,8 +269,7 @@ function contactFormSection() {
         <div class="wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="100ms"
           style="background:rgba(30,22,14,0.88);border-radius:10px;padding:40px 36px;">
           <div style="margin-bottom:24px;">
-            <span style="color:var(--wallox-base,#3A5DAE);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Request a Quote</span>
-            <h3 style="color:#fff;margin-top:8px;margin-bottom:0;">Get a Free Quote</h3>
+            <h2 style="color:#fff;font-size:2rem;font-weight:700;margin:0;">Contact Us</h2>
           </div>
           <form class="contact-one__form form-one" id="quote-form"
             action="/submit"
@@ -285,6 +292,16 @@ function contactFormSection() {
                   style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;border-radius:5px;padding:10px 14px;width:100%;">
               </div>
               <div class="form-one__control">
+                <label for="location" style="color:#ccc;font-size:13px;">Your Location</label>
+                <select id="location" name="location"
+                  style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:5px;background:#2a1e12;color:#fff;">
+                  <option value="" style="color:#222;background:#fff;">Select a City</option>
+                  <option value="El Dorado" style="color:#222;background:#fff;">El Dorado</option>
+                  <option value="Emporia" style="color:#222;background:#fff;">Emporia</option>
+                  <option value="Hillsboro" style="color:#222;background:#fff;">Hillsboro</option>
+                </select>
+              </div>
+              <div class="form-one__control form-one__control--full" style="grid-column:1/-1;">
                 <label for="service" style="color:#ccc;font-size:13px;">Service Needed</label>
                 <select id="service" name="service"
                   style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:5px;background:#2a1e12;color:#fff;">
@@ -298,11 +315,11 @@ function contactFormSection() {
               </div>
               <div class="form-one__control form-one__control--full" style="grid-column:1/-1;">
                 <div class="cf-turnstile" data-sitekey="0x4AAAAAADpT5f2gM80jpJHh" data-theme="dark" style="margin-bottom:12px;"></div>
-                <button type="submit" class="wallox-btn wallox-btn--base" style="width:100%;">Request a Quote</button>
+                <button type="submit" class="wallox-btn wallox-btn--base" style="width:100%;">Submit</button>
               </div>
             </div>
           </form>
-          <p style="margin-top:16px;font-size:13px;color:#aaa;text-align:center;">We respond same-day. Prefer to call or text? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#3A5DAE);text-decoration:underline;">${CLIENT.phone}</a></p>
+          <p style="margin-top:16px;font-size:13px;color:#aaa;text-align:center;">Prefer to call or text? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#3A5DAE);text-decoration:underline;">${CLIENT.phone}</a></p>
         </div>
       </div>
 
@@ -310,12 +327,14 @@ function contactFormSection() {
       <div class="col-lg-6">
         <div class="wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="150ms" style="padding:20px 10px;">
           <span style="color:#fff;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Reach Us Directly</span>
-          <h3 style="color:#fff;margin-top:8px;margin-bottom:30px;">We Respond Same-Day</h3>
+          <h3 style="color:#fff;margin-top:8px;margin-bottom:16px;">We Respond Same-Day</h3>
+          <a href="https://book.housecallpro.com/book/Dons-Heating-and-Air/74c83572624343e580ce5e41660a46b3?v2=true" target="_blank" rel="noopener" style="display:inline-block;background:#F5A623;color:#1a1a1a;font-weight:700;font-size:16px;padding:12px 28px;border-radius:6px;text-decoration:none;margin-bottom:24px;">Book Online</a>
           <ul class="list-unstyled" style="line-height:2.6;">
             <li><i class="fa-solid fa-phone" style="color:var(--wallox-base,#3A5DAE);margin-right:12px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:#fff;">${CLIENT.phone}</a></li>
             <li style="font-size:13px;color:#aaa;"><i class="fa-solid fa-comment-sms" style="color:var(--wallox-base,#3A5DAE);margin-right:12px;"></i>Text us to schedule a quote or talk to a team member</li>
             <li><i class="fa-solid fa-envelope" style="color:var(--wallox-base,#3A5DAE);margin-right:12px;"></i><a href="mailto:${CLIENT.email}" style="color:#ddd;">${CLIENT.email}</a></li>
-            <li><i class="fa-solid fa-location-dot" style="color:var(--wallox-base,#3A5DAE);margin-right:12px;"></i><span style="color:#ddd;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</span></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=306+S+Main+St+El+Dorado+KS+67042" target="_blank" rel="noopener" style="color:#ddd;text-decoration:none;"><i class="fa-solid fa-location-dot" style="color:var(--wallox-base,#3A5DAE);margin-right:12px;"></i>El Dorado, KS 67042</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=421+E+6th+Ave+Emporia+KS+66801" target="_blank" rel="noopener" style="color:#ddd;text-decoration:none;"><i class="fa-solid fa-location-dot" style="color:var(--wallox-base,#3A5DAE);margin-right:12px;"></i>Emporia, KS 66801</a></li>
           </ul>
           <p style="margin-top:30px;font-style:italic;color:#bbb;">Licensed &amp; Insured &bull; Licensed & Insured. &bull; $1M General Liability</p>
         </div>
@@ -370,6 +389,8 @@ function serviceCarouselItems() {
 
 function wrapBody(content) {
   return `<body>
+<div id="dons-page-loader"><div class="dons-spinner"></div></div>
+<script>document.addEventListener('DOMContentLoaded',function(){var l=document.getElementById('dons-page-loader');if(l){l.classList.add('hidden');setTimeout(function(){l.style.display='none'},400);}});<\/script>
 
 <div class="page-wrapper">
 ${content}
@@ -425,7 +446,7 @@ document.addEventListener("DOMContentLoaded", function fixTransforms() {
   document.addEventListener('DOMContentLoaded', function () {
     attachFormHandler(
       'quote-form', 'quote_form',
-      '<p style="color:#3A5DAE;font-size:22px;font-weight:700;margin-bottom:12px;">Thank you!</p><p style="color:rgba(255,255,255,0.85);font-size:15px;line-height:1.7;">We received your request and will be in touch within a few minutes.</p>'
+      '<p style="color:#3A5DAE;font-size:22px;font-weight:700;margin-bottom:12px;">Thank you!</p><p style="color:rgba(255,255,255,0.85);font-size:15px;line-height:1.7;">We received your request and we\'ll be in touch soon.</p>'
     );
     attachFormHandler(
       'contact-form', 'contact_form',
@@ -434,21 +455,16 @@ document.addEventListener("DOMContentLoaded", function fixTransforms() {
   });
 }());
 </script>
-<!-- Web Vitals → GA4 (real user Core Web Vitals measurement) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1XTQPEKLW"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-M1XTQPEKLW', {send_page_view: false});
-</script>
+<!-- Web Vitals → dataLayer (routes through GTM → GA4 G-YD6EGCMW41) -->
 <script type="module">
 import {onLCP, onCLS, onINP, onFCP, onTTFB} from 'https://unpkg.com/web-vitals@4/dist/web-vitals.attribution.js';
 function sendVital(m) {
-  gtag('event', m.name, {
-    event_category: 'Web Vitals',
-    value: Math.round(m.name === 'CLS' ? m.delta * 1000 : m.delta),
-    event_label: m.id,
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'web_vitals',
+    metric_name: m.name,
+    metric_value: Math.round(m.name === 'CLS' ? m.delta * 1000 : m.delta),
+    metric_id: m.id,
     metric_rating: m.rating,
     non_interaction: true
   });
@@ -459,6 +475,7 @@ onINP(sendVital);
 onFCP(sendVital);
 onTTFB(sendVital);
 </script>
+
 </body>
 </html>`;
 }

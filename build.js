@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 /**
  * build.js  -  Don\'s Heating & Air Site Builder
  * Generates all pillar pages from data + templates
@@ -34,7 +34,7 @@ const HEADER = fs.readFileSync(path.join(PARTS, 'header.html'), 'utf8');
 const HEADER_STRIPPED = fs.readFileSync(path.join(PARTS, 'header-stripped.html'), 'utf8');
 const FOOTER_MINIMAL = fs.readFileSync(path.join(PARTS, 'footer-minimal.html'), 'utf8');
 
-// Custom SVG icons ï¿½" inline with brand color
+// Custom SVG icons Ã¯Â¿Â½" inline with brand color
 const BRAND_COLOR = '#3A5DAE';
 function inlineSvg(filename, size) {
   const raw = fs.readFileSync(path.join(__dirname, 'assets/images', filename), 'utf8')
@@ -63,10 +63,10 @@ function writeStripped(relPath, html) {
   console.log('Built:', relPath);
 }
 
-// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ Setup Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
+// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ Setup ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
 ensureDir(DIST);
 copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
-// Generate mobile hero variant (800px @ q68 ~70KB) ï¿½" desktop is pre-compressed in source
+// Generate mobile hero variant (800px @ q68 ~70KB) Ã¯Â¿Â½" desktop is pre-compressed in source
 // Source: assets/images/backgrounds/dons-hero.webp (151KB @ 1440px q50)
 {
   const sharp = require('sharp');
@@ -84,9 +84,9 @@ copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DIST, f));
 });
 
-// Root index.html ï¿½" built by buildHomepage()
+// Root index.html Ã¯Â¿Â½" built by buildHomepage()
 
-// Copy coming-soon landing page to root (DISABLED ï¿½" site is live)
+// Copy coming-soon landing page to root (DISABLED Ã¯Â¿Â½" site is live)
 /* const COMING_SOON = path.join(ROOT, '..', 'El Dorado-painting-coming-soon');
 if (fs.existsSync(COMING_SOON)) {
   fs.copyFileSync(path.join(COMING_SOON, 'index.html'), path.join(DIST, 'index.html'));
@@ -98,7 +98,7 @@ if (fs.existsSync(COMING_SOON)) {
   fs.writeFileSync(path.join(DIST, 'index.html'), csHtml, 'utf8');
   console.log('Coming-soon landing page copied to root.');
 } */
-// Remove _worker.js and _routes.json ï¿½" Pages Functions handle routing now
+// Remove _worker.js and _routes.json Ã¯Â¿Â½" Pages Functions handle routing now
 // _worker.js in dist/ disables ALL Pages Functions (CF limitation)
 const workerFile = path.join(DIST, '_worker.js');
 const routesFile = path.join(DIST, '_routes.json');
@@ -107,15 +107,15 @@ if (fs.existsSync(routesFile)) fs.unlinkSync(routesFile);
 
 console.log('Assets copied.\n');
 
-// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ HOMEPAGE Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
+// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ HOMEPAGE ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
 function buildHomepage() {
-  // ï¿½"ï¿½ï¿½"ï¿½ Reviews data ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½
+  // Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½ Reviews data Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½
   const reviewsFile = path.join(ROOT, 'data', 'reviews.json');
   const reviewData = fs.existsSync(reviewsFile)
     ? JSON.parse(fs.readFileSync(reviewsFile, 'utf8'))
     : { rating: null, userRatingCount: 0, reviews: [] };
 
-  // Build review cards — filter 5-star only, max 6 total, carousel slides
+  // Build review cards â€” filter 5-star only, max 6 total, carousel slides
   const fiveStarReviews = reviewData.reviews.filter(r => r.rating === 5).slice(0, 6);
   const reviewCards = fiveStarReviews.map((r) => {
     const initial = (r.author || 'A').charAt(0).toUpperCase();
@@ -207,7 +207,7 @@ function buildHomepage() {
       </div>
       <p class="main-slider-one__sub-text">${s.subText || ''}</p>
       <div class="main-slider-one__btn">
-        <a href="${s.btn1.h}" class="wallox-btn wallox-btn--base">${s.btn1.t} <i class="fa-solid fa-arrow-right"></i></a>
+        <button onclick="openHCPModal()" class="wallox-btn wallox-btn--base" style="cursor:pointer;">${s.btn1.t} <i class="fa-solid fa-arrow-right"></i></button>
         <a href="${s.btn2.h}" class="wallox-btn wallox-btn--hero-secondary">${s.btn2.t}</a>
       </div>
     </div>
@@ -219,7 +219,7 @@ function buildHomepage() {
     { icon:'fa-solid fa-lightbulb', title:'10 Year Systems', link:'/exterior-painting/index.html' },
     { icon:'fa-solid fa-wrench', title:'Licensed &amp; Insured.', link:'/about/' },
     { icon:'fa-solid fa-users', title:'$1M Liability Coverage', link:'/about/' },
-    { icon:'fa-solid fa-shield-halved', title:'Free On-Site Quotes', link:'/get-a-quote/' },
+    { icon:'fa-solid fa-shield-halved', title:'Free On-Site Quotes', link:'https://book.housecallpro.com/book/Dons-Heating-and-Air/74c83572624343e580ce5e41660a46b3?v2=true' },
   ];
 
   const content = `
@@ -355,7 +355,7 @@ ${T.topbar()}
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Read All Posts <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -369,7 +369,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(finalContent)}`);
 }
 
-// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ ABOUT PAGE Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
+// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ ABOUT PAGE ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
 function buildAbout() {
   const content = `
 ${T.topbar()}
@@ -381,9 +381,9 @@ ${T.pageHeader('About Don\'s Heating & Air', '<li><span>About Us</span></li>')}
     <div class="row align-items-center gutter-y-30">
       <div class="col-lg-6" style="text-align:center;">
         <div style="overflow:visible;">
-          <img src="/assets/images/Dons_Owner_Tom.png" alt="Don - Owner, Don\'s Heating & Air" style="width:100%;max-width:460px;display:block;margin:0 auto;border-radius:8px;">
-          <p style="margin-top:12px;font-weight:600;font-size:1rem;color:#3a2e1e;">Don, Owner</p>
-          <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:inline-block;">Get a Free Quote</a>
+          <img src="/assets/images/Dons_Owner_Tom.png" alt="Tom - Owner, Don\'s Heating & Air" style="width:100%;max-width:460px;display:block;margin:0 auto;border-radius:8px;">
+          <p style="margin-top:12px;font-weight:600;font-size:1rem;color:#3a2e1e;">Tom, Owner</p>
+          <a href="https://book.housecallpro.com/book/Dons-Heating-and-Air/74c83572624343e580ce5e41660a46b3?v2=true" target="_blank" rel="noopener noreferrer" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:inline-block;">Book Online</a>
         </div>
       </div>
       <div class="col-lg-6">
@@ -420,7 +420,7 @@ ${T.pageHeader('About Don\'s Heating & Air', '<li><span>About Us</span></li>')}
       </div>
       <div class="col-lg-6">
         <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms" style="margin-top:40px;">
-          <h4 class="progress-box__title">Surface Preparation Standards</h4>
+          <h4 class="progress-box__title">First-Time Fix Rate</h4>
           <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="100%"><div class="progress-box__number count-text">100%</div></div></div>
         </div>
         <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
@@ -428,7 +428,7 @@ ${T.pageHeader('About Don\'s Heating & Air', '<li><span>About Us</span></li>')}
           <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="100%"><div class="progress-box__number count-text">100%</div></div></div>
         </div>
         <div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms" style="margin-top:32px;border-radius:10px;overflow:hidden;">
-          <img src="/assets/images/about/about-kitchen.jpg" alt="Painting project by Don\'s Heating & Air" style="width:100%;height:auto;display:block;border-radius:10px;">
+          <img src="/assets/images/about/about-kitchen.jpg" alt="HVAC service by Don\'s Heating & Air" style="width:100%;height:auto;display:block;border-radius:10px;">
         </div>
       </div>
     </div>
@@ -443,9 +443,11 @@ ${T.pageHeader('About Don\'s Heating & Air', '<li><span>About Us</span></li>')}
     </div>
     <div class="row gutter-y-30" style="margin-top:40px;">
       ${SERVICES.map(s => `<div class="col-md-6 col-lg-4">
-        <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:space-between;min-height:140px;">
-          <p class="feature-two__item__title" style="margin-bottom:10px;"><a href="/${s.slug}/index.html">${s.label}</a></p>
-          <a href="/${s.slug}/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;">Learn More</a>
+        <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:space-between;min-height:180px;">
+          <i class="${s.icon}" style="font-size:28px;color:#D4601A;margin-bottom:10px;"></i>
+          <p class="feature-two__item__title" style="margin-bottom:6px;"><a href="/${s.slug}/">${s.label}</a></p>
+          <p style="font-size:13px;color:#666;line-height:1.5;margin:0 0 10px;">${s.tagline}</p>
+          <a href="/${s.slug}/" class="wallox-btn wallox-btn--base" style="margin-top:auto;">Learn More</a>
         </div>
       </div>`).join('\n')}
       <div class="col-md-6 col-lg-4">
@@ -469,7 +471,7 @@ ${T.pageHeader('About Don\'s Heating & Air', '<li><span>About Us</span></li>')}
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Read All Posts <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -480,7 +482,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ SERVICE HUB PAGES Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
+// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ SERVICE HUB PAGES ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
 function buildServiceHub(slug) {
   const d = SERVICE_DATA[slug];
   if (!d) { console.warn('No data for', slug); return; }
@@ -544,7 +546,7 @@ function buildServiceHub(slug) {
             <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:10px;"></i><span style="color:#fff;">Licensed &amp; Insured in Kansas</span></li>
             <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:10px;"></i><span style="color:#fff;">Licensed &amp; Insured.</span></li>
             <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:10px;"></i><span style="color:#fff;">$1MLicensed &amp; Insured &mdash; COI on request</span></li>
-            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:10px;"></i><span style="color:#fff;">Licensed &amp; Insjamin Moore Approved</span></li>
+            <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:10px;"></i><span style="color:#fff;">Serving Central Kansas Since 1959</span></li>
             <li><i class="fa-solid fa-check" style="color:#3A5DAE;margin-right:10px;"></i><span style="color:#fff;">No subcontractors. We know our crews.</span></li>
           </ul>
         </div>` : '';
@@ -621,7 +623,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
               <li><i class="fa-solid fa-envelope" style="color:var(--wallox-base);margin-right:8px;"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
               <li><a href="https://maps.google.com/?q=306+S.+Main+St.,+El+Dorado,+KS+67042" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-location-dot" style="color:var(--wallox-base);margin-right:8px;"></i>${CLIENT.city}, ${CLIENT.state}</a></li>
             </ul>
-            <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:block;text-align:center;">Request a Quote</a>
+            <a href="https://book.housecallpro.com/book/Dons-Heating-and-Air/74c83572624343e580ce5e41660a46b3?v2=true" target="_blank" rel="noopener noreferrer" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:block;text-align:center;">Book Online</a>
           </div>
           <div style="background:#1B2A4A;color:#f4ede4;padding:30px;border-radius:8px;">
             <h4 style="color:#3A5DAE;margin-bottom:15px;">Why Don\'s Heating & Air</h4>
@@ -652,7 +654,7 @@ ${serviceReviewsSection}
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Read All Posts <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -665,7 +667,7 @@ ${T.wrapBody(content)}`);
 
 
 
-// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ CONTACT PAGE Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
+// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ CONTACT PAGE ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
 function buildContact() {
   const content = `
 ${T.topbar()}
@@ -733,22 +735,22 @@ ${T.topbar()}
         <div class="contact-info-cards">
           <a href="https://www.google.com/maps/dir/?api=1&destination=306+S.+Main+St+El+Dorado+KS+67042" target="_blank" rel="noopener noreferrer" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-diamond-turn-right"></i></div>
-            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Directions — El Dorado</h4>
+            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Directions â€” El Dorado</h4>
             <p style="margin:4px 0 0;font-size:12px;color:#666;">306 S Main St, El Dorado KS 67042</p>
           </a>
           <a href="https://www.google.com/maps/dir/?api=1&destination=421+E+6th+Ave+Emporia+KS+66801" target="_blank" rel="noopener noreferrer" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-diamond-turn-right"></i></div>
-            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Directions — Emporia</h4>
+            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Directions â€” Emporia</h4>
             <p style="margin:4px 0 0;font-size:12px;color:#666;">421 E 6th Ave, Emporia KS 66801</p>
           </a>
           <a href="tel:${CLIENT.phoneTel}" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-phone"></i></div>
-            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">El Dorado — Call or Text</h4>
+            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">El Dorado â€” Call or Text</h4>
             <p style="margin:4px 0 0;font-size:12px;color:#666;">(316) 321-9438</p>
           </a>
           <a href="tel:+16202615885" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-phone"></i></div>
-            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Emporia — Call or Text</h4>
+            <h4 style="margin-bottom:0;font-size:15px;color:#1B2A4A;">Emporia â€” Call or Text</h4>
             <p style="margin:4px 0 0;font-size:12px;color:#666;">(620) 261-5885</p>
           </a>
           <a href="mailto:${CLIENT.email}" class="contact-info-card" style="text-decoration:none;display:block;">
@@ -770,7 +772,7 @@ ${T.topbar()}
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ Areas Served INDEX Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
+// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ Areas Served INDEX ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
 function buildServiceAreas() {
   const cityGrid = CITIES.map(c => {
     const serviceLinks = SERVICES.map(s =>
@@ -816,7 +818,7 @@ ${T.pageHeader('Areas Served  -  Central Kansas', '<li><span>Areas Served</span>
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Read All Posts <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -827,7 +829,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ RUN ALL Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
+// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ RUN ALL ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
 buildHomepage();
 buildAbout();
 Object.keys(SERVICE_DATA).forEach(buildServiceHub);
@@ -859,8 +861,8 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">what we do</p></div>
-      <h3 class="sec-title__title">Professional Painting Services in Central Kansas</h3>
-      <p style="margin:20px auto 0;max-width:680px;color:#5a5650;">From full exterior repaint to HOA common areas, Don\'s Heating & Air handles it all with crews quality HVAC equipment from leading brands.</p>
+      <h3 class="sec-title__title">Professional HVAC Services in Central Kansas</h3>
+      <p style="margin:20px auto 0;max-width:680px;color:#5a5650;">From furnace repair to AC installation, Don\'s Heating & Air handles it all with certified technicians and quality HVAC equipment from leading brands.</p>
     </div>
     <div class="row gutter-y-30">${serviceGrid}
     <div class="col-lg-4 col-md-6">
@@ -885,7 +887,7 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Read All Posts <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -895,10 +897,14 @@ ${T.contactFormSection()}`;
   write('services/index.html', `${T.htmlHead('Services | Don\'s Heating & Air | Central Kansas', 'Furnace repair, AC installation, heat pump services, indoor air quality and more. Professional HVAC services across Central Kansas.', 'https://donsheatingandair.com/services/')}
 ${T.wrapBody(content)}`);
 }
-// â•â• CITY HUB PAGES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// Ã¢â€¢ÂÃ¢â€¢Â CITY HUB PAGES Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
 function buildCityHub(city) {
   const d = CITY_DATA[city.slug];
   if (!d) { console.warn('No city data for', city.slug); return; }
+  const cityPhone    = city.phone    || CLIENT.phone;
+  const cityPhoneTel = city.phoneTel || CLIENT.phoneTel;
+  const cityAddress  = city.address  || CLIENT.address;
+  const cityMapsUrl  = city.mapsUrl  || 'https://maps.google.com/';
 
   const serviceFeatures = SERVICES.map(s => `
     <li style="display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid #e4dacc;">
@@ -927,7 +933,7 @@ function buildCityHub(city) {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
       name: CLIENT.name,
-      telephone: CLIENT.phone,
+      telephone: cityPhone,
       email: CLIENT.email,
       url: `https://donsheatingandair.com/areas-served/${city.slug}/`,
       areaServed: `${d.label}, ${d.state}`,
@@ -986,7 +992,7 @@ ${T.pageHeader(`HVAC Services in ${d.label}, KS`, `<li><a href="/areas-served/in
 
         <div style="background:#1B2A4A;color:#f4ede4;border-radius:8px;padding:28px 32px;margin-top:32px;">
           <h4 style="color:#fff;margin:0 0 10px;font-size:20px;">Ready to Get Started in ${d.label}?</h4>
-          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call or text <a href="tel:${CLIENT.phoneTel}" style="color:#3A5DAE;font-weight:700;">${CLIENT.phone}</a> or use the form below. We respond same-day and always provide free on-site quotes.</p>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call or text <a href="tel:${cityPhoneTel}" style="color:#3A5DAE;font-weight:700;">${cityPhone}</a> or use the form below. We respond same-day and always provide free on-site quotes.</p>
         </div>
       </div>
 
@@ -995,11 +1001,11 @@ ${T.pageHeader(`HVAC Services in ${d.label}, KS`, `<li><a href="/areas-served/in
         <div style="background:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
           <h4 style="margin-bottom:16px;color:#1B2A4A;">Get a Free Quote</h4>
           <ul class="list-unstyled" style="line-height:2.4;margin-bottom:16px;">
-            <li><i class="fa-solid fa-phone" style="color:#3A5DAE;margin-right:8px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-weight:700;font-size:18px;color:#1B2A4A;">${CLIENT.phone}</a></li>
+            <li><i class="fa-solid fa-phone" style="color:#3A5DAE;margin-right:8px;"></i><a href="tel:${cityPhoneTel}" style="font-weight:700;font-size:18px;color:#1B2A4A;">${cityPhone}</a></li>
             <li><i class="fa-solid fa-envelope" style="color:#3A5DAE;margin-right:8px;"></i><a href="mailto:${CLIENT.email}" style="color:#5a5650;">${CLIENT.email}</a></li>
-            <li><a href="https://maps.google.com/?q=306+S.+Main+St.,+El+Dorado,+KS+67042" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-location-dot" style="color:#3A5DAE;margin-right:8px;"></i><span style="color:#5a5650;">Based in ${CLIENT.city}, ${CLIENT.state}</span></a></li>
+            <li><a href="${cityMapsUrl}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-location-dot" style="color:#3A5DAE;margin-right:8px;"></i><span style="color:#5a5650;">${cityAddress}, ${city.city || city.label}, KS</span></a></li>
           </ul>
-          <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="display:block;text-align:center;">Request a Quote</a>
+          <a href="https://book.housecallpro.com/book/Dons-Heating-and-Air/74c83572624343e580ce5e41660a46b3?v2=true" target="_blank" rel="noopener noreferrer" class="wallox-btn wallox-btn--base" style="display:block;text-align:center;">Book Online</a>
         </div>
 
         <div style="background:#1B2A4A;color:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
@@ -1035,7 +1041,7 @@ ${T.pageHeader(`HVAC Services in ${d.label}, KS`, `<li><a href="/areas-served/in
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Read All Posts <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -1045,14 +1051,16 @@ ${T.contactFormSection()}`;
   write(`areas-served/${city.slug}/index.html`,
     `${T.htmlHead(
       `HVAC Services in ${d.label}, KS | Don\'s Heating & Air`,
-      `Professional HVAC services in ${d.label}, KS. Furnace repair, AC installation, heat pumps and more. Licensed & insured. Call (316) 321-9438.`,
+      `Professional HVAC services in ${d.label}, KS. Furnace repair, AC installation, heat pumps and more. Licensed & insured. Call ${cityPhone}.`,
       `https://donsheatingandair.com/areas-served/${city.slug}/`
     )}
-${T.wrapBody(content)}`);
+${T.wrapBody(content)}
+${ city.phoneTel !== CLIENT.phoneTel ? `<script>document.addEventListener('DOMContentLoaded',function(){var a=document.querySelector('a.topbar-call-btn');if(a){a.href='tel:${cityPhoneTel}';var nodes=a.childNodes;for(var i=nodes.length-1;i>=0;i--){if(nodes[i].nodeType===3&&nodes[i].textContent.trim()){nodes[i].textContent='${cityPhone}';break;}}}})<\/script>` : ''}
+`);
 }
 
-// â•â• GALLERY PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-function buildGallery_OLD() { // OLD ï¿½" replaced by template-based version below
+// Ã¢â€¢ÂÃ¢â€¢Â GALLERY PAGE Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
+function buildGallery_OLD() { // OLD Ã¯Â¿Â½" replaced by template-based version below
   const galleryCSS = `
 .gallery-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
 .filter-btn{padding:7px 18px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#5a5650;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;}
@@ -1115,7 +1123,7 @@ ${T.pageHeader('Project Gallery', '<li><span>Gallery</span></li>')}
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Read All Posts <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -1212,7 +1220,7 @@ function buildGallery() {
   console.log('Built: gallery/index.html');
 }
 
-// â•â• UPLOAD ADMIN PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// Ã¢â€¢ÂÃ¢â€¢Â UPLOAD ADMIN PAGE Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
 function buildUploadAdmin() {
   // Read the pre-built upload page from the dist template file if it exists,
   // otherwise write the standalone file directly (not injected through wrapBody
@@ -1238,6 +1246,10 @@ buildUploadAdmin();
 function buildServiceLocation(service, city) {
   const sd = SERVICE_DATA[service.slug];
   const cd = CITY_DATA[city.slug];
+  const cityPhone    = city.phone    || CLIENT.phone;
+  const cityPhoneTel = city.phoneTel || CLIENT.phoneTel;
+  const cityAddress  = city.address  || CLIENT.address;
+  const cityMapsUrl  = city.mapsUrl  || 'https://maps.google.com/';
   if (!sd || !cd) { console.warn('Missing data:', service.slug, city.slug); return; }
 
   const pageSlug   = `${service.slug}-${city.slug}`;
@@ -1368,14 +1380,14 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
 
         <!-- Other Cities for This Service -->
         <div style="padding:24px;background:#f4ede4;border-radius:8px;margin-bottom:32px;">
-          <p style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#3A5DAE;margin-bottom:10px;">${service.label} in Other NoCo Cities</p>
+          <p style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#3A5DAE;margin-bottom:10px;">${service.label} in Other Central Kansas Cities</p>
           <div>${otherCityLinks}</div>
         </div>
 
         <!-- Bottom CTA -->
         <div style="background:#1B2A4A;color:#f4ede4;border-radius:8px;padding:28px 32px;margin-top:16px;">
           <h4 style="color:#fff;margin:0 0 10px;font-size:20px;">Ready to Get a Free Quote in ${cd.label}?</h4>
-          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call or text <a href="tel:${CLIENT.phoneTel}" style="color:#3A5DAE;font-weight:700;">${CLIENT.phone}</a> or fill out the form below. We respond same-day and provide free on-site assessments.</p>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call or text <a href="tel:${cityPhoneTel}" style="color:#3A5DAE;font-weight:700;">${cityPhone}</a> or fill out the form below. We respond same-day and provide free on-site assessments.</p>
         </div>
 
       </div>
@@ -1386,11 +1398,11 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
         <div style="background:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
           <h4 style="margin-bottom:16px;color:#1B2A4A;">Get a Free Quote</h4>
           <ul class="list-unstyled" style="line-height:2.4;margin-bottom:16px;">
-            <li><i class="fa-solid fa-phone" style="color:#3A5DAE;margin-right:8px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-weight:700;font-size:18px;color:#1B2A4A;">${CLIENT.phone}</a></li>
+            <li><i class="fa-solid fa-phone" style="color:#3A5DAE;margin-right:8px;"></i><a href="tel:${cityPhoneTel}" style="font-weight:700;font-size:18px;color:#1B2A4A;">${cityPhone}</a></li>
             <li><i class="fa-solid fa-envelope" style="color:#3A5DAE;margin-right:8px;"></i><a href="mailto:${CLIENT.email}" style="color:#5a5650;">${CLIENT.email}</a></li>
-            <li><a href="https://maps.google.com/?q=306+S.+Main+St.,+El+Dorado,+KS+67042" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-location-dot" style="color:#3A5DAE;margin-right:8px;"></i><span style="color:#5a5650;">Based in ${CLIENT.city}, ${CLIENT.state}</span></a></li>
+            <li><a href="${cityMapsUrl}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-location-dot" style="color:#3A5DAE;margin-right:8px;"></i><span style="color:#5a5650;">${cityAddress}, ${city.city || city.label}, KS</span></a></li>
           </ul>
-          <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="display:block;text-align:center;">Request a Quote</a>
+          <a href="https://book.housecallpro.com/book/Dons-Heating-and-Air/74c83572624343e580ce5e41660a46b3?v2=true" target="_blank" rel="noopener noreferrer" class="wallox-btn wallox-btn--base" style="display:block;text-align:center;">Book Online</a>
         </div>
 
         <div style="background:#1B2A4A;color:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
@@ -1434,7 +1446,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
       <!-- RECENT_POSTS -->
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/blog/" class="wallox-btn wallox-btn--base">Coming Soon <i class="fa-solid fa-clock"></i></a>
+      <a href="/blog/" class="wallox-btn wallox-btn--base">Read All Posts <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -1466,7 +1478,7 @@ buildBlog({
   siteName: 'Don\'s Heating & Air'
 });
 
-// â”€â”€ Spread recent posts to all inner pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Ã¢â€â‚¬Ã¢â€â‚¬ Spread recent posts to all inner pages Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 (function spreadRecentPosts() {
   const blogIndexPath = path.join(ROOT, 'blog-posts', 'blog-index.json');
   if (!fs.existsSync(blogIndexPath)) return;
@@ -1515,149 +1527,210 @@ console.log('\n? All pillar pages built successfully.');
 
 
 
+
 // ============================================================
-// GET A QUOTE PAGE ï¿½ High-conversion standalone landing page
+// CAREERS PAGE
 // ============================================================
-function buildGetAQuote() {
-  const HEADER_STRIPPED_HTML = fs.readFileSync(path.join(PARTS, 'header-stripped.html'), 'utf8');
-  const FOOTER_MINIMAL_HTML  = fs.readFileSync(path.join(PARTS, 'footer-minimal.html'),  'utf8');
-
-  function inject(html) {
-    return html.replace('<!-- HEADER -->', HEADER).replace('<!-- FOOTER -->', FOOTER_MINIMAL_HTML);
-  }
-
-  const head = T.htmlHead(
-    'Get a Free Painting Quote | Don\'s Heating & Air | (316) 321-9438',
-    'Request a free HVAC estimate from Don\'s Heating & Air. No pressure, no surprises. Serving El Dorado, Hillsboro, Emporia & Central Kansas. We respond within 2 hours.',
-    'https://donsheatingandair.com/get-a-quote/'
-  );
-
-  const html = head + `
+function buildCareers() {
+  const content = `
+${T.topbar()}
 <!-- HEADER -->
-<div class="page-wrapper" style="display:flex;flex-direction:column;min-height:100vh;">
-<style>
-.gaq-wrap{flex:1;background:#F4EDE4;padding:20px 0 64px;}
-.gaq-page-header{margin-bottom:20px;text-align:center;}
-.gaq-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
-@media(max-width:900px){.gaq-grid{grid-template-columns:1fr;gap:24px;}}
-.gaq-headline{color:#1B2A4A;font-size:clamp(28px,3.8vw,52px);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin:0 0 8px;}
-.gaq-subhead{color:#5a5650;font-size:17px;line-height:1.65;margin:0 0 32px;}
-.gaq-trust-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
-.gaq-trust-list li{display:flex;align-items:flex-start;gap:12px;color:#2E2A20;font-size:15px;line-height:1.5;}
-.gaq-trust-list li i{color:#3A5DAE;margin-top:2px;flex-shrink:0;font-size:16px;}
-.gaq-card{background:#fff;border-radius:14px;padding:32px 32px 28px;box-shadow:0 4px 24px rgba(0,0,0,0.09);}
-.gaq-input{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#1B2A4A;background:#fff;box-sizing:border-box;transition:border-color 0.15s;}
-.gaq-input:focus{outline:none;border-color:#3A5DAE;}
-.gaq-input::placeholder{color:#a09890;}
-.gaq-fields{display:flex;flex-direction:column;gap:12px;}
-.gaq-submit{width:100%;padding:14px 20px;background:#3A5DAE;color:#fff;border:none;border-radius:100px;font-size:16px;font-weight:700;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);cursor:pointer;margin-top:4px;transition:background 0.2s;}
-.gaq-submit:hover{background:#922d0a;}
-.gaq-trust-line{text-align:center;color:#5a5650;font-size:13px;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;}
-.gaq-trust-line i{color:#3A5DAE;}
-.gaq-social-proof{margin-top:40px;padding-top:36px;border-top:1px solid #e4dacc;display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:24px;align-items:center;}
-@media(max-width:700px){.gaq-social-proof{grid-template-columns:1fr 1fr;}}
-.gaq-stars{color:#f59e0b;font-size:20px;letter-spacing:2px;}
-.gaq-rating-wrap{display:flex;flex-direction:column;gap:2px;}
-.gaq-rating-num{font-size:28px;font-weight:800;color:#1B2A4A;line-height:1;}
-.gaq-rating-label{color:#5a5650;font-size:13px;}
-.gaq-proof-item{display:flex;align-items:flex-start;gap:10px;}
-.gaq-proof-item i{color:#3A5DAE;margin-top:3px;font-size:16px;flex-shrink:0;}
-.gaq-proof-item p{margin:0;color:#2E2A20;font-size:14px;line-height:1.5;}
-.gaq-proof-item strong{display:block;font-size:14px;font-weight:700;}
-.gaq-subtext{font-size:16px;font-weight:600;color:#3A5DAE;margin:0;letter-spacing:-0.01em;}
-</style>
 <main>
-<section class="gaq-wrap">
+
+<!-- Page Hero -->
+<section class="page-header" style="background:#1B2A4A;padding:72px 0 56px;margin-top:0;">
   <div class="container">
-    <div class="gaq-page-header">
-      <h1 class="gaq-headline">An Honest Painting Quote</h1>
-      <p class="gaq-subtext">We'll come to your location and give you a no obligation estimate</p>
-    </div>
-    <div class="gaq-grid">
-      <div class="gaq-col-form">
-        <div class="gaq-card" style="padding:24px;">
-          <h3 style="margin:0 0 12px;font-size:20px;font-weight:700;color:#1B2A4A;">Schedule Your Free In-Home Quote</h3>
-          <p style="margin:0 0 16px;font-size:14px;color:#5a5650;line-height:1.55;">One of our estimators will visit your home to assess the project and give you an accurate, honest price - no guessing, no online estimates.</p>
-          <div id="2d355475-e9e2-4025-be1d-9768705789fb-4555532"></div>
-          <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
-          <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js" clienthub_id="2d355475-e9e2-4025-be1d-9768705789fb-4555532" form_url="https://clienthub.getjobber.com/client_hubs/2d355475-e9e2-4025-be1d-9768705789fb/public/work_request/embedded_work_request_form?form_id=4555532"></script>
-        </div>
-      </div>
-      <div class="gaq-col-copy">
-        <ul class="gaq-trust-list">
-          <li><i class="fa-solid fa-check"></i><span>Local to El Dorado and Central Kansas. We know the area, the homes, and the neighbors.</span></li>
-          <li><i class="fa-solid fa-check"></i><span>Licensed &amp; Insured with $1M general liability. COI available on request within 24 hours.</span></li>
-          <li><i class="fa-solid fa-check"></i><span>No obligation. Free on-site assessment. We show up, look at the job, and give you a real number. No games.</span></li>
-          <li><i class="fa-solid fa-check"></i><span>Licensed technicians, quality parts, and honest pricing. Built to last a lifetime of comfort.</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="gaq-social-proof">
-      <div class="gaq-rating-wrap">
-        <div class="gaq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="gaq-rating-num">4.9</div>
-        <div class="gaq-rating-label">Google Reviews</div>
-      </div>
-      <div class="gaq-proof-item">
-        <a href="https://maps.google.com/?q=306+S.+Main+St.,+El+Dorado,+KS+67042" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;display:flex;align-items:flex-start;gap:8px;">
-          <i class="fa-solid fa-location-dot" style="margin-top:3px;flex-shrink:0;"></i>
-          <p style="margin:0;"><strong>Local to Central Kansas</strong>Based in El Dorado. Serving El Dorado, Hillsboro, Emporia and more across Central Kansas.</p>
-        </a>
-      </div>
-      <div class="gaq-proof-item">
-        <i class="fa-solid fa-shield-halved"></i>
-        <p><strong>Licensed &amp; Insured</strong>$1M general liability. COI on request within 24 hours.</p>
-      </div>
-      <div class="gaq-proof-item">
-        <i class="fa-solid fa-tag"></i>
-        <p><strong>Free Estimates - No Obligation</strong>We come to your home, assess the project in person, and give you a real number. No online guessing games.</p>
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 style="color:#fff;font-size:clamp(32px,5vw,52px);font-weight:700;margin-bottom:16px;">Join the Don's Heating &amp; Air Team</h1>
+        <p style="color:#b0bfda;font-size:18px;max-width:640px;margin:0 auto;">We are always looking for skilled, dependable HVAC professionals to grow with us across Central Kansas.</p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Why Work With Us -->
+<section style="padding:72px 0 40px;background:#f8f9fb;">
+  <div class="container">
+    <div class="row justify-content-center" style="margin-bottom:48px;">
+      <div class="col-12 text-center">
+        <span style="color:#D4601A;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;">Why Don's</span>
+        <h2 style="color:#1B2A4A;font-size:clamp(26px,4vw,38px);font-weight:700;margin-top:8px;">A Company Worth Working For</h2>
+      </div>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div style="background:#fff;border-radius:12px;padding:36px 28px;text-align:center;height:100%;box-shadow:0 2px 12px rgba(0,0,0,.07);">
+          <div style="width:56px;height:56px;background:#D4601A;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+            <i class="fa-solid fa-calendar-check" style="color:#fff;font-size:22px;"></i>
+          </div>
+          <h3 style="color:#1B2A4A;font-size:20px;font-weight:700;margin-bottom:10px;">Stable Work Year-Round</h3>
+          <p style="color:#6b7280;font-size:15px;line-height:1.7;margin:0;">HVAC never stops. Heating season rolls right into cooling season. Full-time work, all year.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div style="background:#fff;border-radius:12px;padding:36px 28px;text-align:center;height:100%;box-shadow:0 2px 12px rgba(0,0,0,.07);">
+          <div style="width:56px;height:56px;background:#D4601A;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+            <i class="fa-solid fa-people-group" style="color:#fff;font-size:22px;"></i>
+          </div>
+          <h3 style="color:#1B2A4A;font-size:20px;font-weight:700;margin-bottom:10px;">65+ Years, Still Growing</h3>
+          <p style="color:#6b7280;font-size:15px;line-height:1.7;margin:0;">In business since 1959 because we take care of our customers and our crew.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div style="background:#fff;border-radius:12px;padding:36px 28px;text-align:center;height:100%;box-shadow:0 2px 12px rgba(0,0,0,.07);">
+          <div style="width:56px;height:56px;background:#D4601A;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+            <i class="fa-solid fa-map-location-dot" style="color:#fff;font-size:22px;"></i>
+          </div>
+          <h3 style="color:#1B2A4A;font-size:20px;font-weight:700;margin-bottom:10px;">Central Kansas Territory</h3>
+          <p style="color:#6b7280;font-size:15px;line-height:1.7;margin:0;">Based in El Dorado. Serving El Dorado, Hillsboro, Emporia, and surrounding communities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Application Form -->
+<section style="padding:72px 0 88px;background:#fff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="text-center" style="margin-bottom:40px;">
+          <span style="color:#D4601A;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;">Apply Now</span>
+          <h2 style="color:#1B2A4A;font-size:clamp(26px,4vw,36px);font-weight:700;margin-top:8px;">Send Us Your Application</h2>
+          <p style="color:#6b7280;font-size:16px;margin-top:12px;">Fill out the form below and we will be in touch. All positions welcome.</p>
+        </div>
+        <form id="careers-form" action="/submit" method="POST" novalidate style="background:#f8f9fb;border-radius:16px;padding:40px;box-shadow:0 2px 16px rgba(0,0,0,.08);">
+          <input type="hidden" name="service" value="careers-application">
+          <div style="margin-bottom:20px;">
+            <label for="c-name" style="display:block;font-weight:600;color:#1B2A4A;margin-bottom:6px;font-size:14px;">Full Name <span style="color:#D4601A;">*</span></label>
+            <input type="text" id="c-name" name="name" required autocomplete="name" style="width:100%;padding:12px 16px;border:1.5px solid #dde2ea;border-radius:8px;font-size:15px;color:#1B2A4A;background:#fff;" placeholder="Jane Smith">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+            <div>
+              <label for="c-phone" style="display:block;font-weight:600;color:#1B2A4A;margin-bottom:6px;font-size:14px;">Phone <span style="color:#D4601A;">*</span></label>
+              <input type="tel" id="c-phone" name="phone" required autocomplete="tel" style="width:100%;padding:12px 16px;border:1.5px solid #dde2ea;border-radius:8px;font-size:15px;color:#1B2A4A;background:#fff;" placeholder="(316) 555-0100">
+            </div>
+            <div>
+              <label for="c-email" style="display:block;font-weight:600;color:#1B2A4A;margin-bottom:6px;font-size:14px;">Email</label>
+              <input type="email" id="c-email" name="email" autocomplete="email" style="width:100%;padding:12px 16px;border:1.5px solid #dde2ea;border-radius:8px;font-size:15px;color:#1B2A4A;background:#fff;" placeholder="jane@email.com">
+            </div>
+          </div>
+          <div style="margin-bottom:20px;">
+            <label for="c-position" style="display:block;font-weight:600;color:#1B2A4A;margin-bottom:6px;font-size:14px;">Position of Interest</label>
+            <select id="c-position" name="position" style="width:100%;padding:12px 16px;border:1.5px solid #dde2ea;border-radius:8px;font-size:15px;color:#1B2A4A;background:#fff;">
+              <option value="">Select a position...</option>
+              <option>HVAC Technician</option>
+              <option>HVAC Apprentice / Helper</option>
+              <option>Install Technician</option>
+              <option>Service Technician</option>
+              <option>Office / Customer Service</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div style="margin-bottom:24px;">
+            <label for="c-cover" style="display:block;font-weight:600;color:#1B2A4A;margin-bottom:6px;font-size:14px;">Tell Us About Yourself</label>
+            <textarea id="c-cover" name="cover" rows="5" style="width:100%;padding:12px 16px;border:1.5px solid #dde2ea;border-radius:8px;font-size:15px;color:#1B2A4A;background:#fff;resize:vertical;" placeholder="Experience, certifications, why you would like to work at Don's..."></textarea>
+          </div>
+          <div style="margin-bottom:24px;">
+            <label for="c-resume" style="display:block;font-weight:600;color:#1B2A4A;margin-bottom:6px;font-size:14px;">Resume <span style="color:#888;font-weight:400;">(optional &mdash; PDF, DOC, or DOCX, max 5MB)</span></label>
+            <input type="file" id="c-resume" name="resume" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                   style="width:100%;padding:10px 14px;border:1.5px solid #dde2ea;border-radius:8px;font-size:14px;color:#1B2A4A;background:#fff;cursor:pointer;">
+            <div id="resume-size-err" style="display:none;color:#e53935;font-size:13px;margin-top:6px;">File too large. Please keep it under 5MB.</div>
+          </div>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAADpT5f2gM80jpJHh" style="margin-bottom:20px;"></div>
+          <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+          <button type="submit" id="careers-submit" style="width:100%;background:#D4601A;color:#fff;font-weight:700;font-size:16px;letter-spacing:1px;text-transform:uppercase;border:none;border-radius:8px;padding:16px;cursor:pointer;">
+            Submit Application <i class="fa-solid fa-paper-plane" style="margin-left:8px;"></i>
+          </button>
+          <div id="careers-success" style="display:none;margin-top:20px;background:#e8f5e9;border-left:4px solid #43a047;border-radius:8px;padding:16px 20px;color:#2e7d32;font-weight:600;">Thanks! We got your application and will reach out soon.</div>
+          <div id="careers-error" style="display:none;margin-top:20px;background:#fdecea;border-left:4px solid #e53935;border-radius:8px;padding:16px 20px;color:#b71c1c;">Something went wrong. Please try again or call us at <a href="tel:3163219438" style="color:#b71c1c;">(316) 321-9438</a>.</div>
+          <script>
+          (function(){
+            var form=document.getElementById('careers-form');
+            var btn=document.getElementById('careers-submit');
+            var ok=document.getElementById('careers-success');
+            var er=document.getElementById('careers-error');
+            if(!form)return;
+            var resumeInput=document.getElementById('c-resume');
+            var resumeErr=document.getElementById('resume-size-err');
+            form.addEventListener('submit',function(e){
+              e.preventDefault();
+              // Client-side file size check
+              if(resumeInput&&resumeInput.files&&resumeInput.files[0]&&resumeInput.files[0].size>5*1024*1024){
+                resumeErr.style.display='block';return;
+              }
+              if(resumeErr)resumeErr.style.display='none';
+              btn.disabled=true;btn.textContent='Sending...';
+              er.style.display='none';ok.style.display='none';
+              var data=new FormData(form);
+              var pos=data.get('position')||'';
+              var cover=data.get('cover')||'';
+              data.set('message',(pos?'Position: '+pos+'\n\n':'')+cover);
+              data.delete('position');data.delete('cover');
+              fetch('/submit',{method:'POST',body:data})
+                .then(function(r){return r.json();})
+                .then(function(d){
+                  if(d.ok){ok.style.display='block';form.reset();if(window.turnstile)window.turnstile.reset();}
+                  else{er.style.display='block';if(window.turnstile)window.turnstile.reset();}
+                  btn.disabled=false;
+                  btn.innerHTML='Submit Application <i class="fa-solid fa-paper-plane" style="margin-left:8px;"></i>';
+                })
+                .catch(function(){
+                  er.style.display='block';btn.disabled=false;
+                  btn.innerHTML='Submit Application <i class="fa-solid fa-paper-plane" style="margin-left:8px;"></i>';
+                  if(window.turnstile)window.turnstile.reset();
+                });
+            });
+          })();
+          </script>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
-<!-- FOOTER -->
-</div>
-</body>
-</html>`;
+</div>`;
+
+  write('careers/index.html',
+    T.htmlHead(
+      "Careers | Join Don's Heating & Air | HVAC Jobs in El Dorado, KS",
+      "Don's Heating & Air is hiring! Apply for HVAC technician, apprentice, and support roles in El Dorado, Hillsboro, and Emporia, KS.",
+      'https://donsheatingandair.com/careers/',
+      null,
+      false
+    ) + '\n' + T.wrapBody(content));
+}
+
+// ============================================================
+// GET A QUOTE PAGE â€” redirect to HouseCall Pro booking
+// ============================================================
+function buildGetAQuote() {
+  const HCP_URL = 'https://book.housecallpro.com/book/Dons-Heating-and-Air/74c83572624343e580ce5e41660a46b3?v2=true';
+
+  function inject(html) {
+    return html.replace('<!-- HEADER -->', HEADER).replace('<!-- FOOTER -->', '');
+  }
+
+  const head = `<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0;url=${HCP_URL}">
+<title>Book Online | Don's Heating & Air</title>
+<link rel="canonical" href="${HCP_URL}">
+</head><body>
+<p>Redirecting to our online booking... <a href="${HCP_URL}">Click here if not redirected</a>.</p>
+<script>window.location.replace('${HCP_URL}');<\/script>
+</body></html>`;
 
   const dest = path.join(DIST, 'get-a-quote/index.html');
   ensureDir(path.dirname(dest));
-  fs.writeFileSync(dest, inject(html), 'utf8');
-  console.log('Built: get-a-quote/index.html');
+  fs.writeFileSync(dest, head, 'utf8');
+  console.log('Built: get-a-quote/index.html (HCP redirect)');
 }
 
+buildCareers();
 buildGetAQuote();
 // Generate sitemap from actual dist/ contents
 generateSitemap({ distDir: DIST, siteRoot: ROOT, domain: SITE_DOMAIN });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
