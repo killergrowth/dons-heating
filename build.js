@@ -1730,18 +1730,18 @@ function buildGetAQuote() {
 }
 
 // ============================================================
-// GOOGLE ADS LANDING PAGE — /sign-up/hvac/
+// GOOGLE ADS LANDING PAGE - /sign-up/emporia/
 // ============================================================
 function buildSignUpHvac() {
-  const src = path.join(ROOT, 'sign-up', 'hvac', 'index.html');
-  if (!fs.existsSync(src)) { console.warn('sign-up/hvac/index.html not found — skipping'); return; }
+  const src = path.join(ROOT, 'sign-up', 'emporia', 'index.html');
+  if (!fs.existsSync(src)) { console.warn('sign-up/emporia/index.html not found - skipping'); return; }
   let html = fs.readFileSync(src, 'utf8');
   // Inject scripts (GTM etc) but use stripped header/footer (already embedded in file)
   html = injectScripts(html, loadSiteScripts(SITE_ID));
-  const dest = path.join(DIST, 'sign-up', 'hvac', 'index.html');
+  const dest = path.join(DIST, 'sign-up', 'emporia', 'index.html');
   ensureDir(path.dirname(dest));
   fs.writeFileSync(dest, html, 'utf8');
-  console.log('Built: sign-up/hvac/index.html');
+  console.log('Built: sign-up/emporia/index.html');
 }
 
 buildCareers();
