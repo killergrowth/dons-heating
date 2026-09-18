@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free HVAC Estimate | Don's Heating & Air</title>
+<meta name="robots" content="noindex, nofollow">
+<!-- HEAD_ASSETS -->
+<style>
+/* ── Page shell ── */
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;min-height:100%;display:flex;flex-direction:column;}
+body{font-family:'Plus Jakarta Sans','Outfit',sans-serif;background:#f4f7fb;color:#1B2A4A;}
+
+/* ── Stripped header (logo + phone only) ── */
+.lp-header{background:#201B10;padding:14px 0;position:sticky;top:0;z-index:999;}
+.lp-header .inner{max-width:1140px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;}
+.lp-header img{height:48px;width:auto;filter:brightness(0) invert(1);}
+.lp-header a.phone-link{color:#fff;text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap;}
+.lp-header a.phone-link i{color:#3A5DAE;margin-right:7px;}
+
+/* ── Hero ── */
+.lp-hero{background:linear-gradient(135deg,#1B2A4A 0%,#3A5DAE 100%);padding:56px 20px 48px;text-align:center;color:#fff;}
+.lp-hero .badge{display:inline-block;background:#D4601A;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:100px;margin-bottom:18px;}
+.lp-hero h1{font-size:clamp(26px,5vw,42px);font-weight:800;line-height:1.2;margin:0 0 16px;}
+.lp-hero p{font-size:17px;color:rgba(255,255,255,0.85);max-width:580px;margin:0 auto 28px;line-height:1.7;}
+.trust-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:8px;}
+.trust-pill{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:100px;padding:6px 16px;font-size:13px;font-weight:600;color:#fff;display:flex;align-items:center;gap:7px;}
+.trust-pill i{color:#3A5DAE;font-size:12px;}
+
+/* ── Two-col layout ── */
+.lp-body{max-width:1100px;margin:0 auto;padding:48px 20px;display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start;}
+@media(max-width:900px){.lp-body{grid-template-columns:1fr;}}
+
+/* ── Form card ── */
+.form-card{background:#fff;border-radius:14px;box-shadow:0 4px 32px rgba(0,0,0,0.10);padding:36px 32px;position:sticky;top:90px;}
+@media(max-width:900px){.form-card{position:static;}}
+.form-card h2{font-size:22px;font-weight:800;color:#1B2A4A;margin:0 0 6px;}
+.form-card .sub{font-size:14px;color:#6b7280;margin:0 0 24px;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:13px;font-weight:700;color:#1B2A4A;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;}
+.form-group input,
+.form-group select,
+.form-group textarea{width:100%;padding:12px 14px;border:1.5px solid #e0e7ef;border-radius:8px;font-size:15px;font-family:inherit;color:#1B2A4A;background:#f9fbff;outline:none;transition:border-color 0.2s;}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{border-color:#3A5DAE;background:#fff;}
+.form-group textarea{resize:vertical;min-height:90px;}
+.cf-turnstile{margin-bottom:16px;}
+.btn-submit{width:100%;padding:15px;background:#D4601A;color:#fff;border:none;border-radius:100px;font-size:16px;font-weight:800;cursor:pointer;letter-spacing:0.5px;transition:background 0.2s;font-family:inherit;}
+.btn-submit:hover{background:#b8501a;}
+.btn-submit:disabled{background:#ccc;cursor:not-allowed;}
+.form-note{font-size:12px;color:#9ca3af;text-align:center;margin-top:12px;line-height:1.5;}
+#form-success{display:none;text-align:center;padding:20px 0;}
+#form-success .check{font-size:48px;color:#22c55e;margin-bottom:12px;}
+#form-success h3{font-size:20px;color:#1B2A4A;margin:0 0 8px;}
+#form-success p{color:#6b7280;font-size:15px;margin:0;}
+#form-error{display:none;background:#fff0f0;border:1px solid #fca5a5;color:#b91c1c;border-radius:8px;padding:12px 16px;font-size:14px;margin-bottom:14px;}
+
+/* ── Left content ── */
+.lp-content h2{font-size:26px;font-weight:800;color:#1B2A4A;margin:0 0 16px;}
+.lp-content h3{font-size:18px;font-weight:700;color:#1B2A4A;margin:28px 0 10px;}
+.lp-content p{font-size:15px;color:#4b5563;line-height:1.8;margin:0 0 16px;}
+
+/* ── Service cards ── */
+.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0;}
+@media(max-width:540px){.service-grid{grid-template-columns:1fr;}}
+.service-card{background:#fff;border-radius:10px;padding:20px;border:1.5px solid #e0e7ef;display:flex;align-items:flex-start;gap:14px;}
+.service-card .icon{width:40px;height:40px;background:#EEF2FF;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.service-card .icon i{color:#3A5DAE;font-size:18px;}
+.service-card strong{display:block;font-size:14px;font-weight:700;color:#1B2A4A;margin-bottom:4px;}
+.service-card span{font-size:13px;color:#6b7280;line-height:1.5;}
+
+/* ── Trust stats ── */
+.stats-row{display:flex;flex-wrap:wrap;gap:16px;margin:28px 0;}
+.stat-box{background:#fff;border-radius:10px;padding:20px 24px;border:1.5px solid #e0e7ef;flex:1;min-width:120px;text-align:center;}
+.stat-box .num{font-size:30px;font-weight:800;color:#3A5DAE;display:block;}
+.stat-box .lbl{font-size:12px;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;}
+
+/* ── Reviews ── */
+.reviews-strip{margin:28px 0;}
+.review-card{background:#fff;border-radius:10px;padding:20px 22px;border:1.5px solid #e0e7ef;margin-bottom:14px;}
+.review-card .stars{color:#3A5DAE;font-size:13px;margin-bottom:8px;}
+.review-card p{font-size:14px;color:#4b5563;line-height:1.7;margin:0 0 12px;font-style:italic;}
+.review-card .author{font-size:13px;font-weight:700;color:#1B2A4A;}
+
+/* ── Areas ── */
+.areas-list{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 24px;}
+.area-pill{background:#EEF2FF;color:#3A5DAE;border-radius:100px;padding:5px 14px;font-size:13px;font-weight:600;}
+
+/* ── Bottom CTA ── */
+.lp-cta{background:#1B2A4A;padding:48px 20px;text-align:center;color:#fff;margin-top:auto;}
+.lp-cta h2{font-size:26px;font-weight:800;margin:0 0 12px;}
+.lp-cta p{color:rgba(255,255,255,0.75);font-size:16px;margin:0 0 24px;}
+.lp-cta .cta-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
+.btn-cta-primary{display:inline-block;padding:14px 32px;background:#D4601A;color:#fff;border-radius:100px;font-weight:800;font-size:16px;text-decoration:none;}
+.btn-cta-secondary{display:inline-block;padding:14px 32px;background:transparent;border:2px solid rgba(255,255,255,0.4);color:#fff;border-radius:100px;font-weight:700;font-size:16px;text-decoration:none;}
+
+/* ── Footer ── */
+.lp-footer{background:#111827;padding:18px 20px;text-align:center;}
+.lp-footer p{margin:0;font-size:13px;color:rgba(255,255,255,0.4);}
+.lp-footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="lp-header">
+  <div class="inner">
+    <a href="/">
+      <img src="/assets/images/logo-top-bar.png" alt="Don's Heating &amp; Air" width="163" height="60">
+    </a>
+    <a href="tel:3163219438" class="phone-link">
+      <i class="fa-solid fa-phone"></i>Call or Text: (316) 321-9438
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="lp-hero">
+  <div class="badge">Central Kansas HVAC Experts Since 1959</div>
+  <h1>Free HVAC Estimate for Your<br>El Dorado Area Home</h1>
+  <p>Heating or cooling problem? Get a free, no-pressure estimate from Don's — the most trusted HVAC company in central Kansas for over 65 years.</p>
+  <div class="trust-pills">
+    <span class="trust-pill"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Kansas</span>
+    <span class="trust-pill"><i class="fa-solid fa-check"></i> Same-Day Service Available</span>
+    <span class="trust-pill"><i class="fa-solid fa-check"></i> All Makes &amp; Models</span>
+    <span class="trust-pill"><i class="fa-solid fa-check"></i> 4.9★ Google Rating (279 Reviews)</span>
+  </div>
+</section>
+
+<!-- BODY -->
+<div class="lp-body">
+
+  <!-- LEFT: Content -->
+  <div class="lp-content">
+
+    <h2>Heating &amp; Cooling Done Right — Every Time</h2>
+    <p>When your furnace quits in January or your AC dies in August, you need a company you can count on — fast. Don's Heating &amp; Air has been keeping central Kansas families comfortable since 1959. We service all makes and models, show up on time, and fix it right the first time.</p>
+
+    <h3>Services We Offer</h3>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+        <div><strong>Furnace Repair</strong><span>Fast diagnosis &amp; same-day repair for all furnace brands.</span></div>
+      </div>
+      <div class="service-card">
+        <div class="icon"><i class="fa-solid fa-snowflake"></i></div>
+        <div><strong>AC Repair</strong><span>Cool down fast — expert AC repair with a guaranteed fix.</span></div>
+      </div>
+      <div class="service-card">
+        <div class="icon"><i class="fa-solid fa-house-chimney"></i></div>
+        <div><strong>Furnace Installation</strong><span>High-efficiency furnaces sized right for your home.</span></div>
+      </div>
+      <div class="service-card">
+        <div class="icon"><i class="fa-solid fa-temperature-low"></i></div>
+        <div><strong>AC Installation</strong><span>New systems from Rheem, Mitsubishi &amp; more.</span></div>
+      </div>
+      <div class="service-card">
+        <div class="icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+        <div><strong>Heat Pump Services</strong><span>Year-round comfort — repair, replacement &amp; installation.</span></div>
+      </div>
+      <div class="service-card">
+        <div class="icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <div><strong>HVAC Maintenance</strong><span>Tune-ups &amp; maintenance plans to keep your system running right.</span></div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat-box"><span class="num">65+</span><span class="lbl">Years in Business</span></div>
+      <div class="stat-box"><span class="num">4.9★</span><span class="lbl">Google Rating</span></div>
+      <div class="stat-box"><span class="num">279</span><span class="lbl">Google Reviews</span></div>
+      <div class="stat-box"><span class="num">$1M</span><span class="lbl">Liability Coverage</span></div>
+    </div>
+
+    <h3>What Customers Are Saying</h3>
+    <div class="reviews-strip">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Had HVAC service done. Chandler was very nice and well knowledgeable. Don's was able to come out within an hour after being called. The work was done very quickly and we were back to being comfortable in our home."</p>
+        <div class="author">Jerrie Mathews</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"The gentlemen that came out to fix our air conditioner were very nice. They explained the issue clearly and did the work quickly. We definitely will use Don's again!"</p>
+        <div class="author">Holly Ramsett</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Service was very quick — within just over an hour. Serviceman was knowledgeable, courteous, and efficient. He had our air conditioner up &amp; running within minutes it seemed!"</p>
+        <div class="author">Alyce L.</div>
+      </div>
+    </div>
+
+    <h3>Areas We Serve</h3>
+    <p>Proudly serving central Kansas — locally owned, not a franchise.</p>
+    <div class="areas-list">
+      <span class="area-pill">El Dorado</span>
+      <span class="area-pill">Hillsboro</span>
+      <span class="area-pill">Emporia</span>
+      <span class="area-pill">Augusta</span>
+      <span class="area-pill">Newton</span>
+      <span class="area-pill">Marion</span>
+      <span class="area-pill">Andover</span>
+      <span class="area-pill">And surrounding areas</span>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: Form -->
+  <div class="form-card">
+    <h2>Request Your Free Estimate</h2>
+    <p class="sub">We'll reach out quickly — usually within the hour.</p>
+
+    <div id="form-error"></div>
+
+    <form id="lp-form" action="/submit" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="John Smith" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(316) 555-0100" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com">
+      </div>
+      <div class="form-group">
+        <label for="service">Service Needed</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Select a service…</option>
+          <option value="furnace-repair">Furnace Repair</option>
+          <option value="furnace-installation">Furnace Installation</option>
+          <option value="air-conditioning-repair">AC Repair</option>
+          <option value="air-conditioning-installation">AC Installation</option>
+          <option value="heat-pump-services">Heat Pump Services</option>
+          <option value="hvac-maintenance">HVAC Maintenance / Tune-Up</option>
+          <option value="commercial-hvac">Commercial HVAC</option>
+          <option value="indoor-air-quality">Indoor Air Quality</option>
+          <option value="other">Other / Not Sure</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Tell Us More (Optional)</label>
+        <textarea id="message" name="message" placeholder="Describe the issue or what you need…"></textarea>
+      </div>
+
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAADpT5f2gM80jpJHh" data-theme="light"></div>
+
+      <button type="submit" class="btn-submit" id="submit-btn">Get My Free Estimate &rarr;</button>
+      <p class="form-note">✅ No obligation. No spam. We'll be in touch fast.</p>
+    </form>
+
+    <div id="form-success">
+      <div class="check">✅</div>
+      <h3>Got it — thank you!</h3>
+      <p>We'll be in touch shortly. In the meantime, feel free to call us at<br><a href="tel:3163219438" style="color:#3A5DAE;font-weight:700;">(316) 321-9438</a></p>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM CTA -->
+<section class="lp-cta">
+  <h2>Ready to Get Started?</h2>
+  <p>Fill out the form above or call us now. We'll have someone out to you fast with a free, no-pressure on-site estimate.</p>
+  <div class="cta-btns">
+    <a href="#lp-form" class="btn-cta-primary">Request a Free Estimate</a>
+    <a href="tel:3163219438" class="btn-cta-secondary"><i class="fa-solid fa-phone"></i> (316) 321-9438</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="lp-footer">
+  <p>&copy; <span class="dynamic-year"></span> Don's Heating &amp; Air. All Rights Reserved. &nbsp;&middot;&nbsp;
+    <a href="/contact.html">Contact</a> &nbsp;&middot;&nbsp;
+    <a href="/about.html">About</a>
+  </p>
+</footer>
+
+<!-- Scripts -->
+<link rel="stylesheet" href="/assets/vendors/fontawesome/css/all.min.css">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script>
+document.querySelectorAll('.dynamic-year').forEach(function(el){el.textContent=new Date().getFullYear();});
+
+(function(){
+  var form = document.getElementById('lp-form');
+  var btn  = document.getElementById('submit-btn');
+  var err  = document.getElementById('form-error');
+  var suc  = document.getElementById('form-success');
+
+  if (!form) return;
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    err.style.display = 'none';
+
+    try {
+      var data = new FormData(form);
+      var res  = await fetch('/submit', { method: 'POST', body: data });
+      var json = await res.json();
+      if (json.ok) {
+        form.style.display = 'none';
+        suc.style.display  = 'block';
+      } else {
+        err.textContent    = json.error || 'Something went wrong. Please call us at (316) 321-9438.';
+        err.style.display  = 'block';
+        btn.disabled       = false;
+        btn.textContent    = 'Get My Free Estimate →';
+      }
+    } catch(ex) {
+      err.textContent    = 'Network error. Please call us at (316) 321-9438.';
+      err.style.display  = 'block';
+      btn.disabled       = false;
+      btn.textContent    = 'Get My Free Estimate →';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
