@@ -37,6 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .lp-hero__inner{position:relative;z-index:2;width:100%;max-width:1140px;margin:0 auto;padding:60px 20px;display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:flex-start;}
   .lp-hero__copy{color:#fff;padding-top:24px;}
   .lp-hero__eyebrow{display:inline-block;background:#D4601A;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:2px;margin-bottom:18px;}
+  .eyebrow-mobile{display:none;margin-bottom:0;margin-top:14px;}
   .lp-hero__h1{font-size:clamp(28px,4vw,46px);font-weight:800;line-height:1.15;margin-bottom:18px;color:#fff;}
   .lp-hero__sub{font-size:16px;line-height:1.7;color:rgba(255,255,255,0.82);margin-bottom:28px;max-width:480px;}
   .lp-trust{display:flex;flex-wrap:wrap;gap:12px 20px;}
@@ -146,7 +147,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .lp-services{grid-template-columns:1fr;}
     .lp-reviews__grid{grid-template-columns:1fr;}
     .lp-area__list{grid-template-columns:1fr;}
+    .eyebrow-desktop{display:none;}
+    .eyebrow-mobile{display:inline-block;}
     .lp-hero__h1{font-size:40px!important;}
+    .lp-hero__sub{display:none;}
   }
 
   /* ── Header btn ── */
@@ -185,8 +189,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- Left: Copy -->
     <div class="lp-hero__copy">
+      <span class="lp-hero__eyebrow eyebrow-desktop">Central Kansas HVAC Experts Since 1959</span>
       <h1 class="lp-hero__h1">HVAC Repair &amp; Emergency Services in Emporia, KS</h1>
-      <span class="lp-hero__eyebrow">Central Kansas HVAC Experts Since 1959</span>
+      <span class="lp-hero__eyebrow eyebrow-mobile">Central Kansas HVAC Experts Since 1959</span>
+      <p class="lp-hero__sub">When your furnace quits in January or your AC dies in August, you need a company you can trust — fast. Don's has been the go-to HVAC company in central Kansas for over 65 years.</p>
       <div class="lp-trust">
         <div class="lp-trust__item"><i class="fa-solid fa-shield-halved"></i> Licensed &amp; Insured in Kansas</div>
         <div class="lp-trust__item"><i class="fa-solid fa-bolt"></i> Same-Day Service Available</div>
