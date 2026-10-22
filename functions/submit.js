@@ -5,7 +5,6 @@
  * Returns JSON { ok: true } or { ok: false, error: string }
  */
 
-const RECIPIENT = 'brickley@killergrowth.com';
 const SUBJECT   = "New Form Submission | Don's Heating & Air";
 
 const ALLOWED_ORIGINS = [
@@ -171,9 +170,11 @@ export async function onRequestPost({ request, env }) {
 
     const htmlBody = buildHtmlEmail(name, email, phone, service, message);
 
+    const recipient = env.GMAIL_TO || env.GMAIL_FROM;
+
     const mimeLines = [
       `From: Don's Heating & Air <${env.GMAIL_FROM}>`,
-      `To: ${RECIPIENT}`,
+      `To: ${recipient}`,
       `Subject: ${SUBJECT}`,
       `MIME-Version: 1.0`,
       `Content-Type: text/html; charset=UTF-8`,
