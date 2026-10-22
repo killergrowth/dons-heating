@@ -1524,6 +1524,181 @@ console.log('\n? All pillar pages built successfully.');
 
 
 // ============================================================
+// CAREERS PAGE
+// ============================================================
+function buildCareers() {
+  const content = `
+${T.topbar()}
+<!-- HEADER -->
+<main>
+
+<!-- Page Hero -->
+<section class="page-header" style="background:#1B2A4A;padding:72px 0 56px;margin-top:0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 style="color:#fff;font-size:clamp(32px,5vw,52px);font-weight:700;margin-bottom:16px;">Join the Don's Heating &amp; Air Team</h1>
+        <p style="color:#b0bfda;font-size:18px;max-width:640px;margin:0 auto;">We are always looking for skilled, dependable HVAC professionals to grow with us across Central Kansas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Work With Us -->
+<section style="padding:72px 0 40px;background:#f8f9fb;">
+  <div class="container">
+    <div class="row justify-content-center" style="margin-bottom:48px;">
+      <div class="col-12 text-center">
+        <span style="color:#D4601A;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;">Why Don's</span>
+        <h2 style="color:#1B2A4A;font-size:clamp(26px,4vw,38px);font-weight:700;margin-top:8px;">A Company Worth Working For</h2>
+      </div>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div style="background:#fff;border-radius:12px;padding:36px 28px;text-align:center;height:100%;box-shadow:0 2px 12px rgba(0,0,0,.07);">
+          <div style="width:56px;height:56px;background:#D4601A;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+            <i class="fa-solid fa-calendar-check" style="color:#fff;font-size:22px;"></i>
+          </div>
+          <h3 style="color:#1B2A4A;font-size:20px;font-weight:700;margin-bottom:10px;">Stable Work Year-Round</h3>
+          <p style="color:#6b7280;font-size:15px;line-height:1.7;margin:0;">HVAC never stops. Heating season rolls right into cooling season. Full-time work, all year.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div style="background:#fff;border-radius:12px;padding:36px 28px;text-align:center;height:100%;box-shadow:0 2px 12px rgba(0,0,0,.07);">
+          <div style="width:56px;height:56px;background:#D4601A;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+            <i class="fa-solid fa-people-group" style="color:#fff;font-size:22px;"></i>
+          </div>
+          <h3 style="color:#1B2A4A;font-size:20px;font-weight:700;margin-bottom:10px;">65+ Years, Still Growing</h3>
+          <p style="color:#6b7280;font-size:15px;line-height:1.7;margin:0;">In business since 1959 because we take care of our customers and our crew.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div style="background:#fff;border-radius:12px;padding:36px 28px;text-align:center;height:100%;box-shadow:0 2px 12px rgba(0,0,0,.07);">
+          <div style="width:56px;height:56px;background:#D4601A;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+            <i class="fa-solid fa-map-location-dot" style="color:#fff;font-size:22px;"></i>
+          </div>
+          <h3 style="color:#1B2A4A;font-size:20px;font-weight:700;margin-bottom:10px;">Central Kansas Territory</h3>
+          <p style="color:#6b7280;font-size:15px;line-height:1.7;margin:0;">Based in El Dorado. Serving El Dorado, Hillsboro, Emporia, and surrounding communities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Application Form -->
+<section style="padding:72px 0 88px;background:#fff;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="text-center" style="margin-bottom:40px;">
+          <span style="color:#D4601A;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;">Apply Now</span>
+          <h2 style="color:#1B2A4A;font-size:clamp(26px,4vw,36px);font-weight:700;margin-top:8px;">Send Us Your Application</h2>
+          <p style="color:#6b7280;font-size:16px;margin-top:12px;">Fill out the form below and we will be in touch. All positions welcome.</p>
+        </div>
+        <form id="careers-form" action="/submit" method="POST" novalidate style="background:#f8f9fb;border-radius:16px;padding:40px;box-shadow:0 2px 16px rgba(0,0,0,.08);">
+          <input type="hidden" name="service" value="careers-application">
+          <div style="margin-bottom:20px;">
+            <label for="c-name" style="display:block;font-weight:600;color:#1B2A4A;margin-bottom:6px;font-size:14px;">Full Name <span style="color:#D4601A;">*</span></label>
+            <input type="text" id="c-name" name="name" required autocomplete="name" style="width:100%;padding:12px 16px;border:1.5px solid #dde2ea;border-radius:8px;font-size:15px;color:#1B2A4A;background:#fff;" placeholder="Jane Smith">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+            <div>
+              <label for="c-phone" style="display:block;font-weight:600;color:#1B2A4A;margin-bottom:6px;font-size:14px;">Phone <span style="color:#D4601A;">*</span></label>
+              <input type="tel" id="c-phone" name="phone" required autocomplete="tel" style="width:100%;padding:12px 16px;border:1.5px solid #dde2ea;border-radius:8px;font-size:15px;color:#1B2A4A;background:#fff;" placeholder="(316) 555-0100">
+            </div>
+            <div>
+              <label for="c-email" style="display:block;font-weight:600;color:#1B2A4A;margin-bottom:6px;font-size:14px;">Email</label>
+              <input type="email" id="c-email" name="email" autocomplete="email" style="width:100%;padding:12px 16px;border:1.5px solid #dde2ea;border-radius:8px;font-size:15px;color:#1B2A4A;background:#fff;" placeholder="jane@email.com">
+            </div>
+          </div>
+          <div style="margin-bottom:20px;">
+            <label for="c-position" style="display:block;font-weight:600;color:#1B2A4A;margin-bottom:6px;font-size:14px;">Position of Interest</label>
+            <select id="c-position" name="position" style="width:100%;padding:12px 16px;border:1.5px solid #dde2ea;border-radius:8px;font-size:15px;color:#1B2A4A;background:#fff;">
+              <option value="">Select a position...</option>
+              <option>HVAC Technician</option>
+              <option>HVAC Apprentice / Helper</option>
+              <option>Install Technician</option>
+              <option>Service Technician</option>
+              <option>Office / Customer Service</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div style="margin-bottom:24px;">
+            <label for="c-cover" style="display:block;font-weight:600;color:#1B2A4A;margin-bottom:6px;font-size:14px;">Tell Us About Yourself</label>
+            <textarea id="c-cover" name="cover" rows="5" style="width:100%;padding:12px 16px;border:1.5px solid #dde2ea;border-radius:8px;font-size:15px;color:#1B2A4A;background:#fff;resize:vertical;" placeholder="Experience, certifications, why you would like to work at Don's..."></textarea>
+          </div>
+          <div style="margin-bottom:24px;">
+            <label for="c-resume" style="display:block;font-weight:600;color:#1B2A4A;margin-bottom:6px;font-size:14px;">Resume <span style="color:#888;font-weight:400;">(optional &mdash; PDF, DOC, or DOCX, max 5MB)</span></label>
+            <input type="file" id="c-resume" name="resume" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                   style="width:100%;padding:10px 14px;border:1.5px solid #dde2ea;border-radius:8px;font-size:14px;color:#1B2A4A;background:#fff;cursor:pointer;">
+            <div id="resume-size-err" style="display:none;color:#e53935;font-size:13px;margin-top:6px;">File too large. Please keep it under 5MB.</div>
+          </div>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAADpT5f2gM80jpJHh" style="margin-bottom:20px;"></div>
+          <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+          <button type="submit" id="careers-submit" style="width:100%;background:#D4601A;color:#fff;font-weight:700;font-size:16px;letter-spacing:1px;text-transform:uppercase;border:none;border-radius:8px;padding:16px;cursor:pointer;">
+            Submit Application <i class="fa-solid fa-paper-plane" style="margin-left:8px;"></i>
+          </button>
+          <div id="careers-success" style="display:none;margin-top:20px;background:#e8f5e9;border-left:4px solid #43a047;border-radius:8px;padding:16px 20px;color:#2e7d32;font-weight:600;">Thanks! We got your application and will reach out soon.</div>
+          <div id="careers-error" style="display:none;margin-top:20px;background:#fdecea;border-left:4px solid #e53935;border-radius:8px;padding:16px 20px;color:#b71c1c;">Something went wrong. Please try again or call us at <a href="tel:3163219438" style="color:#b71c1c;">(316) 321-9438</a>.</div>
+          <script>
+          (function(){
+            var form=document.getElementById('careers-form');
+            var btn=document.getElementById('careers-submit');
+            var ok=document.getElementById('careers-success');
+            var er=document.getElementById('careers-error');
+            if(!form)return;
+            var resumeInput=document.getElementById('c-resume');
+            var resumeErr=document.getElementById('resume-size-err');
+            form.addEventListener('submit',function(e){
+              e.preventDefault();
+              // Client-side file size check
+              if(resumeInput&&resumeInput.files&&resumeInput.files[0]&&resumeInput.files[0].size>5*1024*1024){
+                resumeErr.style.display='block';return;
+              }
+              if(resumeErr)resumeErr.style.display='none';
+              btn.disabled=true;btn.textContent='Sending...';
+              er.style.display='none';ok.style.display='none';
+              var data=new FormData(form);
+              var pos=data.get('position')||'';
+              var cover=data.get('cover')||'';
+              data.set('message',(pos?'Position: '+pos+'\n\n':'')+cover);
+              data.delete('position');data.delete('cover');
+              fetch('/submit',{method:'POST',body:data})
+                .then(function(r){return r.json();})
+                .then(function(d){
+                  if(d.ok){ok.style.display='block';form.reset();if(window.turnstile)window.turnstile.reset();if(window.fathom&&typeof window.fathom.trackEvent==='function'){window.fathom.trackEvent('Form Submit: careers_form');}}
+                  else{er.style.display='block';if(window.turnstile)window.turnstile.reset();}
+                  btn.disabled=false;
+                  btn.innerHTML='Submit Application <i class="fa-solid fa-paper-plane" style="margin-left:8px;"></i>';
+                })
+                .catch(function(){
+                  er.style.display='block';btn.disabled=false;
+                  btn.innerHTML='Submit Application <i class="fa-solid fa-paper-plane" style="margin-left:8px;"></i>';
+                  if(window.turnstile)window.turnstile.reset();
+                });
+            });
+          })();
+          </script>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>`;
+
+  write('careers/index.html',
+    T.htmlHead(
+      "Careers | Join Don's Heating & Air | HVAC Jobs in El Dorado, KS",
+      "Don's Heating & Air is hiring! Apply for HVAC technician, apprentice, and support roles in El Dorado, Hillsboro, and Emporia, KS.",
+      'https://donsheatingandair.com/careers/',
+      null,
+      false
+    ) + '\n' + T.wrapBody(content));
+}
+
+// ============================================================
 // GET A QUOTE PAGE ï¿½ High-conversion standalone landing page
 // ============================================================
 function buildGetAQuote() {
@@ -1670,7 +1845,24 @@ function buildGetAQuote() {
   console.log('Built: get-a-quote/index.html');
 }
 
+// ============================================================
+// SIGN-UP / EMPORIA - Google Ads landing page (pre-built HTML)
+// ============================================================
+function buildSignUpHvac() {
+  const src = path.join(ROOT, 'sign-up', 'emporia', 'index.html');
+  if (!fs.existsSync(src)) { console.warn('sign-up/emporia/index.html not found - skipping'); return; }
+  let html = fs.readFileSync(src, 'utf8');
+  // Inject scripts (GTM etc) but use stripped header/footer (already embedded in file)
+  html = injectScripts(html, loadSiteScripts(SITE_ID));
+  const dest = path.join(DIST, 'sign-up', 'emporia', 'index.html');
+  ensureDir(path.dirname(dest));
+  fs.writeFileSync(dest, html, 'utf8');
+  console.log('Built: sign-up/emporia/index.html');
+}
+
+buildCareers();
 buildGetAQuote();
+buildSignUpHvac();
 // Generate sitemap from actual dist/ contents
 generateSitemap({ distDir: DIST, siteRoot: ROOT, domain: SITE_DOMAIN });
 
