@@ -15,7 +15,7 @@ const { generateSitemap } = require('./_lib/gen-sitemap');
 
 const SITE_DOMAIN = 'donsheatingandair.com';
 const SITE_ID     = 'dons-heating';
-const { injectScripts, loadSiteScripts } = require('C:\\Users\\KillerGrowth\\.openclaw\\workspace\\tools\\kg-site-builder\\lib\\inject-scripts');
+const { injectScripts, loadSiteScripts } = require('./lib/inject-scripts');
 const ROOT = __dirname;
 const DIST = path.join(ROOT, 'dist');
 const PARTS = path.join(ROOT, '_partials');
