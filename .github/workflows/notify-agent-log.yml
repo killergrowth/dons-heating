@@ -14,10 +14,10 @@ jobs:
           MSG="${{ github.event.head_commit.message }}"
           # Skip internal/tooling commits
           if echo "$MSG" | grep -qiE '^(feat|fix|chore|ci|docs|refactor|test|style|build)\:'; then
-            echo "skip=true" >> $GITHUB_OUTPUT
+            echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "Skipping internal commit: $MSG"
           else
-            echo "skip=false" >> $GITHUB_OUTPUT
+            echo "skip=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Build deploy summary
@@ -26,7 +26,15 @@ jobs:
         run: |
           MSG="${{ github.event.head_commit.message }}"
           CHANGED="${{ join(github.event.head_commit.modified, ', ') }}"
-          echo "summary=Deployed to production. ${MSG}${CHANGED:+ | Files: ${CHANGED}}" >> $GITHUB_OUTPUT
+          # Collapse to first line only to keep the summary short and avoid
+          # any multi-line/heredoc edge cases downstream (JSON payload, Slack, etc.)
+          FIRST_LINE=$(printf '%s\n' "$MSG" | head -n 1)
+          SUMMARY="Deployed to production. ${FIRST_LINE}${CHANGED:+ | Files: ${CHANGED}}"
+          {
+            echo "summary<<SUMMARY_EOF"
+            echo "$SUMMARY"
+            echo "SUMMARY_EOF"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Dispatch to reporting repo
         if: steps.check.outputs.skip == 'false'
