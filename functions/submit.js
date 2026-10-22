@@ -76,7 +76,7 @@ async function getGmailAccessToken(serviceEmail, privateKeyPem, impersonateEmail
   return data.access_token;
 }
 
-function buildHtmlEmail(name, email, phone, service, message) {
+function buildHtmlEmail(name, email, phone, service, message, attachmentName) {
   const serviceLabel = service ? service.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) : 'Not specified';
   return `<!DOCTYPE html>
 <html>
@@ -127,6 +127,12 @@ function buildHtmlEmail(name, email, phone, service, message) {
             <div style="background:#f0f4fb;border-left:3px solid #3A5DAE;padding:16px;font-size:15px;color:#1B2A4A;line-height:1.7;">${message.replace(/\n/g,'<br>')}</div>
           </div>` : ''}
 
+          ${attachmentName ? `
+          <div style="margin-top:20px;">
+            <div style="font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Attachment</div>
+            <div style="background:#f0f4fb;border-left:3px solid #3A5DAE;padding:12px 16px;font-size:14px;color:#1B2A4A;"><i class="fa-solid fa-paperclip"></i> ${attachmentName} (attached to this email)</div>
+          </div>` : ''}
+
           ${phone ? `<div style="margin-top:32px;text-align:center;"><a href="tel:${phone.replace(/\D/g,'')}" style="display:inline-block;background:#3A5DAE;color:#fff;font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:16px;font-weight:700;padding:14px 36px;border-radius:4px;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">Call ${phone}</a></div>` : ''}
         </td></tr>
 
@@ -150,6 +156,70 @@ export async function onRequestOptions({ request }) {
   return new Response(null, { status: 204, headers: corsHeaders(origin) });
 }
 
+const MAX_ATTACHMENT_BYTES = 5 * 1024 * 1024; // 5MB, matches client-side check
+
+function asciiBinaryFromBuffer(buffer) {
+  const bytes = new Uint8Array(buffer);
+  let binary = '';
+  const CHUNK = 0x8000;
+  for (let i = 0; i < bytes.length; i += CHUNK) {
+    binary += String.fromCharCode.apply(null, bytes.subarray(i, i + CHUNK));
+  }
+  return binary;
+}
+
+function b64Standard(binary) {
+  return btoa(binary);
+}
+
+async function buildRawEmail({ from, to, subject, htmlBody, attachment }) {
+  // No attachment: simple single-part HTML email (previous behavior).
+  if (!attachment) {
+    const mimeLines = [
+      `From: Don's Heating & Air <${from}>`,
+      `To: ${to}`,
+      `Subject: ${subject}`,
+      `MIME-Version: 1.0`,
+      `Content-Type: text/html; charset=UTF-8`,
+      '',
+      htmlBody,
+    ].join('\r\n');
+    return asciiBinaryFromBuffer(new TextEncoder().encode(mimeLines));
+  }
+
+  // Attachment present: build a multipart/mixed message with the HTML body
+  // as one part and the uploaded file as a base64 attachment part.
+  const boundary = 'kg_boundary_' + crypto.randomUUID().replace(/-/g, '');
+  const fileBuffer = await attachment.arrayBuffer();
+  const fileB64 = b64Standard(asciiBinaryFromBuffer(fileBuffer)).replace(/(.{76})/g, '$1\r\n');
+  const attachmentType = attachment.type || 'application/octet-stream';
+  const attachmentName = attachment.name || 'attachment';
+
+  const mimeLines = [
+    `From: Don's Heating & Air <${from}>`,
+    `To: ${to}`,
+    `Subject: ${subject}`,
+    `MIME-Version: 1.0`,
+    `Content-Type: multipart/mixed; boundary="${boundary}"`,
+    '',
+    `--${boundary}`,
+    `Content-Type: text/html; charset=UTF-8`,
+    '',
+    htmlBody,
+    '',
+    `--${boundary}`,
+    `Content-Type: ${attachmentType}; name="${attachmentName}"`,
+    `Content-Disposition: attachment; filename="${attachmentName}"`,
+    `Content-Transfer-Encoding: base64`,
+    '',
+    fileB64,
+    '',
+    `--${boundary}--`,
+  ].join('\r\n');
+
+  return asciiBinaryFromBuffer(new TextEncoder().encode(mimeLines));
+}
+
 export async function onRequestPost({ request, env }) {
   const origin = request.headers.get('Origin') || '';
   const headers = corsHeaders(origin);
@@ -162,29 +232,37 @@ export async function onRequestPost({ request, env }) {
     const service = form.get('service') || '';
     const message = form.get('message') || '';
 
+    // Resume / attachment support: form.get('resume') is a File when a file
+    // was actually chosen, or an empty string/File with size 0 when none was.
+    const resumeField = form.get('resume');
+    let attachment = null;
+    if (resumeField && typeof resumeField === 'object' && typeof resumeField.arrayBuffer === 'function' && resumeField.size > 0) {
+      if (resumeField.size > MAX_ATTACHMENT_BYTES) {
+        return new Response(JSON.stringify({ ok: false, error: 'Attachment exceeds 5MB limit.' }), {
+          status: 400,
+          headers,
+        });
+      }
+      attachment = resumeField;
+    }
+
     const accessToken = await getGmailAccessToken(
       env.GMAIL_SERVICE_EMAIL,
       env.GMAIL_PRIVATE_KEY,
       env.GMAIL_FROM
     );
 
-    const htmlBody = buildHtmlEmail(name, email, phone, service, message);
+    const htmlBody = buildHtmlEmail(name, email, phone, service, message, attachment ? attachment.name : '');
 
     const recipient = env.GMAIL_TO || env.GMAIL_FROM;
 
-    const mimeLines = [
-      `From: Don's Heating & Air <${env.GMAIL_FROM}>`,
-      `To: ${recipient}`,
-      `Subject: ${SUBJECT}`,
-      `MIME-Version: 1.0`,
-      `Content-Type: text/html; charset=UTF-8`,
-      '',
+    const emailBinary = await buildRawEmail({
+      from: env.GMAIL_FROM,
+      to: recipient,
+      subject: SUBJECT,
       htmlBody,
-    ].join('\r\n');
-
-    const emailBytes = new TextEncoder().encode(mimeLines);
-    let emailBinary = '';
-    for (let i = 0; i < emailBytes.length; i++) emailBinary += String.fromCharCode(emailBytes[i]);
+      attachment,
+    });
     const encoded = btoa(emailBinary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 
     const sendRes = await fetch(
