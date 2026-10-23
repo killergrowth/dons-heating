@@ -1,7 +1,7 @@
 ---
 slug: heat-pump-cost
 title: 'Heat Pump Cost: What to Expect in 2027'
-status: scheduled
+status: published
 publishDate: '2026-10-23'
 scheduledDate: '2026-10-23'
 excerpt: >-
